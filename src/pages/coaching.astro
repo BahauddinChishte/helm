@@ -1,31 +1,54 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
-import TestimonialCarousel from '../components/TestimonialCarousel.jsx';
 
-const coachingTestimonials = [
+const videoTestimonials = [
   {
-    name: "Nial Campbell",
-    role: "Restaurant Owner & Chef, Firefly Grill",
-    content: "I was getting overloaded...we knew something had to give... this allowed everybody in the company to grow and with clear and proper vision coming from us.",
-    videoUrl: "#"
-  },
-  {
+    id: 1,
     name: "Mark Berger",
     role: "CEO, Securitech",
     content: "Using the principles of this system, we've been able to grow the business. Everybody down the line is now thinking in the same organized fashion allowing me to focus on what I'm supposed to do.",
+    image: "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop",
     videoUrl: "#"
   },
   {
+    id: 2,
+    name: "Nial Campbell",
+    role: "Restaurant Owner & Chef, Firefly Grill",
+    content: "I was getting overloaded...we knew something had to give... this allowed everybody in the company to grow and with clear and proper vision coming from us.",
+    image: "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop",
+    videoUrl: "#"
+  },
+  {
+    id: 3,
     name: "Bill Tobin",
     role: "CEO, Tiki's",
     content: "With the system we were able to maintain it and cascade it down to all our of our 150+ employees. It has really helped us solidify who we are and identify our individual goals. I highly recommend it.",
+    image: "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop",
     videoUrl: "#"
   },
   {
+    id: 4,
     name: "Tim Hubbard",
     role: "President, Vertical Bistro & Tap, Rudi's Deli",
     content: "We struggled with accountability, culture, and attaining our goal. Since implementing this system, we've seen great growth in our operation. It's been a game changer for us.",
+    image: "https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop",
+    videoUrl: "#"
+  },
+  {
+    id: 5,
+    name: "Sarah Mitchell",
+    role: "Founder, TechStart Solutions",
+    content: "This system transformed how we operate. Our team is aligned, our processes are clear, and we're growing faster than ever before. The accountability framework alone was worth it.",
+    image: "https://images.pexels.com/photos/3760607/pexels-photo-3760607.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop",
+    videoUrl: "#"
+  },
+  {
+    id: 6,
+    name: "David Chen",
+    role: "Managing Director, Chen Manufacturing",
+    content: "After implementing this system, we saw immediate improvements in team communication and decision-making. Our leadership team is finally on the same page.",
+    image: "https://images.pexels.com/photos/3782235/pexels-photo-3782235.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop",
     videoUrl: "#"
   }
 ];
@@ -38,7 +61,7 @@ const coachingTestimonials = [
   <section class="relative pt-32 pb-0 bg-gradient-to-br from-brand-navy via-brand-navyDark to-brand-navy overflow-hidden min-h-[600px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="text-white py-12">
+        <div class="text-white py-12 lg:py-20">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Want to scale your company?
           </h1>
@@ -62,13 +85,13 @@ const coachingTestimonials = [
             </svg>
           </Button>
         </div>
-        <div class="relative lg:absolute lg:right-0 lg:top-20 lg:w-1/2">
+        <div class="relative lg:absolute lg:right-0 lg:top-20 lg:w-1/2 lg:h-[calc(100%+5rem)]">
           <img
-            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt="Business coach"
-            class="w-full h-auto object-cover rounded-tl-3xl"
+            src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
+            alt="Business leader"
+            class="w-full h-full object-cover object-center rounded-tl-3xl shadow-2xl"
             width="600"
-            height="700"
+            height="800"
             loading="eager"
           />
         </div>
@@ -80,13 +103,16 @@ const coachingTestimonials = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="order-2 lg:order-1">
-          <img
-            src="https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt="Overwhelmed business owner"
-            class="w-full rounded-3xl"
-            width="600"
-            height="500"
-          />
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+              alt="Overwhelmed business owner at desk"
+              class="w-full h-auto"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+          </div>
         </div>
         <div class="order-1 lg:order-2">
           <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-6">
@@ -106,8 +132,8 @@ const coachingTestimonials = [
         </div>
       </div>
 
-      <div class="flex justify-center my-12">
-        <svg class="w-16 h-16 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="flex justify-center my-16">
+        <svg class="w-16 h-16 text-brand-orange animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
       </div>
@@ -139,18 +165,21 @@ const coachingTestimonials = [
           </p>
         </div>
         <div>
-          <img
-            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt="Team collaboration"
-            class="w-full rounded-3xl"
-            width="600"
-            height="500"
-          />
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+              alt="Team collaboration and success"
+              class="w-full h-auto"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
 
-      <div class="flex justify-center my-12">
-        <svg class="w-16 h-16 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="flex justify-center my-16">
+        <svg class="w-16 h-16 text-brand-orange animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
       </div>
@@ -160,35 +189,38 @@ const coachingTestimonials = [
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div class="bg-white rounded-2xl shadow-2xl p-8 flex items-center justify-center">
-          <div class="text-center max-w-sm">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 lg:p-12 flex items-center justify-center border border-gray-100">
+          <div class="text-center max-w-md">
             <h3 class="text-4xl sm:text-5xl font-black text-brand-navy mb-6 uppercase leading-tight" style="font-family: 'Courier New', monospace;">
               THE SYSTEM
             </h3>
-            <p class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Courier New', monospace;">
+            <p class="text-xl font-bold mb-3 uppercase" style="font-family: 'Courier New', monospace;">
               HOW COMPANIES GET THEIR
             </p>
-            <p class="text-5xl font-black mb-6" style="font-family: 'Courier New', monospace;">
+            <p class="text-5xl sm:text-6xl font-black mb-3" style="font-family: 'Courier New', monospace;">
               SH*T
             </p>
-            <p class="text-2xl font-bold uppercase" style="font-family: 'Courier New', monospace;">
+            <p class="text-xl font-bold uppercase mb-8" style="font-family: 'Courier New', monospace;">
               TOGETHER
             </p>
-            <div class="mt-8">
-              <img
-                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400"
-                alt="Business system illustration"
-                class="mx-auto"
-                width="300"
-                height="200"
-              />
+            <div class="my-8 border-t-4 border-b-4 border-brand-navy py-4">
+              <div class="relative rounded-lg overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                  alt="Business system illustration"
+                  class="mx-auto w-full"
+                  width="400"
+                  height="300"
+                  loading="lazy"
+                />
+              </div>
             </div>
             <Button
               href="#book"
               variant="primary"
               size="lg"
               track="get-book"
-              class="mt-8 inline-flex items-center gap-2"
+              class="mt-8 inline-flex items-center gap-2 w-full justify-center"
             >
               Get the book, free
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -216,6 +248,11 @@ const coachingTestimonials = [
           <p class="text-lg text-brand-slate italic">
             Josh Klenoff, Founder
           </p>
+          <div class="pt-4">
+            <p class="text-base text-brand-slate leading-relaxed">
+              This proven system has helped over 5,000 companies achieve true alignment, create accountability at every level, and unlock sustainable growth. The secret isn't working harder—it's working smarter with a system that actually works.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -227,45 +264,83 @@ const coachingTestimonials = [
         <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
           What Leaders Are Saying
         </h2>
+        <p class="text-lg text-brand-slate max-w-2xl mx-auto">
+          Hear from CEOs and business owners who have transformed their companies with our system
+        </p>
       </div>
 
-      <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-        <div class="aspect-video bg-gray-900 relative">
-          <img
-            src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            alt="Video testimonial"
-            class="w-full h-full object-cover"
-            width="1200"
-            height="675"
-          />
-          <button class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hover:bg-opacity-30 transition-all">
-            <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-2xl">
-              <svg class="w-10 h-10 text-brand-orange ml-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"></path>
-              </svg>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {videoTestimonials.map((testimonial) => (
+          <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
+            <div class="aspect-video bg-gray-900 relative group cursor-pointer">
+              <img
+                src={testimonial.image}
+                alt={`${testimonial.name} video testimonial`}
+                class="w-full h-full object-cover"
+                width="600"
+                height="338"
+                loading="lazy"
+              />
+              <button class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all">
+                <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                  <svg class="w-8 h-8 text-brand-orange ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"></path>
+                  </svg>
+                </div>
+              </button>
             </div>
-          </button>
-        </div>
-        <div class="p-8 text-center">
-          <p class="text-xl text-brand-slate mb-4">
-            "Using the principles of this system, we've been able to grow the business. Everybody down the line is now thinking in the same organized fashion allowing me to focus on what I'm supposed to do."
-          </p>
-          <p class="text-lg font-semibold text-brand-navy">
-            Mark Berger, CEO, Securitech
-          </p>
-        </div>
+            <div class="p-6">
+              <p class="text-base text-brand-slate mb-4 line-clamp-3">
+                "{testimonial.content}"
+              </p>
+              <p class="text-sm font-semibold text-brand-navy">
+                {testimonial.name}
+              </p>
+              <p class="text-sm text-brand-slate">
+                {testimonial.role}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
 
       <div class="mt-16 text-center">
+        <p class="text-lg text-brand-slate mb-8">
+          Ready to transform your leadership team and scale your company?
+        </p>
         <Button
           openModal={true}
           variant="primary"
           size="lg"
           track="coaching-cta"
         >
-          Get Started
+          Get Started Today
         </Button>
       </div>
     </div>
   </section>
 </Layout>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(-25%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+</style>
