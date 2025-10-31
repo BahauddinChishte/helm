@@ -1,0 +1,283 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import TestimonialCarousel from '../../components/TestimonialCarousel.jsx';
+import Button from '../../components/Button.astro';
+import logos from '../../data/logos.json';
+
+const customerSupportTestimonials = [
+  {
+    id: 1,
+    name: 'Dan Lifton',
+    title: 'CEO',
+    company: 'Maypro',
+    quote: "The improvement in our customer satisfaction scores has been remarkable. Murtaza has completely transformed how we engage with clients.",
+    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+  },
+  {
+    id: 2,
+    name: 'Lori Grisham',
+    title: 'Operations Manager',
+    company: 'The Hero Co',
+    quote: "After struggling to find the right fit, I decided to give Helm a try. The customer service specialist they provided has truly exceeded our expectations and is a perfect fit for our needs.",
+    image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+  },
+  {
+    id: 3,
+    name: 'Eugene Min',
+    title: 'Founder',
+    company: 'Quilt Software',
+    quote: "Hiring skilled customer service professionals was one of the best decisions we've made. Their proactive approach has helped us build stronger relationships and loyalty with our clients.",
+    image: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+  }
+];
+
+const benefits = [
+  {
+    title: 'Reliability',
+    description: 'Our customer service professionals are carefully selected for their consistent dependability, ensuring they meet your standards and handle customer interactions with professionalism and care, every time.'
+  },
+  {
+    title: 'Exceptional Communication',
+    description: 'Our customer service professionals are skilled at delivering clear, empathetic, and effective communication, ensuring a positive experience for your clients.'
+  },
+  {
+    title: 'Problem-Solving Expertise',
+    description: 'Equipped with the ability to handle inquiries, resolve issues, and turn challenges into opportunities, they provide solutions that build customer trust and loyalty.'
+  },
+  {
+    title: 'Adaptability',
+    description: 'Whether you need full-time support or flexible coverage, our customer service professionals seamlessly integrate into your business, adapting to your unique customer needs and workflow.'
+  }
+];
+
+const services = [
+  {
+    title: 'Communication Management',
+    items: [
+      'Respond to emails, chats, and calls with quick, helpful solutions.',
+      'Address customer complaints and ensure timely resolutions.'
+    ]
+  },
+  {
+    title: 'Customer Relationship Management',
+    items: [
+      'Assist new customers with a smooth onboarding experience.',
+      'Gather and analyze customer feedback to improve service.'
+    ]
+  },
+  {
+    title: 'Administrative Support',
+    items: [
+      'Manage orders, returns, and exchanges efficiently.',
+      'Keep customer records accurate and current.'
+    ]
+  },
+  {
+    title: 'Product and Service Knowledge',
+    items: [
+      'Provide accurate details to help customers make decisions.',
+      'Assist with troubleshooting and issue resolution.'
+    ]
+  },
+  {
+    title: 'Customer Experience Enhancement',
+    items: [
+      'Send updates, offers, and personalized messages to customers.',
+      'Track and manage customer loyalty rewards.'
+    ]
+  },
+  {
+    title: 'Team and Process Support',
+    items: [
+      'Serve as a liaison between customers and your team, ensuring smooth information flow.',
+      'Identify and suggest improvements to enhance customer service operations.'
+    ]
+  }
+];
+
+const faqs = [
+  {
+    question: 'What is a remote customer service professional?',
+    answer: "Helm's remote customer service professionals provide customer support from a location outside of your office, typically working from their own home or another remote environment. They are fully equipped with the necessary tools and technology to communicate, resolve issues, and manage inquiries just like an in-office team member, ensuring seamless support without the need for physical presence."
+  },
+  {
+    question: 'How do you ensure the customer service professional is qualified?',
+    answer: 'We screen over 3,000 candidates on average to find you the perfect match. Our rigorous vetting process includes skills assessments, communication tests, and cultural fit evaluations. Every professional receives ongoing coaching and professional development from our team.'
+  },
+  {
+    question: 'Can I hire a customer service professional for part-time or flexible hours?',
+    answer: 'Absolutely! We offer flexible solutions that adapt to your needs, whether you require part-time, full-time, or variable coverage. Our customer service professionals can work in your time zone and adjust to your business hours.'
+  }
+];
+
+const howItWorksSteps = [
+  {
+    number: '01',
+    title: 'Share your needs',
+    description: "We'll create a Success Profile based on your needs and preferences. Our team will screen over 3,000 candidates, on average, to find you the perfect match."
+  },
+  {
+    number: '02',
+    title: 'Meet the perfect hire',
+    description: "You'll meet and screen the candidate. Over 80% of the time, the 1st candidate we propose gets hired. If you prefer to meet a new candidate, we extend our search to ensure your success!"
+  },
+  {
+    number: '03',
+    title: 'Delegate. Elevate.',
+    description: 'Best practices for onboarding your new hire will save you time and get them up and running immediately. Create more value and do more of what you love by letting go and delegating to the right support!'
+  }
+];
+---
+
+<Layout
+  title="Customer Support Staffing - Remote Customer Service Professionals | Helm"
+  description="Elevate your customer experience with dedicated customer service experts. Professional support specialists that enhance satisfaction and drive loyalty."
+>
+  <Hero
+    title="Elevate Your Customer Experience with Customer Service Experts"
+    description="Enhance Satisfaction and Drive Loyalty with Dedicated Support Specialists."
+    primaryCTA={{ text: 'Get a Custom Quote', href: '/contact' }}
+    secondaryCTA={{ text: 'Learn More', href: '#benefits' }}
+    image="https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+    imageAlt="Customer service professional providing support"
+  />
+
+  <section class="py-20 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
+          What Our Clients Say
+        </h2>
+      </div>
+      <TestimonialCarousel testimonials={customerSupportTestimonials} client:load />
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-sm font-semibold text-brand-orange uppercase tracking-wide">Trusted By</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center opacity-60">
+        {logos.map(logo => (
+          <img
+            src={logo.image}
+            alt={logo.name}
+            class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-200"
+            loading="lazy"
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gradient-to-br from-brand-navy to-brand-navyDark text-white" id="benefits">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+          Why Choose Our Customer Service Professionals?
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {benefits.map(benefit => (
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:bg-white/20 transition-all duration-300">
+            <h3 class="text-xl font-bold mb-3 text-brand-orange">{benefit.title}</h3>
+            <p class="text-gray-300 leading-relaxed">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
+          What Your Helm Customer Service Professionals Can Help You With
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map(service => (
+          <div class="bg-brand-light rounded-xl p-8 hover:shadow-lg transition-all duration-300">
+            <h3 class="text-xl font-bold text-brand-navy mb-4">{service.title}</h3>
+            <ul class="space-y-3">
+              {service.items.map(item => (
+                <li class="text-gray-700 leading-relaxed">{item}</li>
+              ))}
+            </ul>
+            <a
+              href="/contact"
+              class="inline-block mt-6 text-brand-orange font-semibold hover:text-brand-orangeDark transition-colors"
+            >
+              Find my assistant →
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+          <p class="text-gray-700 mb-8">
+            The most important questions are often about the unknown unknowns – that is the stuff you're not thinking to ask but you really need to know. While some common questions are here, let's hop on a call and get you the knowledge you really need!
+          </p>
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-semibold text-brand-navy mb-2">Email</h3>
+              <a href="mailto:support@helm.ceo" class="text-brand-orange hover:text-brand-orangeDark">support@helm.ceo</a>
+            </div>
+            <div>
+              <h3 class="font-semibold text-brand-navy mb-2">Phone</h3>
+              <a href="tel:917.566.0364" class="text-brand-orange hover:text-brand-orangeDark">917.566.0364</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <details class="bg-brand-light rounded-lg p-6 group">
+                <summary class="font-semibold text-brand-navy cursor-pointer list-none flex justify-between items-center">
+                  {faq.question}
+                  <svg class="w-5 h-5 text-brand-orange transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p class="mt-4 text-gray-700 leading-relaxed">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gradient-to-br from-brand-navy to-brand-navyDark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">What to Expect When You Work With Us</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {howItWorksSteps.map(step => (
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-orange text-white text-2xl font-bold mb-6">
+              {step.number}
+            </div>
+            <h3 class="text-2xl font-bold mb-4">{step.title}</h3>
+            <p class="text-gray-300 leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-12">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="/contact" variant="primary" size="lg">Get a Custom Quote</Button>
+          <Button href="/how-it-works" variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-brand-navy">Learn More</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

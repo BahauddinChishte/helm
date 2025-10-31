@@ -1,0 +1,348 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import TestimonialCarousel from '../../components/TestimonialCarousel.jsx';
+import Button from '../../components/Button.astro';
+import logos from '../../data/logos.json';
+
+const adminTestimonials = [
+  {
+    id: 1,
+    name: 'Athena Simpson',
+    title: 'Founder',
+    company: 'AcquiMatch',
+    quote: "It's impossible to know what freedom feels like until you're living it. Anke has made possible what I couldn't have imagined.",
+    image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+  },
+  {
+    id: 2,
+    name: 'Matt Warnock',
+    title: 'CEO',
+    company: 'RidgeCrest Herbals',
+    quote: "I loved our first remote virtual assistant so much I hired a 2nd one. They started out in support but within 1 year, each was managing different regions for our international operation.",
+    image: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+  },
+  {
+    id: 3,
+    name: 'Jay Kaufman',
+    title: 'President',
+    company: 'Paragon Laboratories',
+    quote: "I've tried everything to find the right person and gave up. Then, I gave Josh and his team at Helm a chance. Natalie, my EA, has been nothing short of life-changing.",
+    image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+  }
+];
+
+const benefits = [
+  {
+    title: 'Reliability',
+    description: 'Our EAs undergo rigorous selection processes to ensure dependability and trustworthiness'
+  },
+  {
+    title: 'Efficiency',
+    description: 'Optimize your workflow as our EAs handle scheduling, email management, and a vast array of other tasks and projects.'
+  },
+  {
+    title: 'Scalability',
+    description: 'Flexible solutions that grow with your needs, whether you need part-time support or a full-time assistant.'
+  }
+];
+
+const services = [
+  {
+    title: 'Communication Management',
+    items: [
+      'Emails: Achieve zero inbox, screen incoming emails, respond timely, and draft necessary communications.',
+      'Phone Management: Join video-conferences for support or to fill in when you cannot be there. Screen and make calls.'
+    ]
+  },
+  {
+    title: 'Research and Data Management',
+    items: [
+      'Data Handling: Manage data entry for CRM, ERP systems, prepare lists, and conduct surveys.',
+      'Research Tasks: Gather information, including conducting interviews of team members or customers. Prepare summary write-ups.'
+    ]
+  },
+  {
+    title: 'Financial and Documentation Oversight',
+    items: [
+      'Financial Tasks: Manage bill payments and processing, maintaining financial discretion and accuracy.',
+      'Document Management: Handle sensitive documents like expense reports and invoicing. Organize and update your intranet.'
+    ]
+  },
+  {
+    title: 'Project and Team Support',
+    items: [
+      'Project Management: Coordinate with vendors, manage client relationships, and handle internal projects.',
+      'Leadership Support: Act as a liaison between you and your team members, potentially supporting other leaders if helpful.'
+    ]
+  },
+  {
+    title: 'Personal Assistant Tasks',
+    items: [
+      'Personal Matters: Manage appointments and personal errands to help maintain your work-life balance.',
+      'Transcription Services: Provide transcription for voicemails, videos, audio recordings, and podcasts.'
+    ]
+  },
+  {
+    title: 'Schedule Optimization',
+    items: [
+      'Calendar Management: Schedule meetings, optimize your week and day to ensure maximum impact and avoidance of conflicts.',
+      'Meeting Engagement: Take detailed minutes and ensure follow-ups are clearly communicated.'
+    ]
+  }
+];
+
+const faqs = [
+  {
+    question: 'What is a remote assistant?',
+    answer: "Helm's remote assistants are hungry, humble and highly intelligent professionals and support you and your team in virtually any function. They work in your time zone and integrate with your team as deeply as you would like. Many of our client partners, within four months of hiring, say their remote assistant is as much a part of the team as the other people in their company."
+  },
+  {
+    question: 'What are the challenges and benefits of a remote assistant?',
+    answer: 'Remote assistants provide significant cost savings while maintaining high quality work. The main challenge is ensuring clear communication and proper onboarding, which our team helps facilitate. Benefits include flexible scaling, access to global talent, and specialized skills.'
+  },
+  {
+    question: 'How is Helm unique?',
+    answer: 'Helm provides ongoing coaching and professional development for every staff member. We screen over 3,000 candidates on average to find you the perfect match. Our assistants work in your time zone with native-level English proficiency.'
+  },
+  {
+    question: 'How does onboarding work?',
+    answer: 'We provide best practices for onboarding your new hire to save you time and get them up and running immediately. Our team supports both you and your new assistant throughout the onboarding process.'
+  },
+  {
+    question: 'How long will it take to find the right remote assistant with Helm?',
+    answer: 'We typically present your first candidate within 1-2 weeks. Over 80% of the time, the first candidate we propose gets hired. If needed, we extend our search to ensure your success.'
+  }
+];
+
+const howItWorksSteps = [
+  {
+    number: '01',
+    title: 'Share your needs',
+    description: "We'll create a Success Profile based on your needs and preferences. Our team will screen over 3,000 candidates, on average, to find you the perfect match."
+  },
+  {
+    number: '02',
+    title: 'Meet the perfect hire',
+    description: "You'll meet and screen the candidate. Over 80% of the time, the 1st candidate we propose gets hired. If you prefer to meet a new candidate, we extend our search to ensure your success!"
+  },
+  {
+    number: '03',
+    title: 'Delegate. Elevate.',
+    description: 'Best practices for onboarding your new hire will save you time and get them up and running immediately. Create more value and do more of what you love by letting go and delegating to the right support!'
+  }
+];
+---
+
+<Layout
+  title="Admin Support - Executive Assistant Staffing | Helm"
+  description="Empower your productivity with a dedicated Executive Assistant. Professional EAs that handle scheduling, email management, and more at 50% less than U.S. equivalent."
+>
+  <Hero
+    title="Empower Your Productivity with a Dedicated Executive Assistant"
+    description="Free up your schedule and focus on what you do best with our professional EAs."
+    primaryCTA={{ text: 'Get a Custom Quote', href: '/contact' }}
+    secondaryCTA={{ text: 'Learn More', href: '#benefits' }}
+    image="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+    imageAlt="Professional executive assistant working"
+  />
+
+  <section class="py-20 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
+          What Our Clients Say
+        </h2>
+      </div>
+      <TestimonialCarousel testimonials={adminTestimonials} client:load />
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-sm font-semibold text-brand-orange uppercase tracking-wide">Trusted By</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center opacity-60">
+        {logos.map(logo => (
+          <img
+            src={logo.image}
+            alt={logo.name}
+            class="h-12 w-auto grayscale hover:grayscale-0 transition-all duration-200"
+            loading="lazy"
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gradient-to-br from-brand-navy to-brand-navyDark text-white" id="benefits">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+          Why Choose Our Executive Assistants?
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {benefits.map(benefit => (
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:bg-white/20 transition-all duration-300">
+            <h3 class="text-xl font-bold mb-3 text-brand-orange">{benefit.title}</h3>
+            <p class="text-gray-300 leading-relaxed">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
+          What Your Helm Assistant Can Support You With
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map(service => (
+          <div class="bg-brand-light rounded-xl p-8 hover:shadow-lg transition-all duration-300">
+            <h3 class="text-xl font-bold text-brand-navy mb-4">{service.title}</h3>
+            <ul class="space-y-3">
+              {service.items.map(item => (
+                <li class="text-gray-700 leading-relaxed">{item}</li>
+              ))}
+            </ul>
+            <a
+              href="/contact"
+              class="inline-block mt-6 text-brand-orange font-semibold hover:text-brand-orangeDark transition-colors"
+            >
+              Find my assistant →
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-brand-light">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="bg-white rounded-2xl shadow-xl p-12">
+        <h2 class="text-3xl font-bold text-brand-navy mb-4">A-Player Executive Assistant</h2>
+        <div class="text-5xl font-bold text-brand-orange mb-2">$23</div>
+        <div class="text-gray-600 mb-8">per hour</div>
+        <ul class="text-left space-y-3 mb-8">
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-orange mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">Email inbox management</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-orange mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">Scheduling and calendar optimization</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-orange mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">Drafting letters and documentation</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-orange mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">Conducting research</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-orange mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">Planning travel arrangements</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-orange mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">Support with spreadsheets and presentations</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-orange mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-700">And much more...</span>
+          </li>
+        </ul>
+        <p class="text-gray-700 mb-8">
+          Ready to enhance your productivity? Get a personalized quote tailored to your specific needs today!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="/contact" variant="primary" size="lg">Get a Custom Quote</Button>
+          <Button href="/how-it-works" variant="outline" size="lg">Learn More</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+          <p class="text-gray-700 mb-8">
+            The most important questions are often about the unknown unknowns – that is the stuff you're not thinking to ask but you really need to know. While some common questions are here, let's hop on a call and get you the knowledge you really need!
+          </p>
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-semibold text-brand-navy mb-2">Email</h3>
+              <a href="mailto:support@helm.ceo" class="text-brand-orange hover:text-brand-orangeDark">support@helm.ceo</a>
+            </div>
+            <div>
+              <h3 class="font-semibold text-brand-navy mb-2">Phone</h3>
+              <a href="tel:917.566.0364" class="text-brand-orange hover:text-brand-orangeDark">917.566.0364</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <details class="bg-brand-light rounded-lg p-6 group">
+                <summary class="font-semibold text-brand-navy cursor-pointer list-none flex justify-between items-center">
+                  {faq.question}
+                  <svg class="w-5 h-5 text-brand-orange transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p class="mt-4 text-gray-700 leading-relaxed">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gradient-to-br from-brand-navy to-brand-navyDark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">How It Works</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {howItWorksSteps.map(step => (
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-orange text-white text-2xl font-bold mb-6">
+              {step.number}
+            </div>
+            <h3 class="text-2xl font-bold mb-4">{step.title}</h3>
+            <p class="text-gray-300 leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-12">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="/contact" variant="primary" size="lg">Get a Custom Quote</Button>
+          <Button href="/how-it-works" variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-brand-navy">Learn More</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
