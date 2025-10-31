@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import Button from '../components/Button.astro';
+import services from '../data/services.json';
+---
+
+<Layout
+  title="Our Services"
+  description="Discover the wide range of services our offshore assistants can provide. From executive assistance to e-commerce management, we have the talent you need."
+>
+  <section class="relative bg-brand-navy text-white overflow-hidden min-h-[60vh] flex items-center">
+    <div class="absolute inset-0 grid-background"></div>
+
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full text-center">
+      <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl mb-6">
+        Our Services
+      </h1>
+      <p class="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+        From executive support to specialized business functions, our talented assistants are ready to help your business grow.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        {services.map((service) => (
+          <ServiceCard
+            title={service.title}
+            description={service.description}
+            icon={service.icon}
+          />
+        ))}
+      </div>
+
+      <div class="bg-gradient-to-br from-brand-navy to-brand-navyDark text-white rounded-3xl p-12 text-center">
+        <h2 class="text-3xl font-bold mb-4">
+          Don't See What You Need?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Our client partners have asked for help with just about everything under the sun. Let's discuss your unique requirements.
+        </p>
+        <Button
+          href="/contact"
+          variant="primary"
+          size="lg"
+          track="services-cta"
+        >
+          Request a quote
+        </Button>
+      </div>
+    </div>
+  </section>
+</Layout>

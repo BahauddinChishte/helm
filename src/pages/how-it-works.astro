@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+
+const steps = [
+  {
+    number: '01',
+    title: 'Share Your Needs',
+    description: "We start with a detailed conversation about your requirements, culture, and goals. We'll create a comprehensive Success Profile that guides our search for the perfect candidate.",
+    details: [
+      'Define role requirements and responsibilities',
+      'Discuss your company culture and values',
+      'Set expectations for skills and experience',
+      'Establish communication preferences'
+    ]
+  },
+  {
+    number: '02',
+    title: 'We Screen Thousands',
+    description: 'Our team screens over 3,000 candidates on average to find you the perfect match. We assess technical skills, cultural fit, language proficiency, and work ethic.',
+    details: [
+      'Review resumes and portfolios',
+      'Conduct initial interviews',
+      'Assess English proficiency',
+      'Verify skills and experience',
+      'Check references'
+    ]
+  },
+  {
+    number: '03',
+    title: 'Meet Your Candidate',
+    description: "You'll meet your top candidate through a video interview. Over 80% of the time, our first candidate gets hired. If needed, we'll continue the search at no extra cost.",
+    details: [
+      'Receive detailed candidate profile',
+      'Schedule video interview',
+      'Ask questions and assess fit',
+      'Make your hiring decision',
+      'Request additional candidates if needed'
+    ]
+  },
+  {
+    number: '04',
+    title: 'Onboard & Succeed',
+    description: 'We provide best practices and support for onboarding. Your new hire receives ongoing coaching from our professional development team.',
+    details: [
+      'Follow proven onboarding framework',
+      'Set up tools and communication',
+      'Establish clear goals and metrics',
+      'Regular check-ins from Helm team',
+      'Ongoing professional development coaching'
+    ]
+  }
+];
+---
+
+<Layout
+  title="How It Works"
+  description="Learn about Helm's proven process for finding and onboarding exceptional offshore talent. From screening to success, we're with you every step."
+>
+  <section class="relative bg-brand-navy text-white overflow-hidden min-h-[60vh] flex items-center">
+    <div class="absolute inset-0 grid-background"></div>
+
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full text-center">
+      <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl mb-6">
+        How Helm Works
+      </h1>
+      <p class="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+        Our proven 4-step process ensures you find the perfect match for your team.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-20">
+        {steps.map((step, index) => (
+          <div class={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+            <div class={index % 2 === 1 ? 'lg:order-2' : ''}>
+              <span class="text-8xl font-bold text-brand-orange opacity-10">
+                {step.number}
+              </span>
+              <h2 class="text-3xl font-bold text-brand-navy mb-4 mt-4">
+                {step.title}
+              </h2>
+              <p class="text-brand-slate text-lg leading-relaxed mb-6">
+                {step.description}
+              </p>
+            </div>
+
+            <div class={`bg-brand-light rounded-2xl p-8 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+              <h3 class="font-bold text-brand-navy mb-4">What to Expect:</h3>
+              <ul class="space-y-3">
+                {step.details.map((detail) => (
+                  <li class="flex items-start space-x-3">
+                    <svg class="w-6 h-6 text-brand-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-brand-slate">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-20 bg-gradient-to-br from-brand-navy to-brand-navyDark text-white rounded-3xl p-12 text-center">
+        <h2 class="text-3xl font-bold mb-4">
+          Ready to Get Started?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Let's find your perfect assistant. The process starts with a simple conversation.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button
+            href="/contact"
+            variant="primary"
+            size="lg"
+            track="how-it-works-cta"
+          >
+            Request a quote
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

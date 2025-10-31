@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout
+  title="About Helm"
+  description="Learn about Helm's mission to connect businesses with top offshore talent. Discover our values, process, and commitment to quality."
+>
+  <section class="relative bg-brand-navy text-white overflow-hidden min-h-[60vh] flex items-center">
+    <div class="absolute inset-0 grid-background"></div>
+
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full text-center">
+      <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl mb-6">
+        About Helm
+      </h1>
+      <p class="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+        We're on a mission to help businesses scale by connecting them with exceptional offshore talent.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">Our Story</h2>
+        <p class="text-brand-slate leading-relaxed mb-6">
+          Helm was founded on a simple belief: exceptional talent exists everywhere, and businesses should have access to it without breaking the bank. We've spent decades helping business owners build their companies, and we understand the challenges of finding the right people to support your growth.
+        </p>
+
+        <h2 class="text-3xl font-bold text-brand-navy mb-6 mt-12">Our Approach</h2>
+        <p class="text-brand-slate leading-relaxed mb-6">
+          We don't just match resumes to job descriptions. We take the time to understand your business, your culture, and your specific needs. Then we screen thousands of candidates to find the perfect fit. Our rigorous vetting process ensures that every candidate we present is hungry to learn, humble in their approach, and smart enough to handle complex challenges.
+        </p>
+
+        <h2 class="text-3xl font-bold text-brand-navy mb-6 mt-12">Why Choose Helm</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div class="bg-brand-light rounded-2xl p-6">
+            <h3 class="text-xl font-bold text-brand-navy mb-3">Quality Over Quantity</h3>
+            <p class="text-brand-slate">
+              We screen over 3,000 candidates on average to find you the perfect match. Over 80% of our first candidates get hired.
+            </p>
+          </div>
+
+          <div class="bg-brand-light rounded-2xl p-6">
+            <h3 class="text-xl font-bold text-brand-navy mb-3">Ongoing Support</h3>
+            <p class="text-brand-slate">
+              Every staff member receives 1-on-1 coaching from our dedicated professional development team.
+            </p>
+          </div>
+
+          <div class="bg-brand-light rounded-2xl p-6">
+            <h3 class="text-xl font-bold text-brand-navy mb-3">Cultural Fit</h3>
+            <p class="text-brand-slate">
+              We identify key aspects of your culture to ensure values alignment and seamless team integration.
+            </p>
+          </div>
+
+          <div class="bg-brand-light rounded-2xl p-6">
+            <h3 class="text-xl font-bold text-brand-navy mb-3">Cost Effective</h3>
+            <p class="text-brand-slate">
+              Get A-player talent for less than 50% of their U.S. equivalent without sacrificing quality.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <Button
+          href="/contact"
+          variant="primary"
+          size="lg"
+          track="about-cta"
+        >
+          Start Your Search
+        </Button>
+      </div>
+    </div>
+  </section>
+</Layout>

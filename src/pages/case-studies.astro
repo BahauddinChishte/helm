@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout
+  title="Case Studies"
+  description="Read success stories from companies that have transformed their operations with Helm's offshore talent solutions."
+>
+  <section class="relative bg-brand-navy text-white overflow-hidden min-h-[60vh] flex items-center">
+    <div class="absolute inset-0 grid-background"></div>
+
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full text-center">
+      <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl mb-6">
+        Case Studies
+      </h1>
+      <p class="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+        See how businesses like yours have succeeded with Helm.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <article class="bg-white rounded-2xl border border-brand-border overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="p-8">
+            <h2 class="text-2xl font-bold text-brand-navy mb-4">
+              AeroFarms: Scaling Operations with Executive Support
+            </h2>
+            <p class="text-brand-slate mb-6">
+              CEO David Rosenberg freed up 20+ hours per week by delegating administrative tasks to his Helm executive assistant, allowing him to focus on strategic growth initiatives.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-brand-slate">Coming Soon</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-2xl border border-brand-border overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="p-8">
+            <h2 class="text-2xl font-bold text-brand-navy mb-4">
+              Ridgecrest Herbal: Streamlining Marketing Operations
+            </h2>
+            <p class="text-brand-slate mb-6">
+              President Matt Warnock's virtual assistant handles content creation, proofreading, and project management, completing in hours what used to take weeks.
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-brand-slate">Coming Soon</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="mt-20 bg-brand-light rounded-2xl p-12 text-center">
+        <h2 class="text-3xl font-bold text-brand-navy mb-4">
+          Ready to Write Your Success Story?
+        </h2>
+        <p class="text-lg text-brand-slate mb-8 max-w-2xl mx-auto">
+          Join the growing list of companies transforming their operations with Helm's offshore talent.
+        </p>
+        <Button
+          href="/contact"
+          variant="primary"
+          size="lg"
+          track="case-studies-cta"
+        >
+          Get Started Today
+        </Button>
+      </div>
+    </div>
+  </section>
+</Layout>
