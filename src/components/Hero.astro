@@ -5,8 +5,8 @@ interface Props {
   title: string;
   subtitle?: string;
   description?: string;
-  primaryCTA?: { text: string; href: string };
-  secondaryCTA?: { text: string; href: string };
+  primaryCTA?: { text: string; href?: string; openModal?: boolean };
+  secondaryCTA?: { text: string; href?: string; openModal?: boolean };
   image?: string;
   imageAlt?: string;
 }
@@ -46,6 +46,7 @@ const {
           {primaryCTA && (
             <Button
               href={primaryCTA.href}
+              openModal={primaryCTA.openModal}
               variant="primary"
               size="lg"
               track="hero-primary-cta"
@@ -57,6 +58,7 @@ const {
           {secondaryCTA && (
             <Button
               href={secondaryCTA.href}
+              openModal={secondaryCTA.openModal}
               variant="outline"
               size="lg"
               track="hero-secondary-cta"

@@ -1,0 +1,54 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  track?: string;
+  class?: string;
+  openModal?: boolean;
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  track,
+  class: className = '',
+  openModal = false
+} = Astro.props;
+
+const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200';
+
+const variantClasses = {
+  primary: 'bg-brand-orange text-white hover:bg-brand-orangeDark',
+  secondary: 'bg-brand-navy text-white hover:bg-brand-navyDark',
+  outline: 'border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white'
+};
+
+const sizeClasses = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-6 py-3 text-base',
+  lg: 'px-8 py-4 text-lg'
+};
+
+const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+---
+
+{openModal ? (
+  <button
+    type="button"
+    data-open-quote-modal
+    class={classes}
+    data-track={track}
+  >
+    <slot />
+  </button>
+) : (
+  <a
+    href={href}
+    class={classes}
+    data-track={track}
+  >
+    <slot />
+  </a>
+)}
