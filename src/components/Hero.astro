@@ -22,10 +22,8 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative bg-brand-navy text-white overflow-hidden min-h-screen flex items-center">
-  <div class="absolute inset-0 grid-background"></div>
-
-  <div class="relative w-full mx-auto px-4 sm:px-6 lg:px-8 py-20" style="max-width: 1400px;">
+<section class="relative bg-white overflow-hidden">
+  <div class="relative w-full mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20" style="max-width: 1400px;">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       <div class="space-y-6 animate-fade-in-up">
         {subtitle && (
@@ -34,12 +32,12 @@ const {
           </p>
         )}
 
-        <h1 class="hero-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight">
+        <h1 class="hero-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight text-brand-navy">
           {title}
         </h1>
 
         {description && (
-          <p class="text-lg text-gray-300 leading-relaxed">
+          <p class="text-lg text-brand-slate leading-relaxed">
             {description}
           </p>
         )}
@@ -62,7 +60,7 @@ const {
               variant="outline"
               size="lg"
               track="hero-secondary-cta"
-              class="border-white text-white hover:bg-white hover:text-brand-navy transition-all duration-300"
+              class="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white transition-all duration-300"
             >
               {secondaryCTA.text}
             </Button>
