@@ -25,63 +25,48 @@ const {
 <section class="relative bg-gradient-to-br from-brand-navy to-brand-navyDark text-white overflow-hidden">
   <div class="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10"></div>
 
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div class="space-y-6">
-        {subtitle && (
-          <p class="text-brand-orange font-semibold text-lg uppercase tracking-wide">
-            {subtitle}
-          </p>
-        )}
-
-        <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl">
-          {title}
-        </h1>
-
-        {description && (
-          <p class="text-xl text-gray-300 leading-relaxed">
-            {description}
-          </p>
-        )}
-
-        <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          {primaryCTA && (
-            <Button
-              href={primaryCTA.href}
-              variant="primary"
-              size="lg"
-              track="hero-primary-cta"
-            >
-              {primaryCTA.text}
-            </Button>
-          )}
-
-          {secondaryCTA && (
-            <Button
-              href={secondaryCTA.href}
-              variant="outline"
-              size="lg"
-              track="hero-secondary-cta"
-              class="border-white text-white hover:bg-white hover:text-brand-navy"
-            >
-              {secondaryCTA.text}
-            </Button>
-          )}
-        </div>
-      </div>
-
-      {image && (
-        <div class="relative">
-          <img
-            src={image}
-            alt={imageAlt}
-            class="rounded-2xl shadow-2xl w-full"
-            width="600"
-            height="450"
-            loading="eager"
-          />
-        </div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+    <div class="text-center space-y-6">
+      {subtitle && (
+        <p class="text-brand-orange font-semibold text-lg uppercase tracking-wide">
+          {subtitle}
+        </p>
       )}
+
+      <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl">
+        {title}
+      </h1>
+
+      {description && (
+        <p class="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          {description}
+        </p>
+      )}
+
+      <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+        {primaryCTA && (
+          <Button
+            href={primaryCTA.href}
+            variant="primary"
+            size="lg"
+            track="hero-primary-cta"
+          >
+            {primaryCTA.text}
+          </Button>
+        )}
+
+        {secondaryCTA && (
+          <Button
+            href={secondaryCTA.href}
+            variant="outline"
+            size="lg"
+            track="hero-secondary-cta"
+            class="border-white text-white hover:bg-white hover:text-brand-navy"
+          >
+            {secondaryCTA.text}
+          </Button>
+        )}
+      </div>
     </div>
   </div>
 </section>
