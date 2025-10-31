@@ -22,10 +22,11 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative bg-gradient-to-br from-brand-navy to-brand-navyDark text-white overflow-hidden">
-  <div class="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10"></div>
+<section class="relative bg-brand-navy text-white overflow-hidden min-h-screen flex items-center">
+  <!-- Grid background effect that fades from top to middle -->
+  <div class="absolute inset-0 grid-background"></div>
 
-  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
     <div class="text-center space-y-6">
       {subtitle && (
         <p class="text-brand-orange font-semibold text-lg uppercase tracking-wide">
