@@ -1,0 +1,283 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const topics = [
+  'All Topics',
+  'Agencies',
+  'Analytics',
+  'Blogging',
+  'Entrepreneurship'
+];
+
+const contentTypes = [
+  'All Types',
+  'E-books',
+  'Webinars'
+];
+---
+
+<Layout
+  title="Resources - Helm Blog & Learning Center"
+  description="Read insights, tips, and success stories about offshore staffing, team building, and business growth from the Helm team."
+>
+  <section class="pt-32 pb-16 bg-gradient-to-br from-brand-navy via-brand-navyDark to-brand-navy text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-96 h-96 bg-brand-orange rounded-full filter blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
+    </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6">
+        Resources & Insights
+      </h1>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+        Expert guidance on building exceptional teams, scaling your business, and mastering offshore talent management.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white sticky top-0 z-40 shadow-md" id="filters">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-sm font-semibold text-brand-navy uppercase tracking-wider mb-3">
+            Filter by Topic
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            {topics.map((topic) => (
+              <button
+                class="filter-button topic-filter px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:scale-105"
+                data-filter={topic}
+                data-active={topic === 'All Topics' ? 'true' : 'false'}
+              >
+                {topic}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-brand-navy uppercase tracking-wider mb-3">
+            Filter by Content Type
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            {contentTypes.map((type) => (
+              <button
+                class="filter-button type-filter px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:scale-105"
+                data-filter={type}
+                data-active={type === 'All Types' ? 'true' : 'false'}
+              >
+                {type}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 flex items-center justify-between border-t pt-6">
+        <p class="text-sm text-brand-slate">
+          <span id="results-count">{posts.length}</span> resource{posts.length !== 1 ? 's' : ''} available
+        </p>
+        <button
+          id="clear-filters"
+          class="text-sm font-medium text-brand-orange hover:text-brand-orangeDark transition-colors"
+        >
+          Clear all filters
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {posts.length > 0 ? (
+        <div>
+          <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map((post) => (
+              <div class="blog-item" data-tags={JSON.stringify(post.data.tags || [])}>
+                <BlogCard
+                  title={post.data.title}
+                  excerpt={post.data.description}
+                  slug={post.slug}
+                  date={post.data.pubDate.toISOString()}
+                  image={post.data.image}
+                  author={post.data.author}
+                />
+              </div>
+            ))}
+          </div>
+
+          <div id="no-results" class="hidden text-center py-16">
+            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-200 mb-6">
+              <svg class="w-10 h-10 text-brand-slate" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M12 12h.01M12 12h.01M12 12h.01M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-brand-navy mb-3">
+              No resources found
+            </h3>
+            <p class="text-brand-slate text-lg mb-6">
+              Try adjusting your filters to see more results
+            </p>
+            <button
+              id="reset-filters"
+              class="inline-flex items-center gap-2 bg-brand-orange text-white px-6 py-3 rounded-full font-medium hover:bg-brand-orangeDark transition-colors"
+            >
+              Reset Filters
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div class="text-center py-16">
+          <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand-light mb-6">
+            <svg class="w-10 h-10 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-brand-navy mb-3">
+            Resources Coming Soon
+          </h3>
+          <p class="text-brand-slate text-lg">
+            Check back later for insights and resources.
+          </p>
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .filter-button {
+    background: white;
+    color: #334155;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .filter-button:hover {
+    border-color: #FF6B35;
+    color: #FF6B35;
+  }
+
+  .filter-button[data-active="true"] {
+    background: linear-gradient(135deg, #FF6B35 0%, #E85D2A 100%);
+    color: white;
+    border-color: #FF6B35;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  }
+
+  .blog-item {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .blog-item.hidden {
+    display: none;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  #filters {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.98);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const topicButtons = document.querySelectorAll('.topic-filter');
+    const typeButtons = document.querySelectorAll('.type-filter');
+    const blogItems = document.querySelectorAll('.blog-item');
+    const blogGrid = document.getElementById('blog-grid');
+    const noResults = document.getElementById('no-results');
+    const resultsCount = document.getElementById('results-count');
+    const clearFiltersBtn = document.getElementById('clear-filters');
+    const resetFiltersBtn = document.getElementById('reset-filters');
+
+    let activeTopic = 'All Topics';
+    let activeType = 'All Types';
+
+    function filterPosts() {
+      let visibleCount = 0;
+
+      blogItems.forEach((item) => {
+        const tags = JSON.parse(item.getAttribute('data-tags') || '[]');
+
+        const matchesTopic = activeTopic === 'All Topics' || tags.includes(activeTopic);
+        const matchesType = activeType === 'All Types' || tags.includes(activeType);
+
+        if (matchesTopic && matchesType) {
+          item.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      if (resultsCount) {
+        resultsCount.textContent = visibleCount.toString();
+      }
+
+      if (visibleCount === 0) {
+        blogGrid?.classList.add('hidden');
+        noResults?.classList.remove('hidden');
+      } else {
+        blogGrid?.classList.remove('hidden');
+        noResults?.classList.add('hidden');
+      }
+    }
+
+    function updateButtons(buttons: NodeListOf<Element>, activeValue: string) {
+      buttons.forEach((btn) => {
+        const filter = btn.getAttribute('data-filter');
+        if (filter === activeValue) {
+          btn.setAttribute('data-active', 'true');
+        } else {
+          btn.setAttribute('data-active', 'false');
+        }
+      });
+    }
+
+    function clearAllFilters() {
+      activeTopic = 'All Topics';
+      activeType = 'All Types';
+      updateButtons(topicButtons, activeTopic);
+      updateButtons(typeButtons, activeType);
+      filterPosts();
+    }
+
+    topicButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        activeTopic = btn.getAttribute('data-filter') || 'All Topics';
+        updateButtons(topicButtons, activeTopic);
+        filterPosts();
+      });
+    });
+
+    typeButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        activeType = btn.getAttribute('data-filter') || 'All Types';
+        updateButtons(typeButtons, activeType);
+        filterPosts();
+      });
+    });
+
+    clearFiltersBtn?.addEventListener('click', clearAllFilters);
+    resetFiltersBtn?.addEventListener('click', clearAllFilters);
+
+    filterPosts();
+  });
+</script>
