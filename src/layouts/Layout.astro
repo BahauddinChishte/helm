@@ -108,8 +108,14 @@ const { title, description, image, type, canonical, noindex } = Astro.props;
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: 'Mazius Display', serif;
+    font-weight: 900;
     line-height: 1.2;
-    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+
+  h1 {
+    line-height: 1.05;
   }
 
   .hero-title {
