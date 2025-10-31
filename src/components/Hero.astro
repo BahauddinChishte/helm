@@ -23,51 +23,110 @@ const {
 ---
 
 <section class="relative bg-brand-navy text-white overflow-hidden min-h-screen flex items-center">
-  <!-- Grid background effect that fades from top to middle -->
   <div class="absolute inset-0 grid-background"></div>
 
-  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-    <div class="text-center space-y-6">
-      {subtitle && (
-        <p class="text-brand-orange font-semibold text-lg uppercase tracking-wide">
-          {subtitle}
-        </p>
-      )}
-
-      <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl">
-        {title}
-      </h1>
-
-      {description && (
-        <p class="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
-          {description}
-        </p>
-      )}
-
-      <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-        {primaryCTA && (
-          <Button
-            href={primaryCTA.href}
-            variant="primary"
-            size="lg"
-            track="hero-primary-cta"
-          >
-            {primaryCTA.text}
-          </Button>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="space-y-8 animate-fade-in-up">
+        {subtitle && (
+          <p class="text-brand-orange font-semibold text-lg uppercase tracking-wide">
+            {subtitle}
+          </p>
         )}
 
-        {secondaryCTA && (
-          <Button
-            href={secondaryCTA.href}
-            variant="outline"
-            size="lg"
-            track="hero-secondary-cta"
-            class="border-white text-white hover:bg-white hover:text-brand-navy"
-          >
-            {secondaryCTA.text}
-          </Button>
+        <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight">
+          {title}
+        </h1>
+
+        {description && (
+          <p class="text-xl text-gray-300 leading-relaxed">
+            {description}
+          </p>
+        )}
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          {primaryCTA && (
+            <Button
+              href={primaryCTA.href}
+              variant="primary"
+              size="lg"
+              track="hero-primary-cta"
+            >
+              {primaryCTA.text}
+            </Button>
+          )}
+
+          {secondaryCTA && (
+            <Button
+              href={secondaryCTA.href}
+              variant="outline"
+              size="lg"
+              track="hero-secondary-cta"
+              class="border-white text-white hover:bg-white hover:text-brand-navy transition-all duration-300"
+            >
+              {secondaryCTA.text}
+            </Button>
+          )}
+        </div>
+      </div>
+
+      <div class="relative animate-fade-in-right">
+        {image ? (
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-tr from-brand-orange/20 to-transparent z-10"></div>
+            <img
+              src={image}
+              alt={imageAlt}
+              class="w-full h-auto object-cover"
+              loading="eager"
+            />
+          </div>
+        ) : (
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-brand-orange/20 to-blue-900/30 backdrop-blur-sm border border-white/10">
+            <div class="aspect-[4/3] flex items-center justify-center p-12">
+              <div class="text-center space-y-4">
+                <svg class="w-24 h-24 mx-auto text-brand-orange/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <p class="text-gray-400 text-sm">Hero Image Placeholder</p>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-right {
+    animation: fade-in-right 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+</style>
