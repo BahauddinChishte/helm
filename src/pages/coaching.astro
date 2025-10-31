@@ -32,144 +32,196 @@ const coachingTestimonials = [
 ---
 
 <Layout
-  title="Scale Your Company - Leadership Coaching"
+  title="Scale Your Company - Leadership Coaching | Helm"
   description="Transform your leadership team with proven systems. Over 5,000 companies have achieved alignment, accountability, and growth with our approach."
 >
-  <section class="pt-32 pb-20 bg-white">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-navy mb-6 hero-title">
-          Want to scale your company?
-        </h1>
-        <p class="text-xl text-brand-slate leading-relaxed max-w-3xl mx-auto mb-8">
-          You'll need a cohesive leadership team with strong accountability and alignment. This isn't something you either have or don't have. It's a science. We've seen it with over 5,000 companies.
-        </p>
-        <p class="text-2xl font-bold text-brand-navy mb-8">
-          Want to know the secret?
-        </p>
-        <Button
-          href="#"
-          variant="primary"
-          size="lg"
-          track="watch-training"
-        >
-          Watch our training
-        </Button>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-brand-light">
+  <section class="relative pt-32 pb-0 bg-gradient-to-br from-brand-navy via-brand-navyDark to-brand-navy overflow-hidden min-h-[600px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-        <div>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-white py-12">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Want to scale your company?
+          </h1>
+          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
+            You'll need a cohesive leadership team with strong accountability and alignment. This isn't something you either have or don't have. It's a science. We've seen it with over 5,000 companies.
+          </p>
+          <p class="text-xl font-semibold mb-8">
+            Want to know the secret?
+          </p>
+          <Button
+            href="#training"
+            variant="primary"
+            size="lg"
+            track="watch-training"
+            class="inline-flex items-center gap-2"
+          >
+            Watch our training
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </Button>
+        </div>
+        <div class="relative lg:absolute lg:right-0 lg:top-20 lg:w-1/2">
           <img
-            src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt="Josh Klenoff, Helm CEO"
-            class="rounded-2xl shadow-2xl w-full"
+            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Business coach"
+            class="w-full h-auto object-cover rounded-tl-3xl"
             width="600"
-            height="600"
+            height="700"
             loading="eager"
           />
         </div>
-        <div>
-          <h2 class="text-3xl font-bold text-brand-navy mb-6">
-            You're the head of your company, but you're stuck running the day-to-day operation...
-          </h2>
-          <p class="text-brand-slate text-lg leading-relaxed mb-6">
-            You'd love to let go, but who will take care of the business?
-          </p>
-          <p class="text-brand-slate text-lg leading-relaxed mb-6">
-            Your team is firefighting. Inevitably, their solutions are patches that just keep you stuck in place.
-          </p>
-          <p class="text-xl font-bold text-brand-navy">
-            We know how frustrating it is.
-          </p>
-        </div>
       </div>
     </div>
   </section>
 
   <section class="py-20 bg-white">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl font-bold text-brand-navy mb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="order-2 lg:order-1">
+          <img
+            src="https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Overwhelmed business owner"
+            class="w-full rounded-3xl"
+            width="600"
+            height="500"
+          />
+        </div>
+        <div class="order-1 lg:order-2">
+          <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-6">
+            You're the head of your company, but you're stuck running the day-to-day operation...
+          </h2>
+          <div class="space-y-4 text-lg text-brand-slate">
+            <p>
+              You'd love to let go, but who will take care of the business?
+            </p>
+            <p>
+              Your team is firefighting. Inevitably, their solutions are patches that just keep you stuck in place.
+            </p>
+            <p class="text-xl font-semibold text-brand-navy">
+              We know how frustrating it is.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center my-12">
+        <svg class="w-16 h-16 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-12">
         Consider an alternative...
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-12">
-        <div class="bg-brand-light rounded-2xl p-8">
-          <p class="text-lg text-brand-slate leading-relaxed">
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-12">
+        <div class="space-y-6 text-lg text-brand-slate">
+          <p>
             Your team commits to one system. The wrong people leave. The right people arrive.
           </p>
-        </div>
-
-        <div class="bg-brand-light rounded-2xl p-8">
-          <p class="text-lg text-brand-slate leading-relaxed">
+          <p>
             All align around a single vision. All follow one set of processes.
           </p>
-        </div>
-
-        <div class="bg-brand-light rounded-2xl p-8">
-          <p class="text-lg text-brand-slate leading-relaxed">
+          <p>
             Each is immersed in big goals. Each is absorbed by the right KPIs.
           </p>
-        </div>
-
-        <div class="bg-brand-light rounded-2xl p-8">
-          <p class="text-lg text-brand-slate leading-relaxed">
+          <p>
             All are open and honest, putting their biggest challenges on the table…
           </p>
+          <p class="text-xl font-semibold text-brand-navy">
+            Then, solving them at the root level so they go away for good.
+          </p>
+        </div>
+        <div>
+          <img
+            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Team collaboration"
+            class="w-full rounded-3xl"
+            width="600"
+            height="500"
+          />
         </div>
       </div>
 
-      <div class="bg-gradient-to-br from-brand-orange to-brand-orangeDark text-white rounded-3xl p-12 mb-12">
-        <p class="text-2xl font-bold">
-          Then, solving them at the root level so they go away for good.
-        </p>
+      <div class="flex justify-center my-12">
+        <svg class="w-16 h-16 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
       </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-brand-navy text-white">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl sm:text-5xl font-bold mb-6 hero-title">
-        the system how companies get their shit together
-      </h2>
-      <p class="text-2xl mb-8">
-        Get the book, free
-      </p>
-      <div class="max-w-3xl mx-auto mb-12">
-        <p class="text-xl text-gray-300 leading-relaxed mb-6">
-          You'd love to let go of the day-to-day operation…
-        </p>
-        <p class="text-xl text-gray-300 leading-relaxed mb-6">
-          But who will take care of the business?
-        </p>
-        <p class="text-3xl font-bold mb-6">
-          They will.
-        </p>
-        <p class="text-2xl font-bold mb-4">
-          Welcome to freedom.
-        </p>
-        <p class="text-2xl font-bold mb-8">
-          Welcome to Helm.
-        </p>
-        <p class="text-lg text-gray-400">
-          Josh Klenoff, Founder
-        </p>
-      </div>
-      <Button
-        href="/contact"
-        variant="primary"
-        size="lg"
-        track="get-book"
-      >
-        Get the book
-      </Button>
     </div>
   </section>
 
   <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 flex items-center justify-center">
+          <div class="text-center max-w-sm">
+            <h3 class="text-4xl sm:text-5xl font-black text-brand-navy mb-6 uppercase leading-tight" style="font-family: 'Courier New', monospace;">
+              THE SYSTEM
+            </h3>
+            <p class="text-2xl font-bold mb-4 uppercase" style="font-family: 'Courier New', monospace;">
+              HOW COMPANIES GET THEIR
+            </p>
+            <p class="text-5xl font-black mb-6" style="font-family: 'Courier New', monospace;">
+              SH*T
+            </p>
+            <p class="text-2xl font-bold uppercase" style="font-family: 'Courier New', monospace;">
+              TOGETHER
+            </p>
+            <div class="mt-8">
+              <img
+                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="Business system illustration"
+                class="mx-auto"
+                width="300"
+                height="200"
+              />
+            </div>
+            <Button
+              href="#book"
+              variant="primary"
+              size="lg"
+              track="get-book"
+              class="mt-8 inline-flex items-center gap-2"
+            >
+              Get the book, free
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </Button>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy">
+            You'd love to let go of the day-to-day operation...
+          </h2>
+          <p class="text-lg text-brand-slate">
+            But who will take care of the business?
+          </p>
+          <p class="text-2xl font-bold text-brand-navy">
+            They will.
+          </p>
+          <p class="text-xl font-semibold text-brand-navy">
+            Welcome to <span class="text-brand-orange">freedom</span>.
+          </p>
+          <p class="text-xl font-semibold text-brand-navy">
+            Welcome to <span class="text-brand-orange">Helm</span>.
+          </p>
+          <p class="text-lg text-brand-slate italic">
+            Josh Klenoff, Founder
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50" id="training">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
@@ -177,19 +229,34 @@ const coachingTestimonials = [
         </h2>
       </div>
 
-      <TestimonialCarousel testimonials={coachingTestimonials} client:load />
-    </div>
-  </section>
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div class="aspect-video bg-gray-900 relative">
+          <img
+            src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Video testimonial"
+            class="w-full h-full object-cover"
+            width="1200"
+            height="675"
+          />
+          <button class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hover:bg-opacity-30 transition-all">
+            <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-2xl">
+              <svg class="w-10 h-10 text-brand-orange ml-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div class="p-8 text-center">
+          <p class="text-xl text-brand-slate mb-4">
+            "Using the principles of this system, we've been able to grow the business. Everybody down the line is now thinking in the same organized fashion allowing me to focus on what I'm supposed to do."
+          </p>
+          <p class="text-lg font-semibold text-brand-navy">
+            Mark Berger, CEO, Securitech
+          </p>
+        </div>
+      </div>
 
-  <section class="py-20 bg-brand-light">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-black text-white rounded-3xl p-12 text-center">
-        <h2 class="text-3xl font-bold mb-4">
-          Ready to Transform Your Leadership Team?
-        </h2>
-        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Join over 5,000 companies that have achieved alignment, accountability, and extraordinary growth.
-        </p>
+      <div class="mt-16 text-center">
         <Button
           openModal={true}
           variant="primary"
