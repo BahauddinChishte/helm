@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  type?: 'website' | 'article';
+  canonical?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  image = 'https://helm.ceo/og-image.jpg',
+  type = 'website',
+  canonical,
+  noindex = false
+} = Astro.props;
+
+const siteUrl = 'https://helm.ceo';
+const fullCanonical = canonical || Astro.url.href;
+const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<link rel="canonical" href={fullCanonical} />
+
+<meta property="og:type" content={type} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullImage} />
+<meta property="og:url" content={fullCanonical} />
+<meta property="og:site_name" content="Helm" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullImage} />

@@ -1,0 +1,116 @@
+---
+---
+
+<div class="bg-gray-50 rounded-2xl p-8">
+  <form class="space-y-4" method="POST" action="/api/form">
+    <input type="hidden" name="formType" value="contact" />
+
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First name*"
+          required
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last name"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent"
+        />
+      </div>
+    </div>
+
+    <div>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email*"
+        required
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent"
+      />
+    </div>
+
+    <div>
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Phone number"
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent"
+      />
+    </div>
+
+    <div>
+      <select
+        name="role"
+        required
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent text-gray-700"
+      >
+        <option value="">What type of assistance do you need?*</option>
+        <option value="executive">Executive Assistant</option>
+        <option value="administrative">Administrative Support</option>
+        <option value="customer">Customer Support</option>
+        <option value="finance">Finance Support</option>
+        <option value="sales">Sales Support</option>
+        <option value="marketing">Marketing Support</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div>
+      <select
+        name="hoursWeekly"
+        required
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent text-gray-700"
+      >
+        <option value="">Hours per week*</option>
+        <option value="10-20">10-20 hours</option>
+        <option value="20-30">20-30 hours</option>
+        <option value="30-40">30-40 hours</option>
+        <option value="40+">40+ hours</option>
+      </select>
+    </div>
+
+    <div>
+      <input
+        type="text"
+        name="company"
+        placeholder="Company"
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent"
+      />
+    </div>
+
+    <div>
+      <textarea
+        name="message"
+        placeholder="Tell us about your needs..."
+        rows="4"
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent"
+      ></textarea>
+    </div>
+
+    <div class="flex items-start">
+      <input
+        type="checkbox"
+        name="agreeToTerms"
+        id="agreeToTerms"
+        required
+        class="mt-1 h-4 w-4 text-brand-orange border-gray-300 rounded focus:ring-brand-orange"
+      />
+      <label for="agreeToTerms" class="ml-3 text-sm text-gray-600">
+        I agree to the <a href="/privacy" class="text-brand-orange hover:underline">Privacy Policy</a> and to receive SMS from Helm Staffing. Message & data rates may apply. Reply STOP to opt out. *
+      </label>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full bg-brand-orange text-white py-4 rounded-lg font-semibold hover:bg-brand-orangeDark transition-colors"
+    >
+      SEND MESSAGE
+    </button>
+  </form>
+</div>
