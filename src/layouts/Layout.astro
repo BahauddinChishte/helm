@@ -33,7 +33,7 @@ const { title, description, image, type, canonical, noindex } = Astro.props;
     <GTM />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=mazius-display@400,700,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   </head>
   <body class="font-sans antialiased bg-white text-brand-navy">
     <GTMBody />
@@ -121,12 +121,13 @@ const { title, description, image, type, canonical, noindex } = Astro.props;
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rubik', sans-serif;
     line-height: 1.2;
     font-weight: 700;
   }
 
   .hero-title {
-    font-family: 'Mazius Display', serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: 900;
     line-height: 1.05;
     letter-spacing: -0.015em;

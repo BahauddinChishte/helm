@@ -22,8 +22,8 @@
     --color-white: #FFFFFF;
     --color-black: #000000;
 
-    --font-sans: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --font-display: 'Mazius Display', serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-display: 'Rubik', sans-serif;
 
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
