@@ -40,17 +40,20 @@ const howItWorksSteps = [
   {
     number: '01',
     title: 'Share your needs',
-    description: "We'll create a Success Profile based on your needs and preferences. Our team will screen over 3,000 candidates, on average, to find you the perfect match."
+    description: "We'll create a Success Profile based on your needs and preferences.",
+    additionalInfo: "Our team will screen over 3,000 candidates, on average, to find you the perfect match."
   },
   {
     number: '02',
     title: 'Meet the perfect hire',
-    description: "You'll meet and screen the candidate. Over 80% of the time, the 1st candidate we propose gets hired. If you prefer to meet a new candidate, we extend our search to ensure your success!"
+    description: "You'll meet and screen the candidate. Over 80% of the time, the 1st candidate we propose gets hired.",
+    additionalInfo: "If you prefer to meet a new candidate, we extend our search to ensure your success!"
   },
   {
     number: '03',
     title: 'Delegate. Elevate.',
-    description: 'Best practices for onboarding your new hire will save you time and get them up and running immediately. Create more value and do more of what you love by letting go and delegating to the right support!'
+    description: 'Best practices for onboarding your new hire will save you time and get them up and running immediately.',
+    additionalInfo: 'Create more value and do more of what you love by letting go and delegating to the right support!'
   }
 ];
 ---
@@ -162,32 +165,45 @@ const howItWorksSteps = [
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-        {howItWorksSteps.map((step) => (
-          <div class="relative">
-            <div class="flex items-start space-x-4">
-              <span class="text-6xl font-bold text-brand-orange opacity-20">
-                {step.number}
-              </span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        {howItWorksSteps.map((step, index) => (
+          <div class="relative text-center">
+            <div class="flex flex-col items-center">
+              <div class="relative mb-6">
+                <div class="w-14 h-14 rounded-full bg-brand-orange flex items-center justify-center">
+                  <span class="text-white text-xl font-bold">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                {index < 2 && (
+                  <div class="hidden md:block absolute top-1/2 left-full w-[calc(100vw/3-3.5rem)] h-0.5 bg-brand-orange transform -translate-y-1/2 ml-4"></div>
+                )}
+              </div>
               <div class="flex-1">
-                <h3 class="text-2xl font-bold text-brand-navy mb-4">
+                <h3 class="text-xl font-bold text-brand-navy mb-4">
                   {step.title}
                 </h3>
-                <p class="text-brand-slate leading-relaxed">
+                <p class="text-brand-slate leading-relaxed mb-4">
                   {step.description}
                 </p>
+                {step.additionalInfo && (
+                  <p class="text-brand-slate leading-relaxed text-sm">
+                    {step.additionalInfo}
+                  </p>
+                )}
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-16">
         <Button
           href="/contact"
           variant="primary"
           size="lg"
           track="how-it-works-cta"
+          class="how-it-works-primary-btn"
         >
           Request a quote
         </Button>
@@ -196,6 +212,7 @@ const howItWorksSteps = [
           variant="outline"
           size="lg"
           track="how-it-works-learn-more"
+          class="how-it-works-secondary-btn"
         >
           Learn more
         </Button>
@@ -307,6 +324,30 @@ const howItWorksSteps = [
   .cta-secondary-btn:hover {
     background-color: var(--color-orange) !important;
     border-color: var(--color-orange) !important;
+    color: white !important;
+  }
+
+  .how-it-works-primary-btn {
+    background-color: var(--color-orange) !important;
+    border: 2px solid var(--color-orange) !important;
+    color: white !important;
+  }
+
+  .how-it-works-primary-btn:hover {
+    background-color: #E67E22 !important;
+    border-color: #E67E22 !important;
+    color: white !important;
+  }
+
+  .how-it-works-secondary-btn {
+    background-color: #343A5A !important;
+    border: 2px solid #343A5A !important;
+    color: white !important;
+  }
+
+  .how-it-works-secondary-btn:hover {
+    background-color: #2C3147 !important;
+    border-color: #2C3147 !important;
     color: white !important;
   }
 </style>
