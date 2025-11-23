@@ -25,7 +25,7 @@ export default function FAQAccordion({ faqs }) {
             className="w-full px-6 py-4 text-left flex items-center justify-between transition-colors"
             aria-expanded={openIndex === index}
           >
-            <span className="font-semibold text-brand-navy text-lg pr-4">
+            <span className="font-semibold text-brand-navy pr-4" style={{ fontSize: '26px', fontFamily: 'Roboto, sans-serif' }}>
               {faq.question}
             </span>
             {openIndex === index ? (
@@ -63,7 +63,7 @@ export default function FAQAccordion({ faqs }) {
               openIndex === index ? 'max-h-[800px]' : 'max-h-0'
             }`}
           >
-            <div className="px-6 pb-5 text-brand-slate leading-relaxed whitespace-pre-line">
+            <div className="px-6 pb-5 text-brand-slate leading-relaxed whitespace-pre-line" style={{ fontSize: '14px', fontFamily: 'Montserrat, sans-serif' }}>
               {faq.answer}
             </div>
           </div>
