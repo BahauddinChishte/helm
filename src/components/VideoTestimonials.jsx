@@ -20,16 +20,15 @@ export default function VideoTestimonials({ testimonials }) {
               <div key={testimonial.id} className="flex flex-col items-center text-center">
                 <button
                   onClick={() => openVideo(testimonial)}
-                  className="relative group mb-6 cursor-pointer focus:outline-none focus:ring-4 focus:ring-brand-orange/50"
+                  className="relative group mb-8 cursor-pointer focus:outline-none"
                   aria-label={`Play video testimonial from ${testimonial.name}`}
                 >
-                  <div className="relative w-80 h-72">
+                  <div className="relative w-96 h-80">
                     <img
                       src={testimonial.thumbnail}
                       alt={testimonial.name}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300"></div>
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
@@ -44,11 +43,11 @@ export default function VideoTestimonials({ testimonials }) {
                   </div>
                 </button>
 
-                <div className="mb-4">
-                  <h3 className="text-white text-2xl font-bold mb-2">
+                <div className="mb-6 w-full max-w-md">
+                  <h3 className="text-white font-bold mb-3" style={{ fontSize: '32px' }}>
                     {testimonial.name}
                   </h3>
-                  <p className="text-white text-base mb-1">
+                  <p className="text-white mb-2" style={{ fontSize: '14px' }}>
                     {testimonial.title}
                   </p>
                   <a
@@ -56,6 +55,7 @@ export default function VideoTestimonials({ testimonials }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-brand-orange hover:text-orange-400 transition-colors duration-200 inline-flex items-center gap-1"
+                    style={{ fontSize: '14px' }}
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
@@ -65,9 +65,12 @@ export default function VideoTestimonials({ testimonials }) {
                   </a>
                 </div>
 
-                <p className="text-white text-base italic leading-relaxed max-w-sm px-4">
-                  "{testimonial.quote}"
-                </p>
+                <div className="w-full max-w-md">
+                  <div className="w-16 h-0.5 bg-red-600 mx-auto mb-4"></div>
+                  <p className="text-white italic leading-relaxed px-4" style={{ fontSize: '14.4px' }}>
+                    "{testimonial.quote}"
+                  </p>
+                </div>
               </div>
             ))}
           </div>
