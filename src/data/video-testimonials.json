@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Renan Cortez",
+    "title": "Founder, Syndicate Venture Group",
+    "website": "svgpe.com",
+    "websiteUrl": "https://svgpe.com",
+    "thumbnail": "/images/client-pictures/renan-cortez-7.webp",
+    "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_1",
+    "quote": "We've had Gabriella on our team for about four or five months, and she has been a game changer. She excels at social media, creating posts, and generating content copy—things that would take me weeks to do, she completes in hours. I don't have to worry about it."
+  },
+  {
+    "id": 2,
+    "name": "Matt Warnock",
+    "title": "President, Ridgecrest Herbal",
+    "website": "rcnerbals.com",
+    "websiteUrl": "https://rcnerbals.com",
+    "thumbnail": "/images/client-pictures/matt-warnock-4.webp",
+    "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_2",
+    "quote": "As a CEO, it's essential to remove obstacles for the team. Hiring virtual assistants has been invaluable for handling tasks like proofreading, writing articles, making travel plans, and managing miscellaneous projects. Virtual Assistants make our work efficient."
+  },
+  {
+    "id": 3,
+    "name": "Danielle Weed",
+    "title": "Director of Marketing, MayPro",
+    "website": "maypro.com",
+    "websiteUrl": "https://maypro.com",
+    "thumbnail": "/images/client-pictures/danielle-weed-v10.webp",
+    "videoUrl": "https://www.youtube.com/embed/VIDEO_ID_3",
+    "quote": "Working with Helm has been so helpful. Four key factors have benefited us. The first is time. Helm took the time to find suitable candidates for us to fill a virtual assistant position. They vetted them and presented the best they had to us."
+  }
+]
