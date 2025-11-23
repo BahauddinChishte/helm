@@ -20,14 +20,14 @@ export default function VideoTestimonials({ testimonials }) {
               <div key={testimonial.id} className="flex flex-col items-center text-center">
                 <button
                   onClick={() => openVideo(testimonial)}
-                  className="relative group mb-4 md:mb-3 cursor-pointer focus:outline-none w-full flex justify-center"
+                  className="relative group mb-4 md:mb-3 cursor-pointer focus:outline-none w-full"
                   aria-label={`Play video testimonial from ${testimonial.name}`}
                 >
-                  <div className="relative w-full aspect-[4/3] max-w-[450px]">
+                  <div className="relative w-full aspect-[4/3] max-w-[450px] mx-auto">
                     <img
                       src={testimonial.thumbnail}
                       alt={testimonial.name}
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-full object-cover object-center rounded-lg"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/60 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
