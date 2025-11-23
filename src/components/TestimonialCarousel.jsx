@@ -10,7 +10,7 @@ export default function TestimonialCarousel({ testimonials }) {
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [testimonials]);
@@ -53,7 +53,7 @@ export default function TestimonialCarousel({ testimonials }) {
 
         <div className="flex-1 overflow-hidden">
           <div
-            className="flex gap-6 transition-transform duration-700 ease-in-out"
+            className="flex gap-6 transition-transform duration-1000 ease-in-out"
             style={{
               transform: `translateX(-${(currentIndex * (100 / cardsPerView))}%)`,
               width: `${(testimonials.length / cardsPerView) * 100}%`
@@ -76,8 +76,8 @@ export default function TestimonialCarousel({ testimonials }) {
                 </div>
 
                 <div
-                  className="rounded-3xl shadow-lg p-6 lg:p-8 relative flex flex-col"
-                  style={{ backgroundColor: '#E9ECFE', minHeight: '320px', paddingTop: '88px' }}
+                  className="rounded-3xl shadow-lg px-6 lg:px-8 pt-[88px] pb-4 relative flex flex-col"
+                  style={{ backgroundColor: '#E9ECFE', minHeight: '320px' }}
                 >
                   <div className="absolute left-6 top-6">
                     <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ backgroundColor: '#9B8FD9' }}>
