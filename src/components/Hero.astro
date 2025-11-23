@@ -22,74 +22,77 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative bg-gray-50 overflow-hidden pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20">
+<section class="relative bg-white overflow-hidden pt-48 pb-32">
   <div class="relative w-full mx-auto px-4 sm:px-6 lg:px-8" style="max-width: 1400px;">
-    <div class="bg-white rounded-3xl shadow-lg border border-gray-200 overflow-hidden">
-      <div class="flex flex-col lg:grid lg:grid-cols-2 lg:items-stretch lg:min-h-[600px]">
-        <div class="flex flex-col justify-center space-y-8 p-8 sm:p-12 lg:p-16 xl:p-20">
-          {subtitle && (
-            <p class="text-brand-orange font-semibold text-base uppercase tracking-wide">
-              {subtitle}
-            </p>
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div class="space-y-6 animate-fade-in-up">
+        {subtitle && (
+          <p class="text-brand-orange font-semibold text-base uppercase tracking-wide">
+            {subtitle}
+          </p>
+        )}
+
+        <h1 class="hero-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight text-brand-navy">
+          {title}
+        </h1>
+
+        {description && (
+          <p class="text-lg text-brand-slate leading-relaxed">
+            {description}
+          </p>
+        )}
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          {primaryCTA && (
+            <Button
+              href={primaryCTA.href}
+              openModal={primaryCTA.openModal}
+              variant="primary"
+              size="lg"
+              track="hero-primary-cta"
+            >
+              {primaryCTA.text}
+            </Button>
           )}
 
-          <h1 class="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-black">
-            {title}
-          </h1>
-
-          {description && (
-            <p class="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-xl">
-              {description}
-            </p>
+          {secondaryCTA && (
+            <Button
+              href={secondaryCTA.href}
+              openModal={secondaryCTA.openModal}
+              variant="outline"
+              size="lg"
+              track="hero-secondary-cta"
+              class="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white transition-all duration-300"
+            >
+              {secondaryCTA.text}
+            </Button>
           )}
-
-          <div class="flex flex-col sm:flex-row gap-4 pt-2">
-            {primaryCTA && (
-              <Button
-                href={primaryCTA.href}
-                openModal={primaryCTA.openModal}
-                variant="primary"
-                size="lg"
-                track="hero-primary-cta"
-              >
-                {primaryCTA.text}
-              </Button>
-            )}
-
-            {secondaryCTA && (
-              <Button
-                href={secondaryCTA.href}
-                openModal={secondaryCTA.openModal}
-                variant="outline"
-                size="lg"
-                track="hero-secondary-cta"
-                class="border-gray-300 text-gray-700 hover:bg-gray-50 transition-all duration-300"
-              >
-                {secondaryCTA.text}
-              </Button>
-            )}
-          </div>
         </div>
+      </div>
 
-        <div class="relative lg:min-h-0">
-          {image ? (
+      <div class="relative animate-fade-in-right">
+        {image ? (
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-tr from-brand-orange/20 to-transparent z-10"></div>
             <img
               src={image}
               alt={imageAlt}
-              class="w-full h-full object-cover block"
+              class="w-full h-auto object-cover"
               loading="eager"
             />
-          ) : (
-            <div class="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center min-h-[400px]">
+          </div>
+        ) : (
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-brand-orange/20 to-blue-900/30 backdrop-blur-sm border border-white/10">
+            <div class="aspect-[4/3] flex items-center justify-center p-12">
               <div class="text-center space-y-4">
-                <svg class="w-24 h-24 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-24 h-24 mx-auto text-brand-orange/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                <p class="text-gray-500 text-sm">Hero Image</p>
+                <p class="text-gray-400 text-sm">Hero Image Placeholder</p>
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   </div>
