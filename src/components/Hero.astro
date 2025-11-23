@@ -59,7 +59,7 @@ const {
               variant="outline"
               size="lg"
               track="hero-secondary-cta"
-              class="hero-secondary-btn hero-btn-responsive border-2 rounded-full font-semibold transition-colors"
+              class="hero-secondary-btn hero-btn-responsive rounded-full font-semibold transition-colors"
             >
               {secondaryCTA.text}
             </Button>
@@ -221,17 +221,22 @@ const {
     background-color: var(--color-orange-dark);
   }
 
-  .hero-secondary-btn {
-    background-color: white;
+  .hero-secondary-btn,
+  .hero-secondary-btn:link,
+  .hero-secondary-btn:visited {
+    background-color: white !important;
     border: 2px solid #40496D !important;
+    border-color: #40496D !important;
     color: #343A5A !important;
   }
 
   .hero-secondary-btn:hover,
-  .hero-secondary-btn:active {
-    background-color: var(--color-orange);
+  .hero-secondary-btn:active,
+  .hero-secondary-btn:focus {
+    background-color: var(--color-orange) !important;
     border: 2px solid var(--color-orange) !important;
-    color: white;
+    border-color: var(--color-orange) !important;
+    color: white !important;
   }
 
   /* Animations */
