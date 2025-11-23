@@ -44,7 +44,7 @@ export default function TestimonialCarousel({ testimonials }) {
   };
 
   return (
-    <div className="relative max-w-7xl mx-auto">
+    <div className="relative w-full">
       <div className="flex items-center gap-8">
         <button
           onClick={goToPrevious}
