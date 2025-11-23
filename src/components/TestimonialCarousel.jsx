@@ -62,11 +62,11 @@ export default function TestimonialCarousel({ testimonials }) {
             {testimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.name}-${index}`}
-                className="relative flex-shrink-0 pt-16"
+                className="relative flex-shrink-0 pt-12"
                 style={{ width: `${100 / testimonials.length}%` }}
               >
                 <div className="absolute left-1/2 transform -translate-x-1/2 top-0 z-20">
-                  <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                  <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-xl">
                     <img
                       src={testimonial.image || 'https://via.placeholder.com/160'}
                       alt={testimonial.name}
@@ -76,7 +76,7 @@ export default function TestimonialCarousel({ testimonials }) {
                 </div>
 
                 <div
-                  className="rounded-3xl shadow-lg px-6 lg:px-8 pt-[88px] pb-4 relative flex flex-col"
+                  className="rounded-3xl shadow-lg px-6 lg:px-8 pt-[64px] pb-4 relative flex flex-col"
                   style={{ backgroundColor: '#E9ECFE', minHeight: '320px' }}
                 >
                   <div className="absolute left-6 top-6">
