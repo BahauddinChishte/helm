@@ -3,7 +3,17 @@ import { useState, useEffect, useRef } from 'react';
 export default function TestimonialCarousel({ testimonials }) {
   const [offset, setOffset] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(false);
   const containerRef = useRef(null);
+
+  useEffect(() => {
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    checkDesktop();
+    window.addEventListener('resize', checkDesktop);
+    return () => window.removeEventListener('resize', checkDesktop);
+  }, []);
 
   if (!testimonials || testimonials.length === 0) {
     return null;
@@ -48,6 +58,13 @@ export default function TestimonialCarousel({ testimonials }) {
     return window.innerWidth < 768 ? 1 : 1.5;
   };
 
+  const getTransform = () => {
+    if (isDesktop) {
+      return `translateX(calc(-${offset * (100 / 3)}% - ${offset * 1}rem))`;
+    }
+    return `translateX(calc(-${offset * 100}% - ${offset * getGapSize()}rem))`;
+  };
+
   return (
     <div className="relative w-full">
       <div className="flex items-center gap-4 md:gap-8">
@@ -66,7 +83,7 @@ export default function TestimonialCarousel({ testimonials }) {
           <div
             className="flex gap-4 md:gap-6"
             style={{
-              transform: `translateX(calc(-${offset * 100}% - ${offset * getGapSize()}rem))`,
+              transform: getTransform(),
               transition: isTransitioning ? 'transform 800ms cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
             }}
           >
@@ -74,7 +91,10 @@ export default function TestimonialCarousel({ testimonials }) {
               <div
                 key={`${testimonial.name}-${index}`}
                 className="relative flex-shrink-0 pt-12"
-                style={{ width: '100%', minWidth: '100%' }}
+                style={{
+                  width: isDesktop ? 'calc(33.333% - 1rem)' : '100%',
+                  minWidth: isDesktop ? 'calc(33.333% - 1rem)' : '100%'
+                }}
               >
                 <div className="absolute left-1/2 transform -translate-x-1/2 top-0 z-20">
                   <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-3 md:border-4 border-white shadow-xl">
