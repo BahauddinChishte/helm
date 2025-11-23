@@ -31,7 +31,7 @@ export default function VideoTestimonials({ testimonials }) {
                     />
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-20 h-20 bg-white/60 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
                       <svg
                         className="w-10 h-10 text-brand-orange ml-1"
                         fill="currentColor"
