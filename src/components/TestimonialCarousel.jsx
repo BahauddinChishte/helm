@@ -52,9 +52,19 @@ export default function TestimonialCarousel({ testimonials }) {
         </button>
 
         <div className="flex-1 overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-16">
-            {visibleTestimonials.map((testimonial, index) => (
-              <div className="relative">
+          <div
+            className="flex gap-6 pt-16 transition-transform duration-700 ease-in-out"
+            style={{
+              transform: `translateX(-${(currentIndex * (100 / cardsPerView))}%)`,
+              width: `${(testimonials.length / cardsPerView) * 100}%`
+            }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={`${testimonial.name}-${index}`}
+                className="relative flex-shrink-0"
+                style={{ width: `${100 / testimonials.length}%` }}
+              >
                 <div className="absolute left-1/2 transform -translate-x-1/2 -top-16 z-10">
                   <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-xl">
                     <img
@@ -66,7 +76,6 @@ export default function TestimonialCarousel({ testimonials }) {
                 </div>
 
                 <div
-                  key={`${testimonial.name}-${index}`}
                   className="rounded-3xl shadow-lg p-6 lg:p-8 relative flex flex-col pt-20"
                   style={{ backgroundColor: '#E9ECFE', minHeight: '320px' }}
                 >
