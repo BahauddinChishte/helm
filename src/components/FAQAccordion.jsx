@@ -16,9 +16,10 @@ export default function FAQAccordion({ faqs }) {
       {faqs.map((faq, index) => (
         <div
           key={index}
-          className={`rounded-lg overflow-hidden transition-all ${
-            openIndex === index ? 'bg-white shadow-lg' : 'bg-gray-100'
+          className={`overflow-hidden transition-all ${
+            openIndex === index ? 'bg-white shadow-lg' : ''
           }`}
+          style={{ backgroundColor: openIndex === index ? 'white' : '#E2E5EE' }}
         >
           <button
             onClick={() => toggleFAQ(index)}
