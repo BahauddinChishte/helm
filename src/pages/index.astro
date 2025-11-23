@@ -224,7 +224,23 @@ const howItWorksSteps = [
     </div>
   </section>
 
-  <section class="relative w-full min-h-[600px] sm:min-h-[700px] lg:min-h-[900px] flex items-end" style="background-image: url('/images/sections-picture/helm-ceo-CEO-Aerofarms-testimonial-1.jpg'); background-size: cover; background-position: 65% center; background-repeat: no-repeat;">
+  <style>
+    .testimonial-bg {
+      background-image: url('/images/sections-picture/image%20copy.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    @media (min-width: 1024px) {
+      .testimonial-bg {
+        background-image: url('/images/sections-picture/helm-ceo-CEO-Aerofarms-testimonial-1.jpg');
+        background-position: center center;
+      }
+    }
+  </style>
+
+  <section class="testimonial-bg relative w-full min-h-[600px] sm:min-h-[700px] lg:min-h-[900px] flex items-end">
     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent lg:bg-gradient-to-t lg:from-black/40"></div>
     <div class="relative w-full px-4 sm:px-6 md:px-12 lg:px-16 py-8 pb-12 sm:py-12 sm:pb-16 lg:pb-16">
       <div class="max-w-7xl mx-auto">
