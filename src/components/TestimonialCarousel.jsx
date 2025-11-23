@@ -1,41 +1,47 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function TestimonialCarousel({ testimonials }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const cardsPerView = 3;
-
-  useEffect(() => {
-    if (!testimonials?.length) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [testimonials]);
+  const [offset, setOffset] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const containerRef = useRef(null);
 
   if (!testimonials || testimonials.length === 0) {
     return null;
   }
 
+  const extendedTestimonials = [
+    ...testimonials,
+    ...testimonials,
+    ...testimonials
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      setOffset((prev) => prev + 1);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (offset >= testimonials.length) {
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setOffset(0);
+      }, 800);
+    }
+  }, [offset, testimonials.length]);
+
   const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setIsTransitioning(true);
+    setOffset((prev) => Math.max(0, prev - 1));
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    setIsTransitioning(true);
+    setOffset((prev) => prev + 1);
   };
-
-  const getVisibleTestimonials = () => {
-    const visible = [];
-    for (let i = 0; i < cardsPerView; i++) {
-      visible.push(testimonials[(currentIndex + i) % testimonials.length]);
-    }
-    return visible;
-  };
-
-  const visibleTestimonials = getVisibleTestimonials();
 
   return (
     <div className="relative max-w-7xl mx-auto">
@@ -51,19 +57,19 @@ export default function TestimonialCarousel({ testimonials }) {
           </svg>
         </button>
 
-        <div className="flex-1 overflow-hidden">
+        <div className="flex-1 overflow-hidden" ref={containerRef}>
           <div
-            className="flex gap-6 transition-transform duration-1000 ease-in-out"
+            className="flex gap-6"
             style={{
-              transform: `translateX(-${(currentIndex * (100 / cardsPerView))}%)`,
-              width: `${(testimonials.length / cardsPerView) * 100}%`
+              transform: `translateX(calc(-${offset * (100 / 3)}% - ${offset * 1.5}rem))`,
+              transition: isTransitioning ? 'transform 800ms cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
             }}
           >
-            {testimonials.map((testimonial, index) => (
+            {extendedTestimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.name}-${index}`}
                 className="relative flex-shrink-0 pt-12"
-                style={{ width: `${100 / testimonials.length}%` }}
+                style={{ width: 'calc(33.333% - 1rem)' }}
               >
                 <div className="absolute left-1/2 transform -translate-x-1/2 top-0 z-20">
                   <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-xl">
