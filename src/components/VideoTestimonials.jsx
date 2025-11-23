@@ -13,8 +13,8 @@ export default function VideoTestimonials({ testimonials }) {
 
   return (
     <>
-      <section className="w-full py-20 px-4 sm:px-8 md:px-12 lg:px-16" style={{ backgroundColor: '#343A5A' }}>
-        <div className="max-w-7xl mx-auto">
+      <section className="w-full py-20" style={{ backgroundColor: '#343A5A' }}>
+        <div className="w-full px-8 sm:px-12 lg:px-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="flex flex-col items-center text-center">
