@@ -122,6 +122,7 @@ const howItWorksSteps = [
           variant="primary"
           size="lg"
           track="cta-section"
+          class="cta-primary-btn"
         >
           Request a quote
         </Button>
@@ -130,7 +131,7 @@ const howItWorksSteps = [
           variant="outline"
           size="lg"
           track="cta-section-secondary"
-          class="border-white text-white hover:bg-white hover:text-black"
+          class="cta-secondary-btn"
         >
           Learn more
         </Button>
@@ -281,3 +282,28 @@ const howItWorksSteps = [
     </div>
   </section>
 </Layout>
+
+<style>
+  .cta-primary-btn {
+    background-color: transparent !important;
+    border: 2px solid white !important;
+    color: white !important;
+  }
+
+  .cta-primary-btn:hover {
+    background-color: #343A5A !important;
+    color: white !important;
+  }
+
+  .cta-secondary-btn {
+    background-color: #343A5A !important;
+    border: 2px solid #343A5A !important;
+    color: white !important;
+  }
+
+  .cta-secondary-btn:hover {
+    background-color: var(--color-orange) !important;
+    border-color: black !important;
+    color: white !important;
+  }
+</style>
