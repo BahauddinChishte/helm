@@ -2,79 +2,31 @@
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  {
-    label: 'Staffing',
-    href: '/services',
-    hasDropdown: true,
-    submenu: [
-      { label: 'Admin Support', href: '/services/admin-support' },
-      { label: 'Customer Support', href: '/services/customer-support' },
-      { label: 'Finance Support', href: '/services/finance-support' }
-    ]
-  },
-  { label: 'Coaching', href: '/coaching' },
-  { label: 'Resources', href: '/blog' }
+  { label: 'STAFFING', href: '/services' },
+  { label: 'COACHING', href: '/coaching' },
+  { label: 'RESOURCES', href: '/blog' }
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-black border-b border-gray-800 transition-shadow duration-300" id="header">
+<header class="fixed top-0 left-0 right-0 z-50 transition-shadow duration-300" style="background-color: #343A5A;" id="header">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
       <a href="/" class="flex items-center space-x-2" aria-label="Helm home">
         <img src="/images/logo/helm-white-logo-1.webp" alt="Helm" class="h-auto" width="105" height="48" />
       </a>
 
-      <nav class="hidden md:flex items-center space-x-8" aria-label="Main navigation">
+      <nav class="hidden md:flex items-center space-x-12" aria-label="Main navigation">
         {navItems.map(item => (
-          item.hasDropdown ? (
-            <div class="relative dropdown-container" data-dropdown>
-              <button
-                class={`text-base font-medium transition-colors hover:text-brand-orange flex items-center gap-1 ${
-                  currentPath.startsWith(item.href) ? 'text-brand-orange' : 'text-white'
-                }`}
-                aria-expanded="false"
-                aria-haspopup="true"
-              >
-                {item.label}
-                <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div class="absolute top-full left-0 mt-2 w-56 bg-brand-orange rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 dropdown-menu">
-                <div class="py-2">
-                  {item.submenu?.map(subItem => (
-                    <a
-                      href={subItem.href}
-                      class="block px-4 py-3 text-white hover:bg-brand-orangeDark transition-colors"
-                    >
-                      {subItem.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ) : (
-            <a
-              href={item.href}
-              class={`text-base font-medium transition-colors hover:text-brand-orange ${
-                currentPath === item.href ? 'text-brand-orange' : 'text-white'
-              }`}
-            >
-              {item.label}
-            </a>
-          )
+          <a
+            href={item.href}
+            class={`text-sm font-semibold tracking-wide transition-colors hover:text-gray-300 ${
+              currentPath === item.href || currentPath.startsWith(item.href) ? 'text-white' : 'text-white'
+            }`}
+          >
+            {item.label}
+          </a>
         ))}
       </nav>
-
-      <div class="hidden md:flex items-center space-x-4">
-        <button
-          data-open-quote-modal
-          class="inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-brand-orange rounded-lg hover:bg-brand-orangeDark transition-colors duration-200"
-          data-track="header-cta"
-        >
-          Request a quote
-        </button>
-      </div>
 
       <button
         class="md:hidden p-2 text-white"
@@ -90,50 +42,19 @@ const navItems = [
   </div>
 
   <div class="hidden md:hidden" id="mobile-menu">
-    <nav class="px-4 pt-2 pb-4 space-y-2 bg-black border-t border-gray-800" aria-label="Mobile navigation">
+    <nav class="px-4 pt-2 pb-4 space-y-2 border-t border-gray-700" style="background-color: #343A5A;" aria-label="Mobile navigation">
       {navItems.map(item => (
-        item.hasDropdown ? (
-          <div>
-            <button
-              class="w-full text-left px-3 py-2 text-base font-medium rounded-lg transition-colors text-white hover:bg-gray-900 flex justify-between items-center"
-              data-mobile-dropdown
-            >
-              {item.label}
-              <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div class="hidden pl-4 space-y-1 mt-1" data-mobile-submenu>
-              {item.submenu?.map(subItem => (
-                <a
-                  href={subItem.href}
-                  class="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-900 rounded-lg transition-colors"
-                >
-                  {subItem.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        ) : (
-          <a
-            href={item.href}
-            class={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${
-              currentPath === item.href
-                ? 'bg-gray-900 text-brand-orange'
-                : 'text-white hover:bg-gray-900'
-            }`}
-          >
-            {item.label}
-          </a>
-        )
+        <a
+          href={item.href}
+          class={`block px-3 py-2 text-base font-semibold rounded-lg transition-colors ${
+            currentPath === item.href || currentPath.startsWith(item.href)
+              ? 'bg-gray-700 text-white'
+              : 'text-white hover:bg-gray-700'
+          }`}
+        >
+          {item.label}
+        </a>
       ))}
-      <button
-        data-open-quote-modal
-        class="block px-3 py-2 text-base font-semibold text-white bg-brand-orange rounded-lg hover:bg-brand-orangeDark transition-colors text-center w-full"
-        data-track="mobile-header-cta"
-      >
-        Request a quote
-      </button>
     </nav>
   </div>
 </header>
@@ -160,57 +81,5 @@ const navItems = [
     }
 
     lastScroll = currentScroll;
-  });
-
-  // Desktop dropdown functionality
-  const dropdownContainers = document.querySelectorAll('[data-dropdown]');
-
-  dropdownContainers.forEach(container => {
-    const button = container.querySelector('button');
-    const menu = container.querySelector('.dropdown-menu');
-    const arrow = button?.querySelector('svg');
-
-    button?.addEventListener('click', (e) => {
-      e.preventDefault();
-      const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
-      // Close all other dropdowns
-      dropdownContainers.forEach(other => {
-        if (other !== container) {
-          const otherButton = other.querySelector('button');
-          const otherMenu = other.querySelector('.dropdown-menu');
-          const otherArrow = otherButton?.querySelector('svg');
-          otherButton?.setAttribute('aria-expanded', 'false');
-          otherMenu?.classList.add('opacity-0', 'invisible');
-          otherArrow?.classList.remove('rotate-180');
-        }
-      });
-
-      button.setAttribute('aria-expanded', String(!isExpanded));
-      menu?.classList.toggle('opacity-0');
-      menu?.classList.toggle('invisible');
-      arrow?.classList.toggle('rotate-180');
-    });
-
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (!container.contains(e.target as Node)) {
-        button?.setAttribute('aria-expanded', 'false');
-        menu?.classList.add('opacity-0', 'invisible');
-        arrow?.classList.remove('rotate-180');
-      }
-    });
-  });
-
-  // Mobile dropdown functionality
-  const mobileDropdownButtons = document.querySelectorAll('[data-mobile-dropdown]');
-
-  mobileDropdownButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const submenu = button.nextElementSibling as HTMLElement;
-      const arrow = button.querySelector('svg');
-      submenu?.classList.toggle('hidden');
-      arrow?.classList.toggle('rotate-180');
-    });
   });
 </script>
