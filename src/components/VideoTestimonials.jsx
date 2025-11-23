@@ -20,10 +20,10 @@ export default function VideoTestimonials({ testimonials }) {
               <div key={testimonial.id} className="flex flex-col items-center text-center">
                 <button
                   onClick={() => openVideo(testimonial)}
-                  className="relative group mb-8 cursor-pointer focus:outline-none"
+                  className="relative group mb-3 cursor-pointer focus:outline-none"
                   aria-label={`Play video testimonial from ${testimonial.name}`}
                 >
-                  <div className="relative w-96 h-80">
+                  <div className="relative w-[450px] h-[360px]">
                     <img
                       src={testimonial.thumbnail}
                       alt={testimonial.name}
