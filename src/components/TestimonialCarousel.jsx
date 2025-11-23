@@ -83,14 +83,14 @@ export default function TestimonialCarousel({ testimonials }) {
                     />
                   </div>
 
-                  <h3 className="font-bold text-xl lg:text-2xl mb-1" style={{ color: '#1a202c' }}>
+                  <h3 className="font-bold mb-1" style={{ color: '#1a202c', fontSize: '14px' }}>
                     {testimonial.name}
                   </h3>
-                  <p className="text-sm lg:text-base mb-6" style={{ color: '#4a5568' }}>
+                  <p className="mb-6" style={{ color: '#4a5568', fontSize: '12px' }}>
                     {testimonial.role}
                   </p>
 
-                  <blockquote className="text-base lg:text-lg leading-relaxed flex-1" style={{ color: '#1a202c' }}>
+                  <blockquote className="leading-relaxed flex-1" style={{ color: '#1a202c', fontSize: '14px' }}>
                     "{testimonial.quote}"
                   </blockquote>
                 </div>
