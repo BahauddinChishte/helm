@@ -53,7 +53,7 @@ export default function TestimonialCarousel({ testimonials }) {
 
         <div className="flex-1 overflow-hidden">
           <div
-            className="flex gap-6 pt-20 transition-transform duration-700 ease-in-out"
+            className="flex gap-6 transition-transform duration-700 ease-in-out"
             style={{
               transform: `translateX(-${(currentIndex * (100 / cardsPerView))}%)`,
               width: `${(testimonials.length / cardsPerView) * 100}%`
@@ -62,10 +62,10 @@ export default function TestimonialCarousel({ testimonials }) {
             {testimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.name}-${index}`}
-                className="relative flex-shrink-0"
+                className="relative flex-shrink-0 pt-16"
                 style={{ width: `${100 / testimonials.length}%` }}
               >
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-0 z-10">
+                <div className="absolute left-1/2 transform -translate-x-1/2 -top-0 z-20">
                   <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-xl">
                     <img
                       src={testimonial.image || 'https://via.placeholder.com/160'}
@@ -76,8 +76,8 @@ export default function TestimonialCarousel({ testimonials }) {
                 </div>
 
                 <div
-                  className="rounded-3xl shadow-lg p-6 lg:p-8 relative flex flex-col"
-                  style={{ backgroundColor: '#E9ECFE', minHeight: '320px', paddingTop: '80px' }}
+                  className="rounded-3xl shadow-lg p-6 lg:p-8 relative flex flex-col pt-20"
+                  style={{ backgroundColor: '#E9ECFE', minHeight: '320px' }}
                 >
                   <div className="absolute left-6 top-6">
                     <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ backgroundColor: '#9B8FD9' }}>
