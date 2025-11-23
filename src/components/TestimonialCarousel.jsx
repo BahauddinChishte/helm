@@ -6,43 +6,40 @@ export default function TestimonialCarousel({ testimonials }) {
   const cardsPerView = 3;
 
   useEffect(() => {
-    if (!isAutoPlaying || !testimonials?.length) return;
+    if (!testimonials?.length) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => {
-        const nextIndex = prev + cardsPerView;
-        return nextIndex >= testimonials.length ? 0 : nextIndex;
-      });
-    }, 5000);
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying, testimonials]);
+  }, [testimonials]);
 
   if (!testimonials || testimonials.length === 0) {
     return null;
   }
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => {
-      const newIndex = prev - cardsPerView;
-      return newIndex < 0 ? Math.max(0, testimonials.length - cardsPerView) : newIndex;
-    });
-    setIsAutoPlaying(false);
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => {
-      const nextIndex = prev + cardsPerView;
-      return nextIndex >= testimonials.length ? 0 : nextIndex;
-    });
-    setIsAutoPlaying(false);
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
 
-  const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + cardsPerView);
+  const getVisibleTestimonials = () => {
+    const visible = [];
+    for (let i = 0; i < cardsPerView; i++) {
+      visible.push(testimonials[(currentIndex + i) % testimonials.length]);
+    }
+    return visible;
+  };
+
+  const visibleTestimonials = getVisibleTestimonials();
 
   return (
     <div className="relative max-w-7xl mx-auto">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-8">
         <button
           onClick={goToPrevious}
           className="hidden lg:flex w-14 h-14 items-center justify-center rounded-full transition-colors shadow-lg flex-shrink-0"
@@ -58,9 +55,9 @@ export default function TestimonialCarousel({ testimonials }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {visibleTestimonials.map((testimonial, index) => (
               <div
-                key={currentIndex + index}
+                key={`${testimonial.name}-${index}`}
                 className="rounded-3xl shadow-lg p-6 lg:p-8 relative flex flex-col"
-                style={{ backgroundColor: '#E9ECFE', minHeight: '400px' }}
+                style={{ backgroundColor: '#E9ECFE', minHeight: '320px' }}
               >
                 <div className="absolute left-6 top-6">
                   <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ backgroundColor: '#9B8FD9' }}>
@@ -75,7 +72,7 @@ export default function TestimonialCarousel({ testimonials }) {
                 </div>
 
                 <div className="flex flex-col items-center text-center pt-2">
-                  <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg">
+                  <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden mb-3 border-4 border-white shadow-lg">
                     <img
                       src={testimonial.image || 'https://via.placeholder.com/160'}
                       alt={testimonial.name}
@@ -86,7 +83,7 @@ export default function TestimonialCarousel({ testimonials }) {
                   <h3 className="font-bold mb-1" style={{ color: '#1a202c', fontSize: '14px' }}>
                     {testimonial.name}
                   </h3>
-                  <p className="mb-6" style={{ color: '#4a5568', fontSize: '12px' }}>
+                  <p className="mb-4" style={{ color: '#4a5568', fontSize: '12px' }}>
                     {testimonial.role}
                   </p>
 
