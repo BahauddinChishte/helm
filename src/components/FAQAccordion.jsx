@@ -61,10 +61,10 @@ export default function FAQAccordion({ faqs }) {
           </button>
           <div
             className={`overflow-hidden transition-all duration-300 ${
-              openIndex === index ? 'max-h-[800px]' : 'max-h-0'
+              openIndex === index ? 'max-h-[1000px]' : 'max-h-0'
             }`}
           >
-            <div className="px-6 pb-5 text-brand-slate leading-relaxed whitespace-pre-line" style={{ fontSize: '14px', fontFamily: 'Montserrat, sans-serif' }}>
+            <div className="px-6 pb-6 text-brand-slate leading-relaxed whitespace-pre-line" style={{ fontSize: '16px', lineHeight: '1.7', fontFamily: 'Montserrat, sans-serif' }}>
               {faq.answer}
             </div>
           </div>
