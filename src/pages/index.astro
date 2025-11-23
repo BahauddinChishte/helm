@@ -20,19 +20,19 @@ const faqs = [
   },
   {
     question: 'What are the challenges and benefits of a remote assistant?',
-    answer: 'Remote assistants provide significant cost savings while maintaining high quality work. The main challenge is ensuring clear communication and proper onboarding, which our team helps facilitate. Benefits include flexible scaling, access to global talent, and specialized skills.'
+    answer: 'A remote assistant is often life-changing since they bring you freedom in work and out. Are your company, your department, or you hitting the ceiling and trying to figure out how to break through? The constraint is often bandwidth or capabilities. Hiring a remote assistant brings you both.\n\nIn times of change, remote assistants make it easier to grow or contract your team with agility.\n\nRates of remote workers are often between 25% and 50% of what you would pay in the US. The challenge, however, of a remote assistant comes into play for companies unable to hold remote meetings. Otherwise, the challenges are similar to those with a physically present team member.'
   },
   {
     question: 'How is Helm unique?',
-    answer: 'Helm provides ongoing coaching and professional development for every staff member. We screen over 3,000 candidates on average to find you the perfect match. Our assistants work in your time zone with native-level English proficiency.'
+    answer: 'The rigor Helm applies to your search goes far beyond that of any other staffing company.\n\nWe bring a deep background in organizational development and helping companies build organizational health. For decades, Helm\'s founder has helped other business owners scale their business and attract exceptional talent. Companies cannot do this if they don\'t themselves possess great talent. We have helped business owners make key hiring and firing decisions that have paved the way for the growth that followed.'
   },
   {
     question: 'How does onboarding work?',
-    answer: 'We provide best practices for onboarding your new hire to save you time and get them up and running immediately. Our team supports both you and your new assistant throughout the onboarding process.'
+    answer: "You'll receive guidance from us on how to get your new hire started. Often your remote assistant can guide you through much of this process. Key elements typically include:\n\n- Enabling access to your software and systems\n- Connecting with stakeholders\n- Acclimating to key processes and how things get done\n- Setting a cadence for meetings or check-ins\n- Sharing any project (s) or goal (s) to start on"
   },
   {
     question: 'How long will it take to find the right remote assistant with Helm?',
-    answer: 'We typically present your first candidate within 1-2 weeks. Over 80% of the time, the first candidate we propose gets hired. If needed, we extend our search to ensure your success.'
+    answer: 'On average it takes us three weeks to find the right match for you. We know that once you need to hire, everyday can be a painful and costly wait, but as most people know, the cost of hiring the wrong person is vastly greater. Sometimes we have the right match for you within our community, particularly as our community of professionals grows.'
   }
 ];
 
@@ -263,42 +263,38 @@ const howItWorksSteps = [
     </div>
   </section>
 
-  <section class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl sm:text-5xl font-bold text-brand-navy mb-4">
           Frequently Asked Questions
         </h2>
-        <p class="text-lg text-brand-slate">
-          The most important questions are often about the unknown unknowns – that is the stuff you're not thinking to ask but you really need to know. Let's hop on a call and get you the knowledge you really need!
-        </p>
       </div>
 
-      <FAQAccordion faqs={faqs} client:load />
-
-      <div class="mt-12 bg-black rounded-2xl p-8 text-center">
-        <h3 class="text-xl font-bold text-white mb-4">Still have questions?</h3>
-        <div class="space-y-2 mb-6">
-          <p class="text-gray-300">
-            <strong>Email:</strong>{' '}
-            <a href="mailto:support@helm.ceo" class="text-brand-orange hover:text-brand-orangeDark">
-              support@helm.ceo
-            </a>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div class="lg:sticky lg:top-8">
+          <p class="text-lg text-brand-slate leading-relaxed mb-8">
+            The most important questions are often about the unknown unknowns – that is the stuff you're not thinking to ask but you really need to know. While some common questions are just over here on the right, let's hop on a call and get you the knowledge you really need!
           </p>
-          <p class="text-gray-300">
-            <strong>Phone:</strong>{' '}
-            <a href="tel:+19175660364" class="text-brand-orange hover:text-brand-orangeDark">
-              917.566.0364
-            </a>
-          </p>
+          <div class="space-y-6">
+            <div>
+              <p class="text-brand-navy font-bold mb-1">Email</p>
+              <a href="mailto:support@helm.ceo" class="text-brand-orange hover:text-brand-orangeDark text-lg">
+                support@helm.ceo
+              </a>
+            </div>
+            <div>
+              <p class="text-brand-navy font-bold mb-1">Phone</p>
+              <a href="tel:+19175660364" class="text-brand-orange hover:text-brand-orangeDark text-lg">
+                917.566.0364
+              </a>
+            </div>
+          </div>
         </div>
-        <Button
-          href="/contact"
-          variant="primary"
-          track="faq-cta"
-        >
-          Get in touch
-        </Button>
+
+        <div>
+          <FAQAccordion faqs={faqs} client:load />
+        </div>
       </div>
     </div>
   </section>
