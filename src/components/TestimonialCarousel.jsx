@@ -76,8 +76,8 @@ export default function TestimonialCarousel({ testimonials }) {
                 </div>
 
                 <div
-                  className="rounded-3xl shadow-lg px-6 lg:px-8 pt-[64px] pb-4 relative flex flex-col"
-                  style={{ backgroundColor: '#E9ECFE', minHeight: '320px' }}
+                  className="rounded-3xl shadow-lg px-6 lg:px-8 pt-[64px] pb-6 relative flex flex-col"
+                  style={{ backgroundColor: '#E9ECFE' }}
                 >
                   <div className="absolute left-6 top-6">
                     <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ backgroundColor: '#9B8FD9' }}>
