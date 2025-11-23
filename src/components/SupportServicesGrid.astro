@@ -14,8 +14,8 @@ const { services } = Astro.props;
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
   {services.map((service) => (
-    <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
-      <div class="w-32 h-32 mb-6 flex items-center justify-center">
+    <div class="bg-white p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center" style="border-radius: 5px;">
+      <div class="w-20 h-20 mb-6 flex items-center justify-center">
         {service.icon ? (
           <img src={service.icon} alt={service.title} class="w-full h-full object-contain" />
         ) : (
