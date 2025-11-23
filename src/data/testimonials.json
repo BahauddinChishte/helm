@@ -1,30 +1,98 @@
 [
   {
-    "quote": "Thanks to my Executive Assistant, I'm no longer stuck in the weeds. I can focus on strategic decisions while they handle the day-to-day operations seamlessly.",
-    "name": "David Rosenberg",
-    "role": "CEO",
-    "company": "Aerofarms",
+    "quote": "In business 30 years with inconsistent growth. Since Helm started doing sales development for us, we've been on fire!",
+    "name": "Russell Slappey",
+    "role": "CEO, nPerspective",
     "image": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400"
   },
   {
-    "quote": "Helm found us an incredible assistant who integrated with our team immediately. The quality of talent and ongoing support is unmatched.",
-    "name": "Sarah Chen",
-    "role": "VP Operations",
-    "company": "TechStart Inc",
-    "image": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400"
-  },
-  {
-    "quote": "Working with Helm has been transformative for our business. Our remote assistant is highly skilled, proactive, and has become an essential part of our team.",
-    "name": "Michael Torres",
-    "role": "Founder",
-    "company": "Growth Ventures",
+    "quote": "Helm's coaching changed the game for us for years. Now, their staffing operation - in a huge way - is doing the same.",
+    "name": "Mike Wyrzykowski",
+    "role": "CEO, Blackpurl",
     "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400"
   },
   {
-    "quote": "The coaching and support Helm provides to their staff shows in the quality of work. Our assistant continuously improves and takes on more responsibility.",
-    "name": "Jennifer Lee",
-    "role": "Chief of Staff",
-    "company": "Innovate Labs",
+    "quote": "Freedom is indescribable until experienced. Anke made the unimaginable possible. Every entrepreneur should use Helm!",
+    "name": "Athena Simpson",
+    "role": "CEO, Unrestricted Ventures",
+    "image": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "quote": "I tried everything to find the right person and gave up. Then I gave Josh and Helm a chance. Natalie, my EA, has been life-changing.",
+    "name": "Jay Kaufman",
+    "role": "CEO, Paragon Laboratory",
+    "image": "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "quote": "Seeking accountability, I needed help. With one hire and follow-ups on open loops, we're in a different world now!",
+    "name": "Dan Lifton",
+    "role": "CEO, Quality of Life",
+    "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "quote": "I loved our first VA so much I hired a 2nd one. They started in support but within a year, each was managing different regions globally.",
+    "name": "Matthew Warnock",
+    "role": "CEO, Ridgecrest Herbals",
+    "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "quote": "My only regret is not doing this sooner. Every business should consider the extraordinary savings and quality from going virtual.",
+    "name": "Ann Hambly",
+    "role": "CEO, 1st Service Solutions",
+    "image": "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "quote": "From day one, Marie (my EA) found perfect leads, built our dashboard, and tracks our data for contract work!",
+    "name": "Ed Mafoud",
+    "role": "CEO, Damascus Bakery",
+    "image": "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "quote": "When our software startup was ready to scale up. Helm armed us with 5 exceptional inside salespeople: remarkable and consistent quality!",
+    "name": "Pramod Sajja",
+    "role": "CEO, Paramount Software",
+    "image": "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "quote": "We considered a $125k salesperson. Our Sales Dev Rep costs less than 1/3 of that but has exceeded every expectation!",
+    "name": "Katie Borden",
+    "role": "CEO, Redbox",
+    "image": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "quote": "Marketing was a black box until Allan cracked the SEO code. He turned our Marketing around in many ways. WOW!!",
+    "name": "Heather Wainer",
+    "role": "CEO, Whole Foods Magazine",
+    "image": "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "quote": "With Otensia's Salesforce admin and customizations, we have finally stepped into our potential with Salesforce.",
+    "name": "Joshua Guarino",
+    "role": "Associate Director, Commercial Management",
+    "image": "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "quote": "Life before Helm and life after Helm. My rockstar EA, a former national debate champion, took email management off my hands.",
+    "name": "Elan Sudberg",
+    "role": "CEO, Alkemist Labs",
+    "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "quote": "Helm brings master matchmaker chemistry, placing 7 people on our team. Our marketing and customer service are now world-class.",
+    "name": "Maccy Franze",
+    "role": "Director of Marketing, MayPro",
+    "image": "https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "quote": "Social media was a box to check until Helm's Jacquie took over. Our brand and sales are now at a totally different level.",
+    "name": "Brad Berdow",
+    "role": "Founder, East Bay Card Show",
+    "image": "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    "quote": "Coming from Google, I have high standards. The quality of both staff members Helm brought to our team has blown me away.",
+    "name": "Janet Ng",
+    "role": "COO, Syndicate Venture Group",
     "image": "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400"
   }
 ]
