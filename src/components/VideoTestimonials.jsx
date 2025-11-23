@@ -65,9 +65,9 @@ export default function VideoTestimonials({ testimonials }) {
                   </a>
                 </div>
 
-                <div className="w-full max-w-md">
-                  <div className="w-16 h-0.5 bg-red-600 mx-auto mb-4"></div>
-                  <p className="text-white italic leading-relaxed px-4" style={{ fontSize: '14.4px' }}>
+                <div className="w-full max-w-md px-4">
+                  <div className="w-full h-0.5 bg-red-600 mb-4"></div>
+                  <p className="text-white italic leading-relaxed" style={{ fontSize: '14.4px' }}>
                     "{testimonial.quote}"
                   </p>
                 </div>
