@@ -46,7 +46,7 @@ const {
               variant="primary"
               size="lg"
               track="hero-primary-cta"
-              class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              class="hero-primary-btn px-8 py-3 rounded-full font-semibold transition-colors text-white"
             >
               {primaryCTA.text}
             </Button>
@@ -59,8 +59,7 @@ const {
               variant="outline"
               size="lg"
               track="hero-secondary-cta"
-              class="border-2 px-8 py-3 rounded-lg font-semibold transition-colors"
-              style="border-color: rgb(52, 58, 90); color: rgb(52, 58, 90);"
+              class="hero-secondary-btn border-2 px-8 py-3 rounded-full font-semibold transition-colors"
             >
               {secondaryCTA.text}
             </Button>
@@ -94,6 +93,27 @@ const {
 </section>
 
 <style>
+  .hero-primary-btn {
+    background-color: #EC7A00;
+  }
+
+  .hero-primary-btn:hover {
+    background-color: #d66e00;
+  }
+
+  .hero-secondary-btn {
+    background-color: white;
+    border-color: rgb(52, 58, 90);
+    color: rgb(52, 58, 90);
+  }
+
+  .hero-secondary-btn:hover,
+  .hero-secondary-btn:active {
+    background-color: #EC7A00;
+    border-color: #EC7A00;
+    color: white;
+  }
+
   @keyframes fade-in-up {
     from {
       opacity: 0;
