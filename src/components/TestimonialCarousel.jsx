@@ -43,25 +43,30 @@ export default function TestimonialCarousel({ testimonials }) {
     setOffset((prev) => prev + 1);
   };
 
+  const getGapSize = () => {
+    if (typeof window === 'undefined') return 1.5;
+    return window.innerWidth < 768 ? 1 : 1.5;
+  };
+
   return (
     <div className="relative w-full">
-      <div className="flex items-center gap-8">
+      <div className="flex items-center gap-4 md:gap-8">
         <button
           onClick={goToPrevious}
-          className="hidden lg:flex w-14 h-14 items-center justify-center rounded-full transition-colors shadow-lg flex-shrink-0"
+          className="hidden lg:flex w-12 h-12 md:w-14 md:h-14 items-center justify-center rounded-full transition-colors shadow-lg flex-shrink-0"
           style={{ backgroundColor: '#6B63B5' }}
           aria-label="Previous testimonials"
         >
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
 
         <div className="flex-1 overflow-hidden" ref={containerRef}>
           <div
-            className="flex gap-6"
+            className="flex gap-4 md:gap-6"
             style={{
-              transform: `translateX(calc(-${offset * (100 / 3)}% - ${offset * 1.5}rem))`,
+              transform: `translateX(calc(-${offset * 100}% - ${offset * getGapSize()}rem))`,
               transition: isTransitioning ? 'transform 800ms cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
             }}
           >
@@ -69,10 +74,10 @@ export default function TestimonialCarousel({ testimonials }) {
               <div
                 key={`${testimonial.name}-${index}`}
                 className="relative flex-shrink-0 pt-12"
-                style={{ width: 'calc(33.333% - 1rem)' }}
+                style={{ width: '100%', minWidth: '100%' }}
               >
                 <div className="absolute left-1/2 transform -translate-x-1/2 top-0 z-20">
-                  <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-3 md:border-4 border-white shadow-xl">
                     <img
                       src={testimonial.image || 'https://via.placeholder.com/160'}
                       alt={testimonial.name}
@@ -82,13 +87,13 @@ export default function TestimonialCarousel({ testimonials }) {
                 </div>
 
                 <div
-                  className="rounded-3xl shadow-lg px-6 lg:px-8 pt-[64px] pb-6 relative flex flex-col h-full"
-                  style={{ backgroundColor: '#E9ECFE', minHeight: '280px' }}
+                  className="rounded-2xl md:rounded-3xl shadow-lg px-4 sm:px-6 lg:px-8 pt-14 md:pt-[64px] pb-5 md:pb-6 relative flex flex-col h-full"
+                  style={{ backgroundColor: '#E9ECFE', minHeight: '240px' }}
                 >
-                  <div className="absolute left-6 top-6">
-                    <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ backgroundColor: '#9B8FD9' }}>
+                  <div className="absolute left-4 sm:left-6 top-4 sm:top-6">
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center" style={{ backgroundColor: '#9B8FD9' }}>
                       <svg
-                        className="w-7 h-7 text-white"
+                        className="w-6 h-6 md:w-7 md:h-7 text-white"
                         fill="currentColor"
                         viewBox="0 0 24 24"
                       >
@@ -98,14 +103,14 @@ export default function TestimonialCarousel({ testimonials }) {
                   </div>
 
                   <div className="flex flex-col items-center text-center">
-                    <h3 className="font-bold mb-1" style={{ color: '#1a202c', fontSize: '16px' }}>
+                    <h3 className="font-bold mb-1 text-sm md:text-base" style={{ color: '#1a202c' }}>
                       {testimonial.name}
                     </h3>
-                    <p className="mb-4" style={{ color: '#4a5568', fontSize: '13px' }}>
+                    <p className="mb-3 md:mb-4 text-xs md:text-sm" style={{ color: '#4a5568' }}>
                       {testimonial.role}
                     </p>
 
-                    <blockquote className="leading-relaxed flex-1" style={{ color: '#1a202c', fontSize: '14px' }}>
+                    <blockquote className="leading-relaxed flex-1 text-xs md:text-sm" style={{ color: '#1a202c' }}>
                       "{testimonial.quote}"
                     </blockquote>
                   </div>
@@ -114,24 +119,24 @@ export default function TestimonialCarousel({ testimonials }) {
             ))}
           </div>
 
-          <div className="flex lg:hidden justify-center gap-3 mt-8">
+          <div className="flex lg:hidden justify-center gap-3 mt-6 md:mt-8">
             <button
               onClick={goToPrevious}
-              className="w-12 h-12 flex items-center justify-center rounded-full transition-colors shadow-md"
+              className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full transition-colors shadow-md"
               style={{ backgroundColor: '#6B63B5' }}
               aria-label="Previous testimonials"
             >
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             <button
               onClick={goToNext}
-              className="w-12 h-12 flex items-center justify-center rounded-full transition-colors shadow-md"
+              className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full transition-colors shadow-md"
               style={{ backgroundColor: '#6B63B5' }}
               aria-label="Next testimonials"
             >
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
@@ -140,11 +145,11 @@ export default function TestimonialCarousel({ testimonials }) {
 
         <button
           onClick={goToNext}
-          className="hidden lg:flex w-14 h-14 items-center justify-center rounded-full transition-colors shadow-lg flex-shrink-0"
+          className="hidden lg:flex w-12 h-12 md:w-14 md:h-14 items-center justify-center rounded-full transition-colors shadow-lg flex-shrink-0"
           style={{ backgroundColor: '#6B63B5' }}
           aria-label="Next testimonials"
         >
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
           </svg>
         </button>

@@ -12,26 +12,26 @@ export default function FAQAccordion({ faqs }) {
   }
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-2 md:space-y-3">
       {faqs.map((faq, index) => (
         <div
           key={index}
-          className={`overflow-hidden transition-all ${
+          className={`overflow-hidden transition-all rounded-lg md:rounded-none ${
             openIndex === index ? 'bg-white shadow-lg' : ''
           }`}
           style={{ backgroundColor: openIndex === index ? 'white' : '#E2E5EE' }}
         >
           <button
             onClick={() => toggleFAQ(index)}
-            className="w-full px-6 py-4 text-left flex items-center justify-between transition-colors"
+            className="w-full px-4 py-3 sm:px-5 sm:py-4 md:px-6 text-left flex items-center justify-between transition-colors"
             aria-expanded={openIndex === index}
           >
-            <span className="font-semibold text-brand-navy pr-4" style={{ fontSize: '26px', fontFamily: 'Roboto, sans-serif' }}>
+            <span className="font-semibold text-brand-navy pr-3 sm:pr-4 text-base sm:text-xl md:text-2xl lg:text-[26px]" style={{ fontFamily: 'Roboto, sans-serif' }}>
               {faq.question}
             </span>
             {openIndex === index ? (
               <svg
-                className="w-6 h-6 text-brand-navy flex-shrink-0"
+                className="w-5 h-5 sm:w-6 sm:h-6 text-brand-navy flex-shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -45,7 +45,7 @@ export default function FAQAccordion({ faqs }) {
               </svg>
             ) : (
               <svg
-                className="w-6 h-6 text-brand-navy flex-shrink-0"
+                className="w-5 h-5 sm:w-6 sm:h-6 text-brand-navy flex-shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -64,7 +64,7 @@ export default function FAQAccordion({ faqs }) {
               openIndex === index ? 'max-h-[1000px]' : 'max-h-0'
             }`}
           >
-            <div className="px-6 pb-6 text-brand-slate leading-relaxed whitespace-pre-line" style={{ fontSize: '16px', lineHeight: '1.7', fontFamily: 'Montserrat, sans-serif' }}>
+            <div className="px-4 pb-4 sm:px-5 sm:pb-5 md:px-6 md:pb-6 text-brand-slate leading-relaxed whitespace-pre-line text-sm sm:text-base" style={{ lineHeight: '1.7', fontFamily: 'Montserrat, sans-serif' }}>
               {faq.answer}
             </div>
           </div>
