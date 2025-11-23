@@ -20,19 +20,19 @@ export default function VideoTestimonials({ testimonials }) {
               <div key={testimonial.id} className="flex flex-col items-center text-center">
                 <button
                   onClick={() => openVideo(testimonial)}
-                  className="relative group mb-6 cursor-pointer focus:outline-none focus:ring-4 focus:ring-brand-orange/50 rounded-full"
+                  className="relative group mb-6 cursor-pointer focus:outline-none focus:ring-4 focus:ring-brand-orange/50"
                   aria-label={`Play video testimonial from ${testimonial.name}`}
                 >
-                  <div className="relative w-64 h-64 rounded-full overflow-hidden">
+                  <div className="relative w-80 h-72">
                     <img
                       src={testimonial.thumbnail}
                       alt={testimonial.name}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300"></div>
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300"></div>
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
                       <svg
                         className="w-10 h-10 text-brand-orange ml-1"
                         fill="currentColor"
@@ -65,7 +65,7 @@ export default function VideoTestimonials({ testimonials }) {
                   </a>
                 </div>
 
-                <p className="text-white text-base italic leading-relaxed max-w-sm">
+                <p className="text-white text-base italic leading-relaxed max-w-sm px-4">
                   "{testimonial.quote}"
                 </p>
               </div>
