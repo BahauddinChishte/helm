@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Executive Assistant",
+    "description": "Scheduling, Email management, Drafting, Manage spreadsheets, Travel planning, Data entry, Research, Personal Matters & More…",
+    "icon": ""
+  },
+  {
+    "title": "Sales Development",
+    "description": "Generate leads, Find contact information, Qualify leads, Schedule appointments for you, Manage your follow-up & More…",
+    "icon": ""
+  },
+  {
+    "title": "Bookkeeping / Accounting",
+    "description": "Financial record keeping, Payroll processing, Tax compliance, Cash flow management, Budgeting, Financial reporting, Accounts Receivable & More…",
+    "icon": ""
+  },
+  {
+    "title": "Project Management",
+    "description": "Document goals, Define key tasks and deadlines, Enroll support from stakeholders, Optimize your use of software, Financial reporting, Accounts Receivable & More…",
+    "icon": ""
+  },
+  {
+    "title": "Account Management",
+    "description": "Build & maintain strong client relationships, Resolve client problems, Negotiate contracts, Collaborate with teams, Product or service education, Create plans & More…",
+    "icon": ""
+  },
+  {
+    "title": "Customer Support",
+    "description": "Resolve issues, Deeply understand your product, Technical assistance, Process orders, Collect customer Feedback, Reach out proactively, Train & document, Build relationships & More…",
+    "icon": ""
+  },
+  {
+    "title": "Marketing Support",
+    "description": "Social media & blog Management, Market research & analysis, Campaign planning & execution, Email marketing, Analytics & reporting, Partnerships & collaboration, & More…",
+    "icon": ""
+  },
+  {
+    "title": "E-commerce Management",
+    "description": "Manage platforms such as Amazon, Shopify and your website, Manage inventory, Order fulfillment & shipping, Payment processing, Marketing, Analytics & reporting, & More…",
+    "icon": ""
+  },
+  {
+    "title": "And More...",
+    "description": "Our client partners have asked for help with just about everything under the sun! We exist to ensure you get the support you need.",
+    "icon": ""
+  }
+]

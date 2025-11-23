@@ -2,10 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import SupportServicesGrid from '../components/SupportServicesGrid.astro';
 import TestimonialCarousel from '../components/TestimonialCarousel.jsx';
 import FAQAccordion from '../components/FAQAccordion.jsx';
 import Button from '../components/Button.astro';
 import services from '../data/services.json';
+import supportServices from '../data/support-services.json';
 import testimonials from '../data/testimonials.json';
 import logos from '../data/logos.json';
 
@@ -96,23 +98,15 @@ const howItWorksSteps = [
     </div>
   </section>
 
-  <section class="py-20 bg-brand-light">
-    <div class="w-full px-8 sm:px-12 lg:px-16">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
+  <section class="pt-8 pb-20 sm:pt-12 sm:pb-24 lg:pt-16 lg:pb-28" style="background-color: #F5F5F5;">
+    <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16">
+      <div class="text-center mb-12">
+        <h2 class="text-gray-900 mb-8" style="font-size: 32px; font-weight: 600;">
           What Your Helm Assistant Can Support You With
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service) => (
-          <ServiceCard
-            title={service.title}
-            description={service.description}
-            icon={service.icon}
-          />
-        ))}
-      </div>
+      <SupportServicesGrid services={supportServices} />
     </div>
   </section>
 
