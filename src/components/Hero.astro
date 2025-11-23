@@ -25,9 +25,9 @@ const {
 ---
 
 <section class="relative bg-gray-50 overflow-hidden pt-28 pb-12 sm:pt-32 sm:pb-16 md:pt-36 lg:pt-40 lg:pb-20">
-  <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16">
+  <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16 max-w-[1920px] mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-[65%_35%] gap-8 lg:gap-12 items-center">
-      <div class="space-y-6 sm:space-y-8 max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
+      <div class="space-y-6 sm:space-y-8 max-w-2xl lg:max-w-4xl text-center lg:text-left mx-auto lg:mx-0">
         <h1 class="font-semibold leading-tight hero-title" style="color: rgb(52, 58, 90);">
           {title}
         </h1>
@@ -111,6 +111,12 @@ const {
     }
   }
 
+  @media (min-width: 1536px) {
+    .hero-title {
+      font-size: 64px;
+    }
+  }
+
   /* Responsive Description Sizing */
   .hero-description {
     font-size: 16px;
@@ -125,6 +131,12 @@ const {
   @media (min-width: 1024px) {
     .hero-description {
       font-size: 20px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .hero-description {
+      font-size: 24px;
     }
   }
 
@@ -147,6 +159,13 @@ const {
     }
   }
 
+  @media (min-width: 1536px) {
+    .hero-btn-responsive {
+      padding: 16px 40px;
+      font-size: 18px;
+    }
+  }
+
   /* Responsive Image Sizing */
   .hero-image-container {
     width: 280px;
@@ -164,6 +183,12 @@ const {
     }
   }
 
+  @media (min-width: 1536px) {
+    .hero-image-container {
+      width: 480px;
+    }
+  }
+
   /* Responsive Caption Sizing */
   .hero-caption {
     font-size: 15px;
@@ -178,6 +203,12 @@ const {
   @media (min-width: 1024px) {
     .hero-caption {
       font-size: 18px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .hero-caption {
+      font-size: 20px;
     }
   }
 
