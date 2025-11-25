@@ -1,0 +1,431 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SupportServicesGrid from '../components/SupportServicesGrid.astro';
+import VideoTestimonials from '../components/VideoTestimonials.jsx';
+import FAQAccordion from '../components/FAQAccordion.jsx';
+import Button from '../components/Button.astro';
+import supportServices from '../data/support-services.json';
+import videoTestimonials from '../data/video-testimonials.json';
+
+const faqs = [
+  {
+    question: 'What is a remote assistant?',
+    answer: "Helm's remote assistants are hungry, humble and highly intelligent professionals and support you and your team in virtually any function. They work in your time zone and integrate with your team as deeply as you would like. Many of our client partners, within four months of hiring, say their remote assistant is as much a part of the team as the other people in their company."
+  },
+  {
+    question: 'What are the challenges and benefits of a remote assistant?',
+    answer: 'A remote assistant is often life-changing since they bring you freedom in work and out. Are your company, your department, or you hitting the ceiling and trying to figure out how to break through? The constraint is often bandwidth or capabilities. Hiring a remote assistant brings you both.\n\nIn times of change, remote assistants make it easier to grow or contract your team with agility.\n\nRates of remote workers are often between 25% and 50% of what you would pay in the US. The challenge, however, of a remote assistant comes into play for companies unable to hold remote meetings. Otherwise, the challenges are similar to those with a physically present team member.'
+  },
+  {
+    question: 'How is Helm unique?',
+    answer: 'The rigor Helm applies to your search goes far beyond that of any other staffing company.\n\nWe bring a deep background in organizational development and helping companies build organizational health. For decades, Helm\'s founder has helped other business owners scale their business and attract exceptional talent. Companies cannot do this if they don\'t themselves possess great talent. We have helped business owners make key hiring and firing decisions that have paved the way for the growth that followed.'
+  },
+  {
+    question: 'How does onboarding work?',
+    answer: "You'll receive guidance from us on how to get your new hire started. Often your remote assistant can guide you through much of this process. Key elements typically include:\n\n- Enabling access to your software and systems\n- Connecting with stakeholders\n- Acclimating to key processes and how things get done\n- Setting a cadence for meetings or check-ins\n- Sharing any project (s) or goal (s) to start on"
+  },
+  {
+    question: 'How long will it take to find the right remote assistant with Helm?',
+    answer: 'On average it takes us three weeks to find the right match for you. We know that once you need to hire, everyday can be a painful and costly wait, but as most people know, the cost of hiring the wrong person is vastly greater. Sometimes we have the right match for you within our community, particularly as our community of professionals grows.'
+  }
+];
+
+const companyLogos = [
+  { name: 'Maypro', image: '/images/company-logo/maypro.webp' },
+  { name: 'Alkemist Labs', image: '/images/sections-picture/image.png' },
+  { name: 'Syndicate Venture', image: '/images/sections-picture/image.png' },
+  { name: 'Paragon Laboratories', image: '/images/sections-picture/image.png' },
+  { name: 'Whole Foods', image: '/images/sections-picture/image.png' },
+  { name: 'Blackpurl', image: '/images/sections-picture/image.png' }
+];
+
+const howItWorksSteps = [
+  {
+    number: '01',
+    title: 'Share your needs',
+    description: "We'll create a Success Profile based on your needs and preferences.",
+    additionalInfo: "Our team will screen over 3,000 candidates, on average, to find you the perfect match."
+  },
+  {
+    number: '02',
+    title: 'Meet the perfect hire',
+    description: "You'll meet and screen the candidate. Over 80% of the time, the 1st candidate we propose gets hired.",
+    additionalInfo: "If you prefer to meet a new candidate, we extend our search to ensure your success!"
+  },
+  {
+    number: '03',
+    title: 'Delegate. Elevate.',
+    description: 'Best practices for onboarding your new hire will save you time and get them up and running immediately.',
+    additionalInfo: 'Create more value and do more of what you love by letting go and delegating to the right support!'
+  }
+];
+---
+
+<Layout
+  title="Staffing - Helm Remote Assistants"
+  description="Elevate yourself and delegate to the perfect support person. Save time, money and stress with a remote assistant tailored to your needs."
+>
+  <section class="relative overflow-hidden pt-28 pb-0 sm:pt-32 sm:pb-0 md:pt-36 lg:pt-40" style="background-color: #343A5A;">
+    <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16 max-w-[1920px] mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 lg:gap-12 items-center pb-12 lg:pb-16">
+        <div class="space-y-6 sm:space-y-8 max-w-2xl lg:max-w-3xl text-left">
+          <h1 class="font-semibold leading-tight text-white staffing-hero-title">
+            Elevate Yourself.<br>
+            Delegate to The Perfect Support Person.
+          </h1>
+
+          <p class="staffing-hero-description leading-relaxed text-white opacity-90">
+            Save time, money and stress while catapulting productivity with a remote assistant perfect for your needs.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
+            <Button
+              openModal={true}
+              variant="primary"
+              size="lg"
+              track="staffing-hero-cta"
+              class="staffing-primary-btn staffing-btn-responsive rounded-full font-semibold transition-colors text-white"
+            >
+              Try a virtual assistant now
+            </Button>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center">
+          <div class="relative staffing-image-container">
+            <div class="aspect-square rounded-full overflow-hidden shadow-2xl bg-white border-8 border-white">
+              <img
+                src="/images/people/regina-sanchez.jpg"
+                alt="Regina Sanchez, Helm EA"
+                class="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
+          </div>
+          <p class="mt-4 sm:mt-6 text-center italic text-white staffing-caption">
+            Regina Sanchez, Helm EA since 2020
+          </p>
+        </div>
+      </div>
+
+      <div class="pb-8 sm:pb-12">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 sm:gap-8 items-center">
+          {companyLogos.map((logo) => (
+            <div class="flex items-center justify-center p-4 bg-white/10 rounded-lg backdrop-blur-sm">
+              <img
+                src={logo.image}
+                alt={logo.name}
+                class="w-full h-auto max-h-12 sm:max-h-14 object-contain"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 sm:py-16 lg:py-20 bg-white">
+    <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16">
+      <div class="text-center mb-12 sm:mb-16">
+        <h2 class="text-brand-navy text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+          What Your Helm Assistant Can Support You With
+        </h2>
+      </div>
+
+      <SupportServicesGrid services={supportServices} ctaText="Find my assistant" />
+    </div>
+  </section>
+
+  <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+    <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16">
+      <div class="text-center mb-12 sm:mb-16">
+        <h2 class="text-brand-navy text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+          How Helm Works
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
+        {howItWorksSteps.map((step) => (
+          <div class="relative flex flex-col">
+            <div class="flex items-start mb-4">
+              <span class="text-6xl font-bold text-brand-orange mr-4">{step.number}</span>
+            </div>
+            <h3 class="text-2xl font-semibold text-brand-navy mb-3">{step.title}</h3>
+            <p class="text-gray-700 mb-3 leading-relaxed">{step.description}</p>
+            <p class="text-gray-600 leading-relaxed">{step.additionalInfo}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <Button
+          openModal={true}
+          variant="primary"
+          size="lg"
+          track="how-it-works-cta"
+          class="rounded-full font-semibold transition-colors text-white"
+          style="background-color: var(--color-orange);"
+        >
+          Try a virtual assistant now
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative w-full min-h-[600px] sm:min-h-[700px] lg:min-h-[900px] flex items-end testimonial-bg">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent lg:bg-gradient-to-t lg:from-black/40"></div>
+    <div class="relative w-full px-4 sm:px-6 md:px-12 lg:px-16 py-8 pb-12 sm:py-12 sm:pb-16 lg:pb-16">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex justify-start lg:justify-end pr-0 lg:pr-12">
+          <div class="max-w-2xl w-full">
+            <div class="px-4 sm:px-6 lg:px-10 py-4 sm:py-6 mb-0 relative overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-r from-[#AF6022]/95 via-[#AF6022]/85 to-[#AF6022]/40 lg:from-[#AF6022]/90 lg:via-[#AF6022]/70 lg:to-transparent"></div>
+              <h2 class="text-white text-xl sm:text-2xl lg:text-3xl font-bold relative z-10 leading-tight">
+                What Do Our Clients Think?
+              </h2>
+            </div>
+            <div class="px-4 sm:px-6 lg:px-10 py-6 sm:py-8">
+              <blockquote class="text-white text-lg sm:text-xl lg:text-2xl font-normal mb-4 sm:mb-6 leading-relaxed">
+                "Thanks to my Executive Assistant,<br>
+                I'm no longer stuck in the weeds."
+              </blockquote>
+              <div class="text-white">
+                <p class="font-bold text-base sm:text-lg mb-1">DAVID ROSENBERG</p>
+                <p class="text-sm sm:text-base">CEO Aerofarms</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+    <div class="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-20">
+        <div class="flex justify-center lg:justify-start">
+          <img src="/images/sections-picture/helm-support-staff.webp" alt="Support Staff" class="w-full sm:w-4/5 rounded-lg shadow-lg" />
+        </div>
+        <div class="space-y-4 sm:space-y-6">
+          <h2 class="text-brand-navy text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight">
+            Helm's Support Staff is Vetted and Trained to Save You Time and Create Immediate Value.
+          </h2>
+          <div class="space-y-3 sm:space-y-4 text-gray-700 text-base sm:text-lg leading-relaxed">
+            <p>
+              With decades of experience helping business owners build companies, Helm will help you define the right success profile for your next hire.
+            </p>
+            <p>
+              All hires work in your time zone and bring native level English, verbal and spoken, for easy integration with your team.
+            </p>
+            <p>
+              We also identify key aspects of your culture to ensure values alignment. This helps you avoid the frustration many companies face by hiring the wrong person. One such hire can kill your culture.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+        <div class="space-y-4 sm:space-y-6 order-2 lg:order-1">
+          <h2 class="text-brand-navy text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight">
+            Every Staff Member Gets 1-on-1 Coaching from Helm's Dedicated Team of Professional Development Coaches.
+          </h2>
+          <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
+            We coach each staff member ongoingly in order to help them acquire new skills and tackle their greatest opportunity for professional growth. If you lack the experience or time to help your hire gain a particular skill, our coach can help.
+          </p>
+        </div>
+        <div class="flex justify-center lg:justify-end order-1 lg:order-2">
+          <img src="/images/sections-picture/helm-1-on-1-coaching.jpg" alt="1-on-1 Coaching" class="w-full sm:w-4/5 rounded-lg shadow-lg" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 sm:py-16 lg:py-20 bg-white">
+    <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16 text-center">
+      <h2 class="text-brand-navy text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6">
+        Ready to Elevate Yourself And Your Team?
+      </h2>
+      <Button
+        openModal={true}
+        variant="primary"
+        size="lg"
+        track="ready-to-elevate-cta"
+        class="rounded-full font-semibold transition-colors text-white inline-block"
+        style="background-color: var(--color-orange);"
+      >
+        Get Started
+      </Button>
+    </div>
+  </section>
+
+  <VideoTestimonials testimonials={videoTestimonials} client:load />
+
+  <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+    <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
+          <div>
+            <h2 class="text-brand-navy text-3xl sm:text-4xl font-semibold mb-6">
+              Frequently Asked Questions
+            </h2>
+            <p class="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
+              The most important questions are often about the unknown unknowns – that is the stuff you're not thinking to ask but you really need to know. While some common questions are just over here on the right, let's hop on a call and get you the knowledge you really need!
+            </p>
+            <div class="space-y-3">
+              <div class="flex items-center space-x-3">
+                <svg class="w-5 h-5 text-brand-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                </svg>
+                <div>
+                  <p class="font-semibold text-brand-navy">Email</p>
+                  <a href="mailto:support@helm.ceo" class="text-brand-orange hover:text-orange-600 transition-colors">support@helm.ceo</a>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg class="w-5 h-5 text-brand-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+                <div>
+                  <p class="font-semibold text-brand-navy">Phone</p>
+                  <a href="tel:917.566.0364" class="text-brand-orange hover:text-orange-600 transition-colors">917.566.0364</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <FAQAccordion faqs={faqs} client:load />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .testimonial-bg {
+    background-image: url('/images/sections-picture/image%20copy.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width: 1024px) {
+    .testimonial-bg {
+      background-image: url('/images/sections-picture/helm-ceo-CEO-Aerofarms-testimonial-1.jpg');
+      background-position: center center;
+    }
+  }
+
+  .staffing-hero-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 640px) {
+    .staffing-hero-title {
+      font-size: 42px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .staffing-hero-title {
+      font-size: 50px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .staffing-hero-title {
+      font-size: 56px;
+    }
+  }
+
+  .staffing-hero-description {
+    font-size: 16px;
+  }
+
+  @media (min-width: 640px) {
+    .staffing-hero-description {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .staffing-hero-description {
+      font-size: 20px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .staffing-hero-description {
+      font-size: 22px;
+    }
+  }
+
+  .staffing-btn-responsive {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+
+  @media (min-width: 640px) {
+    .staffing-btn-responsive {
+      padding: 14px 32px;
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .staffing-btn-responsive {
+      padding: 16px 40px;
+      font-size: 18px;
+    }
+  }
+
+  .staffing-image-container {
+    width: 280px;
+  }
+
+  @media (min-width: 640px) {
+    .staffing-image-container {
+      width: 320px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .staffing-image-container {
+      width: 350px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .staffing-image-container {
+      width: 400px;
+    }
+  }
+
+  .staffing-caption {
+    font-size: 15px;
+  }
+
+  @media (min-width: 640px) {
+    .staffing-caption {
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .staffing-caption {
+      font-size: 18px;
+    }
+  }
+
+  .staffing-primary-btn {
+    background-color: var(--color-orange);
+  }
+
+  .staffing-primary-btn:hover {
+    background-color: var(--color-orange-dark);
+  }
+</style>
