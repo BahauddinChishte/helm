@@ -58,38 +58,40 @@ const videoTestimonials = [
   title="Scale Your Company - Leadership Coaching | Helm"
   description="Transform your leadership team with proven systems. Over 5,000 companies have achieved alignment, accountability, and growth with our approach."
 >
-  <section class="relative pt-32 pb-0 bg-gradient-to-br from-brand-navy via-brand-navyDark to-brand-navy overflow-hidden min-h-[600px]">
-    <div class="w-full px-8 sm:px-12 lg:px-16">
+  <section class="relative pt-32 pb-20 lg:pb-0 bg-gradient-to-br from-[#3d4463] via-[#343A5A] to-[#2d3350] overflow-hidden">
+    <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="text-white py-12 lg:py-20">
+        <div class="text-white py-8 lg:py-16">
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Want to scale your company?
           </h1>
-          <p class="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
-            You'll need a cohesive leadership team with strong accountability and alignment. This isn't something you either have or don't have. It's a science. We've seen it with over 5,000 companies.
-          </p>
-          <p class="text-xl font-semibold mb-8">
-            Want to know the secret?
-          </p>
+          <div class="space-y-4 text-lg sm:text-xl text-gray-200 leading-relaxed mb-8">
+            <p>
+              You'll need a cohesive leadership team with strong accountability and alignment. This isn't something you either have or don't have. It's a science. We've seen it with over 5,000 companies.
+            </p>
+            <p class="font-semibold text-white">
+              Want to know the secret?
+            </p>
+          </div>
           <Button
             href="#training"
             variant="primary"
             size="lg"
             track="watch-training"
-            class="inline-flex items-center gap-2"
+            class="inline-flex items-center gap-2 !bg-[#EC7A00] hover:!bg-[#d66d00] !text-white rounded-full px-8 py-4"
           >
             Watch our training
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M10 8l6 4-6 4V8z"/>
             </svg>
           </Button>
         </div>
-        <div class="relative lg:absolute lg:right-0 lg:top-20 lg:w-1/2 lg:h-[calc(100%+5rem)]">
+        <div class="relative lg:absolute lg:right-0 lg:top-0 lg:w-1/2 lg:h-full flex items-end justify-end">
           <img
             src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop"
             alt="Business leader"
-            class="w-full h-full object-cover object-center rounded-tl-3xl shadow-2xl"
+            class="w-full h-[500px] lg:h-full object-cover object-top"
             width="600"
             height="800"
             loading="eager"
