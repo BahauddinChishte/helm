@@ -6,6 +6,7 @@ interface Props {
   track?: string;
   class?: string;
   openModal?: boolean;
+  style?: string;
 }
 
 const {
@@ -14,7 +15,8 @@ const {
   size = 'md',
   track,
   class: className = '',
-  openModal = false
+  openModal = false,
+  style
 } = Astro.props;
 
 const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200';
@@ -40,6 +42,7 @@ const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} 
     data-open-quote-modal
     class={classes}
     data-track={track}
+    style={style}
   >
     <slot />
   </button>
@@ -48,6 +51,7 @@ const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} 
     href={href}
     class={classes}
     data-track={track}
+    style={style}
   >
     <slot />
   </a>
