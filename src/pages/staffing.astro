@@ -127,10 +127,10 @@ const howItWorksSteps = [
     </div>
   </section>
 
-  <section class="py-12 sm:py-16 lg:py-20 bg-white">
+  <section class="pt-8 pb-20 sm:pt-12 sm:pb-24 lg:pt-16 lg:pb-28" style="background-color: #F5F5F5;">
     <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16">
-      <div class="text-center mb-12 sm:mb-16">
-        <h2 class="text-brand-navy text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+      <div class="text-center mb-12">
+        <h2 class="text-gray-900 mb-8" style="font-size: 32px; font-weight: 500;">
           What Your Helm Assistant Can Support You With
         </h2>
       </div>
@@ -139,35 +139,72 @@ const howItWorksSteps = [
     </div>
   </section>
 
-  <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
-    <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16">
-      <div class="text-center mb-12 sm:mb-16">
-        <h2 class="text-brand-navy text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+  <VideoTestimonials testimonials={videoTestimonials} client:load />
+
+  <section class="py-20 bg-white">
+    <div class="w-full px-8 sm:px-12 lg:px-16">
+      <div class="text-center mb-16">
+        <h2 class="text-brand-navy mb-8" style="font-size: 32px; font-weight: 500;">
           How Helm Works
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
-        {howItWorksSteps.map((step) => (
-          <div class="relative flex flex-col">
-            <div class="flex items-start mb-4">
-              <span class="text-6xl font-bold text-brand-orange mr-4">{step.number}</span>
-            </div>
-            <h3 class="text-2xl font-semibold text-brand-navy mb-3">{step.title}</h3>
-            <p class="text-gray-700 mb-3 leading-relaxed">{step.description}</p>
-            <p class="text-gray-600 leading-relaxed">{step.additionalInfo}</p>
+      <div class="max-w-[1400px] mx-auto mb-16 px-4">
+        <div class="p-1.5 bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
+          <div class="relative w-full" style="padding-bottom: 56.25%;">
+            <iframe
+              class="absolute top-0 left-0 w-full h-full rounded-xl"
+              src="https://www.youtube.com/embed/xGWBAliMJLY"
+              title="How Helm Works"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
           </div>
-        ))}
+        </div>
       </div>
 
-      <div class="text-center mt-12">
+      <div class="max-w-[1400px] mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          {howItWorksSteps.map((step, index) => (
+            <div class="relative text-center">
+              <div class="flex flex-col items-center">
+                <div class="relative mb-6">
+                  <div class="w-14 h-14 rounded-full bg-brand-orange flex items-center justify-center">
+                    <span class="text-white text-xl font-bold">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+                  {index < 2 && (
+                    <div class="hidden md:block absolute top-1/2 left-full w-[calc(100vw/3-3.5rem)] h-0.5 bg-brand-orange transform -translate-y-1/2 ml-4"></div>
+                  )}
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-[22px] font-bold text-brand-navy mb-4">
+                    {step.title}
+                  </h3>
+                  <p class="text-brand-slate leading-relaxed mb-3 text-base">
+                    {step.description}
+                  </p>
+                  {step.additionalInfo && (
+                    <p class="text-brand-slate leading-relaxed text-base">
+                      {step.additionalInfo}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-16">
         <Button
           openModal={true}
           variant="primary"
           size="lg"
           track="how-it-works-cta"
-          class="rounded-full font-semibold transition-colors text-white"
-          style="background-color: var(--color-orange);"
+          class="how-it-works-primary-btn"
         >
           Try a virtual assistant now
         </Button>
@@ -260,8 +297,6 @@ const howItWorksSteps = [
       </Button>
     </div>
   </section>
-
-  <VideoTestimonials testimonials={videoTestimonials} client:load />
 
   <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
     <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16">
@@ -428,6 +463,16 @@ const howItWorksSteps = [
   }
 
   .staffing-primary-btn:hover {
+    background-color: var(--color-orange-dark);
+  }
+
+  .how-it-works-primary-btn {
+    background-color: var(--color-orange);
+    color: white;
+    border: none;
+  }
+
+  .how-it-works-primary-btn:hover {
     background-color: var(--color-orange-dark);
   }
 </style>
