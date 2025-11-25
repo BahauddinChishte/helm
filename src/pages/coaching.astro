@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
+import BookModal from '../components/BookModal.jsx';
 
 const videoTestimonials = [
   {
@@ -212,18 +213,15 @@ const videoTestimonials = [
               loading="lazy"
             />
           </div>
-          <Button
-            href="#book"
-            variant="primary"
-            size="lg"
-            track="get-book"
-            class="inline-flex items-center gap-2"
+          <button
+            onclick="document.querySelector('[data-book-modal-trigger]').click()"
+            class="inline-flex items-center gap-2 bg-brand-orange text-white px-8 py-4 rounded-full font-semibold hover:bg-brand-orangeDark transition-colors border-2 border-white"
           >
             Get the book, free
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
-          </Button>
+          </button>
         </div>
         <div class="space-y-6">
           <h2 class="text-brand-navy" style="font-size: 30px; font-weight: 700;">
@@ -320,6 +318,8 @@ const videoTestimonials = [
       </div>
     </div>
   </section>
+
+  <BookModal client:load />
 </Layout>
 
 <style>
