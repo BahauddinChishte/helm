@@ -31,12 +31,12 @@ const faqs = [
 ];
 
 const companyLogos = [
-  { name: 'Maypro', image: '/images/company-logo/maypro.webp' },
-  { name: 'Alkemist Labs', image: '/images/sections-picture/image.png' },
-  { name: 'Syndicate Venture', image: '/images/sections-picture/image.png' },
-  { name: 'Paragon Laboratories', image: '/images/sections-picture/image.png' },
-  { name: 'Whole Foods', image: '/images/sections-picture/image.png' },
-  { name: 'Blackpurl', image: '/images/sections-picture/image.png' }
+  { name: 'Maypro', image: '/images/staffing-company-logo/Maypro_Logo_NOTagline_410x.webp' },
+  { name: 'Alkemist Labs', image: '/images/staffing-company-logo/cropped-Alkemist-logo-Lockup.png' },
+  { name: 'Syndicate Venture Group', image: '/images/staffing-company-logo/Syndecate Venture Group.png' },
+  { name: 'Paragon Laboratories', image: '/images/staffing-company-logo/paragon-laboratories-logo-helm.jpg' },
+  { name: 'Whole Foods Magazine', image: '/images/staffing-company-logo/WholeFoods_Magazine.webp' },
+  { name: 'Blackpurl', image: '/images/staffing-company-logo/helm-blackpurl-logo.webp' }
 ];
 
 const howItWorksSteps = [
@@ -65,9 +65,9 @@ const howItWorksSteps = [
   title="Staffing - Helm Remote Assistants"
   description="Elevate yourself and delegate to the perfect support person. Save time, money and stress with a remote assistant tailored to your needs."
 >
-  <section class="relative overflow-hidden pt-28 pb-0 sm:pt-32 sm:pb-0 md:pt-36 lg:pt-40" style="background-color: #343A5A;">
+  <section class="relative overflow-hidden pt-28 pb-12 sm:pt-32 sm:pb-16 md:pt-36 lg:pt-40 lg:pb-20" style="background-color: #343A5A;">
     <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16 max-w-[1920px] mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 lg:gap-12 items-center pb-12 lg:pb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 lg:gap-12 items-center">
         <div class="space-y-6 sm:space-y-8 max-w-2xl lg:max-w-3xl text-left">
           <h1 class="font-semibold leading-tight text-white staffing-hero-title">
             Elevate Yourself.<br>
@@ -107,20 +107,22 @@ const howItWorksSteps = [
           </p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="pb-8 sm:pb-12">
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 sm:gap-8 items-center">
-          {companyLogos.map((logo) => (
-            <div class="flex items-center justify-center p-4 bg-white/10 rounded-lg backdrop-blur-sm">
-              <img
-                src={logo.image}
-                alt={logo.name}
-                class="w-full h-auto max-h-12 sm:max-h-14 object-contain"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
+  <section class="py-8 sm:py-12 bg-white">
+    <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16 max-w-[1920px] mx-auto">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 sm:gap-8 items-center">
+        {companyLogos.map((logo) => (
+          <div class="flex items-center justify-center p-4">
+            <img
+              src={logo.image}
+              alt={logo.name}
+              class="w-full h-auto max-h-12 sm:max-h-14 object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+              loading="lazy"
+            />
+          </div>
+        ))}
       </div>
     </div>
   </section>
