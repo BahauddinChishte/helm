@@ -15,13 +15,14 @@ const navItems = [
         <img src="/images/logo/helm-white-logo-1.webp" alt="Helm" class="h-auto" width="105" height="48" />
       </a>
 
-      <nav class="hidden md:flex items-center space-x-12" aria-label="Main navigation">
+      <nav class="hidden md:flex items-center space-x-8 lg:space-x-12" aria-label="Main navigation">
         {navItems.map(item => (
           <a
             href={item.href}
-            class={`text-sm font-semibold tracking-wide transition-colors hover:text-gray-300 ${
+            class={`text-base font-semibold tracking-wide transition-colors hover:text-gray-300 ${
               currentPath === item.href || currentPath.startsWith(item.href) ? 'text-white' : 'text-white'
             }`}
+            style="font-family: 'Open Sans', sans-serif;"
           >
             {item.label}
           </a>
@@ -51,6 +52,7 @@ const navItems = [
               ? 'bg-gray-700 text-white'
               : 'text-white hover:bg-gray-700'
           }`}
+          style="font-family: 'Open Sans', sans-serif;"
         >
           {item.label}
         </a>
