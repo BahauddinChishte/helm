@@ -4,7 +4,7 @@ description: "Get everyone in your company on the same page… 1 language, 1 set
 pubDate: 2024-10-30T00:00:00.000Z
 author: "Helm Team"
 image: "/images/resources-page/ audit-your-company-in-5-minute.webp"
-tags: ["Webinars", "Analytics", "Blogging"]
+tags: ["Analytics", "Blogging", "Webinars"]
 ---
 
 # How to Audit Your Entire Company in Five Minutes
