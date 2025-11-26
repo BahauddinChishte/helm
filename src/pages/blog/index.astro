@@ -25,53 +25,53 @@ const contentTypes = [
   title="Resources - Helm Blog & Learning Center"
   description="Read insights, tips, and success stories about offshore staffing, team building, and business growth from the Helm team."
 >
-  <section class="relative pt-24 pb-16 bg-brand-navy overflow-hidden">
+  <section class="relative pt-24 pb-20 bg-brand-navy overflow-hidden">
     <div class="absolute inset-0 z-0">
       <img
         src="/images/resources-page/resources-page-hero-background.webp"
         alt="Resources Background"
-        class="w-full h-full object-cover opacity-30"
+        class="w-full h-full object-cover opacity-20"
       />
-      <div class="absolute inset-0 bg-gradient-to-b from-brand-navy/60 to-brand-navy/80"></div>
+      <div class="absolute inset-0 bg-brand-navy/70"></div>
     </div>
     <div class="relative z-10 w-full px-8 sm:px-12 lg:px-16">
       <div class="text-center">
-        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">
+        <h1 class="text-4xl sm:text-5xl font-bold text-white">
           Free Resources
         </h1>
       </div>
     </div>
   </section>
 
-  <section class="pb-20 bg-gray-50 -mt-8">
+  <section class="pb-20 bg-gray-50 pt-8">
     <div class="w-full px-8 sm:px-12 lg:px-16">
       <div class="flex flex-col lg:flex-row gap-8">
 
-        <aside class="lg:w-72 flex-shrink-0">
-          <div class="bg-brand-navy rounded-2xl p-6 sticky top-24 shadow-xl">
-            <div class="mb-6">
+        <aside class="lg:w-80 flex-shrink-0">
+          <div class="bg-brand-navy rounded-lg p-8 sticky top-24 shadow-lg">
+            <div class="mb-8">
               <input
                 type="text"
                 id="search-input"
                 placeholder="Search..."
-                class="w-full px-4 py-2.5 rounded-lg bg-white text-brand-navy placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                class="w-full px-4 py-3 rounded-md bg-white text-brand-navy placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-orange text-sm"
               />
             </div>
 
-            <div class="mb-6">
-              <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+            <div class="mb-8">
+              <h3 class="text-white font-bold text-lg mb-4">
                 Topics
               </h3>
-              <div class="space-y-2">
+              <div class="space-y-3">
                 {topics.map((topic) => (
                   <label class="flex items-center gap-3 cursor-pointer group">
                     <input
                       type="checkbox"
-                      class="topic-checkbox w-4 h-4 rounded border-2 border-gray-400 bg-transparent checked:bg-brand-orange checked:border-brand-orange focus:ring-2 focus:ring-brand-orange focus:ring-offset-0 cursor-pointer"
+                      class="topic-checkbox custom-checkbox w-5 h-5 rounded border-2 border-gray-300 bg-white checked:bg-white checked:border-white focus:ring-0 focus:ring-offset-0 cursor-pointer appearance-none"
                       data-filter={topic}
                       value={topic}
                     />
-                    <span class="text-gray-200 text-sm group-hover:text-white transition-colors">
+                    <span class="text-white text-base group-hover:text-gray-200 transition-colors">
                       {topic}
                     </span>
                   </label>
@@ -80,33 +80,24 @@ const contentTypes = [
             </div>
 
             <div>
-              <h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+              <h3 class="text-white font-bold text-lg mb-4">
                 Content Types
               </h3>
-              <div class="space-y-2">
+              <div class="space-y-3">
                 {contentTypes.map((type) => (
                   <label class="flex items-center gap-3 cursor-pointer group">
                     <input
                       type="checkbox"
-                      class="type-checkbox w-4 h-4 rounded border-2 border-gray-400 bg-transparent checked:bg-brand-orange checked:border-brand-orange focus:ring-2 focus:ring-brand-orange focus:ring-offset-0 cursor-pointer"
+                      class="type-checkbox custom-checkbox w-5 h-5 rounded border-2 border-gray-300 bg-white checked:bg-white checked:border-white focus:ring-0 focus:ring-offset-0 cursor-pointer appearance-none"
                       data-filter={type}
                       value={type}
                     />
-                    <span class="text-gray-200 text-sm group-hover:text-white transition-colors">
+                    <span class="text-white text-base group-hover:text-gray-200 transition-colors">
                       {type}
                     </span>
                   </label>
                 ))}
               </div>
-            </div>
-
-            <div class="mt-6 pt-6 border-t border-gray-600">
-              <button
-                id="clear-filters"
-                class="w-full text-sm text-gray-300 hover:text-white transition-colors text-center"
-              >
-                Clear all filters
-              </button>
             </div>
           </div>
         </aside>
@@ -120,12 +111,12 @@ const contentTypes = [
 
           {posts.length > 0 ? (
             <div>
-              <div id="blog-grid" class="grid grid-cols-1 gap-6">
+              <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {posts.map((post) => (
                   <div class="blog-item" data-tags={JSON.stringify(post.data.tags || [])} data-title={(post.data.title || '').toLowerCase()} data-description={(post.data.description || '').toLowerCase()}>
                     <a href={`/blog/${post.slug}/`} class="block group">
-                      <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col sm:flex-row">
-                        <div class="sm:w-80 flex-shrink-0 overflow-hidden bg-gray-100 relative aspect-video sm:aspect-auto">
+                      <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col border border-gray-200">
+                        <div class="overflow-hidden bg-gray-100 relative aspect-video">
                           {post.data.image && (
                             <img
                               src={post.data.image}
@@ -142,8 +133,8 @@ const contentTypes = [
                             )}
                           </div>
                         </div>
-                        <div class="p-5 flex flex-col flex-1">
-                          <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-orange transition-colors">
+                        <div class="p-6 flex flex-col flex-1">
+                          <h3 class="text-lg font-bold text-brand-navy mb-3 group-hover:text-brand-orange transition-colors leading-snug">
                             {post.data.title}
                           </h3>
                           <p class="text-sm text-brand-slate leading-relaxed">
@@ -217,7 +208,7 @@ const contentTypes = [
     }
   }
 
-  input[type="checkbox"] {
+  .custom-checkbox {
     appearance: none;
     -webkit-appearance: none;
     display: inline-block;
@@ -226,24 +217,19 @@ const contentTypes = [
     transition: all 0.2s ease;
   }
 
-  input[type="checkbox"]:checked {
-    background-color: #FF6B35;
-    border-color: #FF6B35;
-  }
-
-  input[type="checkbox"]:checked::before {
-    content: "";
+  .custom-checkbox:checked::before {
+    content: "✓";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 8px;
-    height: 8px;
-    background: white;
-    border-radius: 2px;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
   }
 
-  input[type="checkbox"]:focus {
+  .custom-checkbox:focus {
     outline: none;
   }
 </style>
