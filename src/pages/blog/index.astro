@@ -25,20 +25,25 @@ const contentTypes = [
   title="Resources - Helm Blog & Learning Center"
   description="Read insights, tips, and success stories about offshore staffing, team building, and business growth from the Helm team."
 >
-  <section class="pt-32 pb-12 bg-white">
-    <div class="w-full px-8 sm:px-12 lg:px-16">
-      <div class="text-center mb-8">
-        <h1 class="text-4xl sm:text-5xl font-bold text-brand-navy mb-4">
-          Resources & Insights
+  <section class="relative pt-24 pb-16 bg-brand-navy overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/resources-page/resources-page-hero-background.webp"
+        alt="Resources Background"
+        class="w-full h-full object-cover opacity-30"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-navy/60 to-brand-navy/80"></div>
+    </div>
+    <div class="relative z-10 w-full px-8 sm:px-12 lg:px-16">
+      <div class="text-center">
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">
+          Free Resources
         </h1>
-        <p class="text-lg text-brand-slate max-w-2xl mx-auto">
-          Expert guidance on building exceptional teams and scaling your business.
-        </p>
       </div>
     </div>
   </section>
 
-  <section class="pb-20 bg-gray-50">
+  <section class="pb-20 bg-gray-50 -mt-8">
     <div class="w-full px-8 sm:px-12 lg:px-16">
       <div class="flex flex-col lg:flex-row gap-8">
 
@@ -115,12 +120,12 @@ const contentTypes = [
 
           {posts.length > 0 ? (
             <div>
-              <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              <div id="blog-grid" class="grid grid-cols-1 gap-6">
                 {posts.map((post) => (
                   <div class="blog-item" data-tags={JSON.stringify(post.data.tags || [])} data-title={(post.data.title || '').toLowerCase()} data-description={(post.data.description || '').toLowerCase()}>
                     <a href={`/blog/${post.slug}/`} class="block group">
-                      <article class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
-                        <div class="aspect-video overflow-hidden bg-gray-100 relative">
+                      <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full flex flex-col sm:flex-row">
+                        <div class="sm:w-80 flex-shrink-0 overflow-hidden bg-gray-100 relative aspect-video sm:aspect-auto">
                           {post.data.image && (
                             <img
                               src={post.data.image}
@@ -129,27 +134,21 @@ const contentTypes = [
                               loading="lazy"
                             />
                           )}
-                          <div class="absolute top-3 right-3">
+                          <div class="absolute top-3 left-3">
                             {post.data.tags && post.data.tags.length > 0 && (
-                              <span class="inline-block px-3 py-1 bg-brand-orange text-white text-xs font-semibold rounded-full">
+                              <span class="inline-block px-3 py-1 bg-yellow-400 text-brand-navy text-xs font-bold rounded">
                                 {post.data.tags[post.data.tags.length - 1]}
                               </span>
                             )}
                           </div>
                         </div>
                         <div class="p-5 flex flex-col flex-1">
-                          <h3 class="text-lg font-bold text-brand-navy mb-2 group-hover:text-brand-orange transition-colors line-clamp-2">
+                          <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-orange transition-colors">
                             {post.data.title}
                           </h3>
-                          <p class="text-sm text-brand-slate mb-4 line-clamp-3 flex-1">
+                          <p class="text-sm text-brand-slate leading-relaxed">
                             {post.data.description}
                           </p>
-                          <div class="flex items-center justify-between text-xs text-gray-500">
-                            {post.data.author && (
-                              <span>{post.data.author}</span>
-                            )}
-                            <span>{new Date(post.data.pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                          </div>
                         </div>
                       </article>
                     </a>
@@ -199,20 +198,6 @@ const contentTypes = [
 </Layout>
 
 <style>
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
   .blog-item {
     animation: fadeIn 0.4s ease-out;
   }

@@ -3,7 +3,7 @@ title: "How companies get their sh*t together"
 description: "You'd love to let go of the day-to-day operation… But who will take care of the business?"
 pubDate: 2024-10-28T00:00:00.000Z
 author: "Josh Klenoff"
-image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "/images/resources-page/the-system-how-companies-get-their-shit-together.jpg"
 tags: ["E-books", "Entrepreneurship", "Analytics"]
 ---
 

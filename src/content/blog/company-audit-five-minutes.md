@@ -3,7 +3,7 @@ title: "How to Audit Your Entire Company in Five Minutes to See What's Working a
 description: "Get everyone in your company on the same page… 1 language, 1 set of tools, 1 set of processes"
 pubDate: 2024-10-30T00:00:00.000Z
 author: "Helm Team"
-image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "/images/resources-page/ audit-your-company-in-5-minute.webp"
 tags: ["Webinars", "Analytics", "Blogging"]
 ---
 
