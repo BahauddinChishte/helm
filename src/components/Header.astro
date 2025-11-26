@@ -19,7 +19,7 @@ const navItems = [
         {navItems.map(item => (
           <a
             href={item.href}
-            class={`text-base font-semibold tracking-wide transition-colors hover:text-gray-300 ${
+            class={`text-base font-semibold tracking-wide transition-colors hover:text-brand-orange ${
               currentPath === item.href || currentPath.startsWith(item.href) ? 'text-white' : 'text-white'
             }`}
             style="font-family: 'Open Sans', sans-serif;"
