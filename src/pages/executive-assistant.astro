@@ -139,27 +139,27 @@ const howItWorksSteps = [
   description="Empower your productivity with a dedicated executive assistant. Free up your schedule and focus on what you do best with our professional EAs."
 >
   <!-- Hero Section -->
-  <section class="relative min-h-[500px] flex items-center justify-center" style="background: linear-gradient(135deg, #434b6d 0%, #343a5a 100%);">
+  <section class="relative min-h-[400px] sm:min-h-[500px] flex items-center justify-center" style="background: linear-gradient(135deg, #434b6d 0%, #343a5a 100%);">
     <div class="absolute inset-0 grid-background"></div>
-    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-      <h1 class="text-white mb-6" style="font-size: 55px; font-weight: 600; line-height: 1.2;">
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 text-center">
+      <h1 class="text-white mb-4 sm:mb-6 hero-title-responsive">
         Empower Your Productivity with a Dedicated<br class="hidden lg:block" /> Executive Assistant
       </h1>
-      <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+      <p class="text-base sm:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto">
         Free up your schedule and focus on what you do best with our professional EAs.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-lg mx-auto">
         <button
           data-open-quote-modal
-          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200"
-          style="background-color: #EC7A00; font-size: 16px; border-style: solid; border-width: 4px; border-color: #FFFFFF; border-radius: 10px; padding: 15px 20px;"
+          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 hero-btn-responsive"
+          style="background-color: #EC7A00; border-style: solid; border-width: 3px; border-color: #FFFFFF; border-radius: 10px;"
         >
           Get a Custom Quote
         </button>
         <a
           href="#why-choose"
-          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200"
-          style="background-color: #5080A0; font-size: 18px; border-style: solid; border-width: 4px; border-color: #FFFFFF; border-radius: 10px; padding: 15px;"
+          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 hero-btn-responsive"
+          style="background-color: #5080A0; border-style: solid; border-width: 3px; border-color: #FFFFFF; border-radius: 10px;"
         >
           Learn More
         </a>
@@ -248,12 +248,12 @@ const howItWorksSteps = [
   <RoleTestimonials testimonials={testimonials} />
 
   <!-- Client Testimonial Video Section -->
-  <section class="py-16" style="background: linear-gradient(135deg, #e8e9f3 0%, #d4d7e8 100%);">
+  <section class="py-12 sm:py-16" style="background: linear-gradient(135deg, #e8e9f3 0%, #d4d7e8 100%);">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center max-w-7xl mx-auto">
         <div>
-          <h2 class="text-4xl font-bold text-gray-900 mb-6">
-            Here's What One of Our Clients<br />Had to Say!
+          <h2 class="testimonial-video-title text-gray-900 mb-4 sm:mb-6">
+            Here's What One of Our Clients<br class="hidden sm:block" />Had to Say!
           </h2>
         </div>
         <div>
@@ -278,10 +278,10 @@ const howItWorksSteps = [
     imageAlt="Executive Assistant"
   />
 
-  <section class="pt-8 pb-20 sm:pt-12 sm:pb-24 lg:pt-16 lg:pb-28" style="background-color: #F5F5F5;">
+  <section class="pt-8 pb-12 sm:pb-20 lg:pb-24" style="background-color: #F5F5F5;">
     <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16">
-      <div class="text-center mb-12">
-        <h2 class="text-gray-900 mb-8" style="font-size: 32px; font-weight: 500;">
+      <div class="text-center mb-8 sm:mb-12">
+        <h2 class="text-gray-900 mb-4 sm:mb-8 support-services-title">
           What Your Helm Assistant Can Support You With
         </h2>
       </div>
@@ -291,39 +291,39 @@ const howItWorksSteps = [
   </section>
 
   <!-- A-Player Executive Assistant Section -->
-  <section class="py-16" style="background: linear-gradient(135deg, #434b6d 0%, #343a5a 100%);">
+  <section class="py-12 sm:py-16" style="background: linear-gradient(135deg, #434b6d 0%, #343a5a 100%);">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="font-bold text-white mb-8" style="font-size: 52px;">
+        <h2 class="font-bold text-white mb-6 sm:mb-8 pricing-title-responsive">
           A-Player Executive Assistant
         </h2>
-        <div class="mb-8">
-          <div class="text-6xl font-bold text-white mb-2">$23</div>
-          <div class="text-xl text-gray-300">per hour</div>
+        <div class="mb-6 sm:mb-8">
+          <div class="font-bold text-white mb-2 pricing-amount-responsive">$23</div>
+          <div class="text-base sm:text-lg lg:text-xl text-gray-300">per hour</div>
         </div>
-        <div class="grid grid-cols-1 gap-4 text-left mb-12 max-w-2xl mx-auto">
+        <div class="grid grid-cols-1 gap-3 sm:gap-4 text-left mb-8 sm:mb-12 max-w-2xl mx-auto">
           {aPlayerFeatures.map((feature) => (
             <div class="flex items-center gap-3 text-white">
-              <img src="/images/executive-assistant-page/check-sign.png" alt="Check" class="flex-shrink-0" style="width: 31px; height: 28px;" />
-              <span style="font-size: 24px;">{feature}</span>
+              <img src="/images/executive-assistant-page/check-sign.png" alt="Check" class="flex-shrink-0 check-icon-responsive" />
+              <span class="feature-text-responsive">{feature}</span>
             </div>
           ))}
         </div>
-        <p class="text-xl text-white mb-8">
+        <p class="text-base sm:text-lg lg:text-xl text-white mb-6 sm:mb-8 px-4">
           Ready to enhance your productivity? Get a personalized quote tailored to your specific needs today!
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-lg mx-auto">
           <button
             data-open-quote-modal
-            class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200"
-            style="background-color: #EC7A00; font-size: 16px; border-style: solid; border-width: 4px; border-color: #FFFFFF; border-radius: 10px; padding: 15px 20px;"
+            class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 pricing-btn-responsive"
+            style="background-color: #EC7A00; border-style: solid; border-width: 3px; border-color: #FFFFFF; border-radius: 10px;"
           >
             Get a Custom Quote
           </button>
           <a
             href="#how-it-works"
-            class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200"
-            style="background-color: #5080A0; font-size: 18px; border-style: solid; border-width: 4px; border-color: #FFFFFF; border-radius: 10px; padding: 15px;"
+            class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 pricing-btn-responsive"
+            style="background-color: #5080A0; border-style: solid; border-color: #FFFFFF; border-radius: 10px;"
           >
             Learn More
           </a>
@@ -336,3 +336,180 @@ const howItWorksSteps = [
 
   <HowItWorksSteps steps={howItWorksSteps} />
 </Layout>
+
+<style>
+  /* Hero Title Responsive */
+  .hero-title-responsive {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 640px) {
+    .hero-title-responsive {
+      font-size: 38px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-title-responsive {
+      font-size: 48px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-title-responsive {
+      font-size: 55px;
+    }
+  }
+
+  /* Hero Button Responsive */
+  .hero-btn-responsive {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  @media (min-width: 640px) {
+    .hero-btn-responsive {
+      padding: 14px 24px;
+      font-size: 16px;
+      border-width: 4px !important;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-btn-responsive {
+      padding: 15px 20px;
+      font-size: 16px;
+    }
+  }
+
+  /* Pricing Section Title Responsive */
+  .pricing-title-responsive {
+    font-size: 32px;
+  }
+
+  @media (min-width: 640px) {
+    .pricing-title-responsive {
+      font-size: 42px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .pricing-title-responsive {
+      font-size: 52px;
+    }
+  }
+
+  /* Pricing Amount Responsive */
+  .pricing-amount-responsive {
+    font-size: 48px;
+  }
+
+  @media (min-width: 640px) {
+    .pricing-amount-responsive {
+      font-size: 56px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .pricing-amount-responsive {
+      font-size: 64px;
+    }
+  }
+
+  /* Check Icon Responsive */
+  .check-icon-responsive {
+    width: 24px;
+    height: 22px;
+  }
+
+  @media (min-width: 640px) {
+    .check-icon-responsive {
+      width: 28px;
+      height: 25px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .check-icon-responsive {
+      width: 31px;
+      height: 28px;
+    }
+  }
+
+  /* Feature Text Responsive */
+  .feature-text-responsive {
+    font-size: 16px;
+  }
+
+  @media (min-width: 640px) {
+    .feature-text-responsive {
+      font-size: 20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .feature-text-responsive {
+      font-size: 24px;
+    }
+  }
+
+  /* Pricing Button Responsive */
+  .pricing-btn-responsive {
+    padding: 12px 20px;
+    font-size: 14px;
+    border-width: 3px !important;
+  }
+
+  @media (min-width: 640px) {
+    .pricing-btn-responsive {
+      padding: 14px 24px;
+      font-size: 16px;
+      border-width: 4px !important;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .pricing-btn-responsive {
+      padding: 15px 20px;
+      font-size: 16px;
+    }
+  }
+
+  /* Testimonial Video Title Responsive */
+  .testimonial-video-title {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  @media (min-width: 640px) {
+    .testimonial-video-title {
+      font-size: 34px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .testimonial-video-title {
+      font-size: 40px;
+    }
+  }
+
+  /* Support Services Title Responsive */
+  .support-services-title {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  @media (min-width: 640px) {
+    .support-services-title {
+      font-size: 28px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .support-services-title {
+      font-size: 32px;
+    }
+  }
+</style>
