@@ -294,18 +294,18 @@ const howItWorksSteps = [
   <section class="py-16" style="background: linear-gradient(135deg, #434b6d 0%, #343a5a 100%);">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-white mb-8">
+        <h2 class="font-bold text-white mb-8" style="font-size: 52px;">
           A-Player Executive Assistant
         </h2>
         <div class="mb-8">
           <div class="text-6xl font-bold text-white mb-2">$23</div>
           <div class="text-xl text-gray-300">per hour</div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mb-12">
+        <div class="grid grid-cols-1 gap-4 text-left mb-12 max-w-2xl mx-auto">
           {aPlayerFeatures.map((feature) => (
             <div class="flex items-center gap-3 text-white">
-              <img src="/images/executive-assistant-page/check-sign.png" alt="Check" class="w-5 h-5 flex-shrink-0" />
-              <span>{feature}</span>
+              <img src="/images/executive-assistant-page/check-sign.png" alt="Check" class="flex-shrink-0" style="width: 31px; height: 28px;" />
+              <span style="font-size: 24px;">{feature}</span>
             </div>
           ))}
         </div>
@@ -313,11 +313,19 @@ const howItWorksSteps = [
           Ready to enhance your productivity? Get a personalized quote tailored to your specific needs today!
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#" data-open-quote-modal>
-            <Button variant="primary" size="lg">Get a Custom Quote</Button>
-          </a>
-          <a href="#how-it-works">
-            <Button variant="secondary" size="lg">Learn More</Button>
+          <button
+            data-open-quote-modal
+            class="inline-flex items-center justify-center font-semibold text-white rounded-full transition-colors hover:!bg-[#343A5A]"
+            style="background-color: #EC7A00; padding: 16px 40px; font-size: 18px;"
+          >
+            Get a Custom Quote
+          </button>
+          <a
+            href="#how-it-works"
+            class="inline-flex items-center justify-center font-semibold rounded-full transition-colors hover:!bg-[#EC7A00] hover:!border-[#EC7A00] hover:!text-white"
+            style="background-color: white; border: 2px solid #343A5A; color: #000000; padding: 16px 40px; font-size: 18px;"
+          >
+            Learn More
           </a>
         </div>
       </div>
