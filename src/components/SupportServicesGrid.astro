@@ -8,9 +8,10 @@ interface Service {
 
 interface Props {
   services: Service[];
+  buttonText?: string;
 }
 
-const { services } = Astro.props;
+const { services, buttonText = 'Find my assistant' } = Astro.props;
 ---
 
 <style>
@@ -41,7 +42,7 @@ const { services } = Astro.props;
         class="text-white font-semibold transition-all duration-300 support-service-btn"
         style="background-color: #FF8C42; border: 2px solid white; padding: 5px 20px; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);"
       >
-        Find my assistant
+        {buttonText}
       </a>
     </div>
   ))}

@@ -3,9 +3,10 @@ interface Props {
   title: string;
   description: string;
   icon?: string;
+  buttonText?: string;
 }
 
-const { title, description, icon } = Astro.props;
+const { title, description, icon, buttonText = 'Find my assistant' } = Astro.props;
 
 const iconMap: Record<string, string> = {
   calendar: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>',
@@ -43,7 +44,7 @@ const iconSvg = icon ? iconMap[icon] : null;
       class="inline-flex items-center text-brand-orange font-semibold hover:text-brand-orangeDark transition-all duration-300 group-hover:gap-3 gap-2"
       data-track={`service-card-${title.toLowerCase().replace(/\s+/g, '-')}`}
     >
-      Find my assistant
+      {buttonText}
       <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
       </svg>
