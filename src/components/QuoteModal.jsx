@@ -166,6 +166,10 @@ export default function QuoteModal() {
                     <option value="administrative">Administrative Support</option>
                     <option value="customer">Customer Support</option>
                     <option value="finance">Finance Support</option>
+                    <option value="sales">Sales Support</option>
+                    <option value="marketing">Marketing Support</option>
+                    <option value="project">Project Management</option>
+                    <option value="ecommerce">E-Commerce Support</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
