@@ -3,6 +3,7 @@ interface Service {
   title: string;
   description: string;
   icon?: string;
+  link?: string;
 }
 
 interface Props {
@@ -38,7 +39,7 @@ const { services } = Astro.props;
       </p>
 
       <a
-        href="/contact"
+        href={service.link || "/contact"}
         class="text-white font-semibold transition-all duration-300 support-service-btn"
         style="background-color: #FF8C42; border: 2px solid white; padding: 5px 20px; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);"
       >
