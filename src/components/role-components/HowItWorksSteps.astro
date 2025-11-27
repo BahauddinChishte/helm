@@ -54,9 +54,9 @@ import Button from '../Button.astro';
             <a href="#" data-open-quote-modal>
               <Button variant="primary" size="lg">{buttonPrimaryText}</Button>
             </a>
-            <a href={buttonSecondaryLink}>
-              <Button variant="secondary" size="lg">{buttonSecondaryText}</Button>
-            </a>
+            <button data-open-learn-more-modal class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold border-2 rounded-lg transition-all duration-200 bg-gray-800 text-white border-gray-800 hover:bg-gray-900">
+              {buttonSecondaryText}
+            </button>
           </div>
         </div>
       )}

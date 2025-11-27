@@ -5,8 +5,8 @@ interface Props {
   title: string;
   subtitle?: string;
   description?: string;
-  primaryCTA?: { text: string; href?: string; openModal?: boolean };
-  secondaryCTA?: { text: string; href?: string; openModal?: boolean };
+  primaryCTA?: { text: string; href?: string; openModal?: boolean; isLearnMore?: boolean };
+  secondaryCTA?: { text: string; href?: string; openModal?: boolean; isLearnMore?: boolean };
   image?: string;
   imageAlt?: string;
   imageCaption?: string;
@@ -53,16 +53,25 @@ const {
           )}
 
           {secondaryCTA && (
-            <Button
-              href={secondaryCTA.href}
-              openModal={secondaryCTA.openModal}
-              variant="outline"
-              size="lg"
-              track="hero-secondary-cta"
-              class="!bg-white !border-[#343A5A] !text-black hover:!bg-[#EC7A00] hover:!border-[#EC7A00] hover:!text-white hero-btn-responsive rounded-full font-semibold transition-colors"
-            >
-              {secondaryCTA.text}
-            </Button>
+            secondaryCTA.isLearnMore ? (
+              <button
+                data-open-learn-more-modal
+                class="!bg-white !border-[#343A5A] !text-black hover:!bg-[#EC7A00] hover:!border-[#EC7A00] hover:!text-white hero-btn-responsive rounded-full font-semibold transition-colors inline-flex items-center justify-center border-2 px-6 py-3"
+              >
+                {secondaryCTA.text}
+              </button>
+            ) : (
+              <Button
+                href={secondaryCTA.href}
+                openModal={secondaryCTA.openModal}
+                variant="outline"
+                size="lg"
+                track="hero-secondary-cta"
+                class="!bg-white !border-[#343A5A] !text-black hover:!bg-[#EC7A00] hover:!border-[#EC7A00] hover:!text-white hero-btn-responsive rounded-full font-semibold transition-colors"
+              >
+                {secondaryCTA.text}
+              </Button>
+            )
           )}
         </div>
       </div>
@@ -104,16 +113,25 @@ const {
         )}
 
         {secondaryCTA && (
-          <Button
-            href={secondaryCTA.href}
-            openModal={secondaryCTA.openModal}
-            variant="outline"
-            size="lg"
-            track="hero-secondary-cta"
-            class="!bg-white !border-[#343A5A] !text-black hover:!bg-[#EC7A00] hover:!border-[#EC7A00] hover:!text-white hero-btn-responsive rounded-full font-semibold transition-colors"
-          >
-            {secondaryCTA.text}
-          </Button>
+          secondaryCTA.isLearnMore ? (
+            <button
+              data-open-learn-more-modal
+              class="!bg-white !border-[#343A5A] !text-black hover:!bg-[#EC7A00] hover:!border-[#EC7A00] hover:!text-white hero-btn-responsive rounded-full font-semibold transition-colors inline-flex items-center justify-center border-2 px-6 py-3"
+            >
+              {secondaryCTA.text}
+            </button>
+          ) : (
+            <Button
+              href={secondaryCTA.href}
+              openModal={secondaryCTA.openModal}
+              variant="outline"
+              size="lg"
+              track="hero-secondary-cta"
+              class="!bg-white !border-[#343A5A] !text-black hover:!bg-[#EC7A00] hover:!border-[#EC7A00] hover:!text-white hero-btn-responsive rounded-full font-semibold transition-colors"
+            >
+              {secondaryCTA.text}
+            </Button>
+          )
         )}
       </div>
     </div>

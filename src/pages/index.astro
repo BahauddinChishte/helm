@@ -67,7 +67,7 @@ const howItWorksSteps = [
     title="We find hungry, humble, smart A-players that cost less than 50% of their U.S. equivalent"
     description="We're a staffing agency that finds the best offshore talent for your business."
     primaryCTA={{ text: 'Request a quote', openModal: true }}
-    secondaryCTA={{ text: 'Learn more', href: '/how-it-works' }}
+    secondaryCTA={{ text: 'Learn more', openModal: true, isLearnMore: true }}
     image={heroImage}
     imageAlt="Professional Helm EA"
     imageCaption="Regina Sanchez, Helm EA since 2020"
@@ -131,16 +131,13 @@ const howItWorksSteps = [
         >
           Request A Demo
         </Button>
-        <Button
-          href="/how-it-works"
-          variant="secondary"
-          size="lg"
-          track="cta-section-secondary"
-          class="cta-secondary-btn"
+        <button
+          data-open-learn-more-modal
+          class="cta-secondary-btn inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-200"
           style="background-color: #343A5A; color: #FFFFFF; border: 2px solid #343A5A; border-radius: 15px; padding: 20px;"
         >
           Learn More
-        </Button>
+        </button>
       </div>
     </div>
   </section>
@@ -212,15 +209,12 @@ const howItWorksSteps = [
         >
           Request a quote
         </Button>
-        <Button
-          href="/how-it-works"
-          variant="outline"
-          size="lg"
-          track="how-it-works-learn-more"
-          class="how-it-works-secondary-btn"
+        <button
+          data-open-learn-more-modal
+          class="how-it-works-secondary-btn inline-flex items-center justify-center px-6 py-3 text-base font-semibold border-2 rounded-lg transition-all duration-200"
         >
           Learn more
-        </Button>
+        </button>
       </div>
     </div>
   </section>

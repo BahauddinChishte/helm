@@ -142,7 +142,7 @@ const howItWorksSteps = [
     title="Empower Your Productivity with a Dedicated Executive Assistant"
     description="Free up your schedule and focus on what you do best with our professional EAs."
     primaryCTA={{ text: 'Get a Custom Quote', openModal: true }}
-    secondaryCTA={{ text: 'Learn More', href: '#benefits' }}
+    secondaryCTA={{ text: 'Learn More', openModal: true, isLearnMore: true }}
     image="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
     imageAlt="Professional executive assistant working"
   />
@@ -277,7 +277,7 @@ const howItWorksSteps = [
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <Button href="/contact" variant="primary" size="lg">Get a Custom Quote</Button>
-          <Button href="/how-it-works" variant="outline" size="lg">Learn More</Button>
+          <button data-open-learn-more-modal class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold border-2 rounded-lg transition-all duration-200 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white">Learn More</button>
         </div>
       </div>
     </div>
@@ -340,7 +340,7 @@ const howItWorksSteps = [
       <div class="text-center mt-12">
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <Button href="/contact" variant="primary" size="lg">Get a Custom Quote</Button>
-          <Button href="/how-it-works" variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-brand-navy">Learn More</Button>
+          <button data-open-learn-more-modal class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold border-2 rounded-lg transition-all duration-200 border-white text-white hover:bg-white hover:text-brand-navy">Learn More</button>
         </div>
       </div>
     </div>
