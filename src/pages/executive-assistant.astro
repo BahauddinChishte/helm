@@ -151,15 +151,13 @@ const howItWorksSteps = [
       <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-lg mx-auto">
         <button
           data-open-quote-modal
-          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 hero-btn-responsive"
-          style="background-color: #EC7A00; border-style: solid; border-width: 3px; border-color: #FFFFFF; border-radius: 6px;"
+          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 hero-btn-responsive btn-custom-quote"
         >
           Get a Custom Quote
         </button>
         <a
           href="#why-choose"
-          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 hero-btn-responsive"
-          style="background-color: #5080A0; border-style: solid; border-width: 3px; border-color: #FFFFFF; border-radius: 6px;"
+          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 hero-btn-responsive btn-learn-more"
         >
           Learn More
         </a>
@@ -315,15 +313,13 @@ const howItWorksSteps = [
         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-lg mx-auto">
           <button
             data-open-quote-modal
-            class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 pricing-btn-responsive"
-            style="background-color: #EC7A00; border-style: solid; border-width: 3px; border-color: #FFFFFF; border-radius: 6px;"
+            class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 pricing-btn-responsive btn-custom-quote"
           >
             Get a Custom Quote
           </button>
           <a
             href="#how-it-works"
-            class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 pricing-btn-responsive"
-            style="background-color: #5080A0; border-style: solid; border-width: 3px; border-color: #FFFFFF; border-radius: 6px;"
+            class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 pricing-btn-responsive btn-learn-more"
           >
             Learn More
           </a>
@@ -510,6 +506,26 @@ const howItWorksSteps = [
   @media (min-width: 1024px) {
     .support-services-title {
       font-size: 32px;
+    }
+  }
+
+  /* Custom Button Styles */
+  .btn-custom-quote {
+    background-color: #EC7A00 !important;
+    border: 3px solid #FFFFFF !important;
+    border-radius: 6px !important;
+  }
+
+  .btn-learn-more {
+    background-color: #5080A0 !important;
+    border: 3px solid #FFFFFF !important;
+    border-radius: 6px !important;
+  }
+
+  @media (min-width: 640px) {
+    .btn-custom-quote,
+    .btn-learn-more {
+      border-width: 4px !important;
     }
   }
 </style>
