@@ -5,7 +5,7 @@ import ServiceCard from '../components/ServiceCard.astro';
 import SupportServicesGrid from '../components/SupportServicesGrid.astro';
 import TestimonialCarousel from '../components/TestimonialCarousel.jsx';
 import VideoTestimonials from '../components/VideoTestimonials.jsx';
-import FAQAccordion from '../components/FAQAccordion.jsx';
+import FAQSection from '../components/FAQSection.astro';
 import Button from '../components/Button.astro';
 import services from '../data/services.json';
 import supportServices from '../data/support-services.json';
@@ -310,41 +310,10 @@ const howItWorksSteps = [
 
   <VideoTestimonials testimonials={videoTestimonials} client:load />
 
-  <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
-    <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16">
-      <div class="text-center mb-8 sm:mb-12 lg:mb-16">
-        <h2 class="text-brand-navy mb-4 text-3xl sm:text-4xl lg:text-5xl font-bold">
-          Frequently Asked Questions
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-[700px_1fr] gap-8 sm:gap-12 lg:gap-16 items-start">
-        <div class="lg:sticky lg:top-8">
-          <p class="text-brand-slate leading-relaxed mb-6 sm:mb-8 text-base sm:text-lg lg:text-xl">
-            The most important questions are often about the unknown unknowns – that is the stuff you're not thinking to ask but you really need to know. While some common questions are just over here <span class="hidden lg:inline">on the right</span><span class="inline lg:hidden">below</span>, let's hop on a call and get you the knowledge you really need!
-          </p>
-          <div class="space-y-4 sm:space-y-6">
-            <div>
-              <p class="text-brand-navy font-bold mb-1 text-lg sm:text-xl lg:text-2xl">Email</p>
-              <a href="mailto:support@helm.ceo" class="text-brand-orange hover:text-brand-orangeDark text-lg sm:text-xl lg:text-2xl break-all">
-                support@helm.ceo
-              </a>
-            </div>
-            <div>
-              <p class="text-brand-navy font-bold mb-1 text-lg sm:text-xl lg:text-2xl">Phone</p>
-              <a href="tel:+19175660364" class="text-brand-orange hover:text-brand-orangeDark text-lg sm:text-xl lg:text-2xl">
-                917.566.0364
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <FAQAccordion faqs={faqs} client:load />
-        </div>
-      </div>
-    </div>
-  </section>
+  <FAQSection
+    faqs={faqs}
+    description="The most important questions are often about the unknown unknowns – that is the stuff you're not thinking to ask but you really need to know. While some common questions are just over here on the right, let's hop on a call and get you the knowledge you really need!"
+  />
 </Layout>
 
 <style>

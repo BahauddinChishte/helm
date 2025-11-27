@@ -1,12 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
-import FAQAccordion from '../components/FAQAccordion.jsx';
-import ServiceCard from '../components/ServiceCard.astro';
 import CompanyLogos from '../components/CompanyLogos.astro';
+import FAQSection from '../components/FAQSection.astro';
 import WhyChoose from '../components/role-components/WhyChoose.astro';
 import RoleTestimonials from '../components/role-components/RoleTestimonials.astro';
-import services from '../data/services.json';
+import DetailedServiceCard from '../components/role-components/DetailedServiceCard.astro';
 
 const testimonials = [
   {
@@ -270,39 +269,7 @@ const faqs = [
     imageAlt="Executive Assistant"
   />
 
-  <!-- What Your Helm Assistant Can Support You With -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">
-        What Your Helm Assistant Can Support You With
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {supportServices.map((service) => (
-          <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-xl transition-shadow">
-            <div class="flex justify-center mb-6">
-              <img src={service.icon} alt={service.title} class="w-20 h-20 object-contain" />
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">{service.title}</h3>
-            <div class="space-y-4">
-              {service.items.map((item) => (
-                <div>
-                  <p class="text-sm">
-                    <span class="font-semibold text-gray-900">{item.label}</span>
-                    <span class="text-gray-700"> {item.description}</span>
-                  </p>
-                </div>
-              ))}
-            </div>
-            <div class="mt-6 text-center">
-              <a href="#" data-open-quote-modal>
-                <Button variant="primary" size="sm">Find my assistant</Button>
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <DetailedServiceCard services={supportServices} sectionTitle="What Your Helm Assistant Can Support You With" />
 
   <!-- A-Player Executive Assistant Section -->
   <section class="py-16" style="background: linear-gradient(135deg, #434b6d 0%, #343a5a 100%);">
@@ -338,34 +305,7 @@ const faqs = [
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">
-          Frequently Asked Questions
-        </h2>
-        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          The most important questions are often about the unknown unknowns – that is the stuff you're not thinking to ask but you really need to know. While some common questions are just as important, let's take a hop on a call and get you the knowledge you really need!
-        </p>
-        <FAQAccordion faqs={faqs} client:load />
-
-        <div class="mt-12 bg-gray-50 rounded-lg p-8 text-center">
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Contact Us</h3>
-          <div class="space-y-2">
-            <p class="text-gray-700">
-              <span class="font-semibold">Email:</span><br />
-              <a href="mailto:support@helm.ceo" class="text-orange-500 hover:text-orange-600">support@helm.ceo</a>
-            </p>
-            <p class="text-gray-700">
-              <span class="font-semibold">Phone:</span><br />
-              <a href="tel:917.566.0364" class="text-orange-500 hover:text-orange-600">917.566.0364</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <FAQSection faqs={faqs} />
 
   <!-- How It Works Section -->
   <section id="how-it-works" class="py-16 bg-gray-50">
