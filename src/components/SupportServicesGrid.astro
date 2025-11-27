@@ -34,7 +34,7 @@ const { services } = Astro.props;
         {service.title}
       </h3>
 
-      <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-1" set:html={service.description} />
+      <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-1 text-left" set:html={service.description} />
 
       <a
         href={service.link || "/contact"}
