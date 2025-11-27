@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout
+  title="Page Not Found | Helm"
+  description="The page you're looking for doesn't exist. Let us help you find what you need."
+>
+  <section class="relative bg-gray-50 min-h-[calc(100vh-80px)] flex items-center justify-center py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="mb-8">
+        <h1 class="text-[150px] sm:text-[200px] lg:text-[250px] font-bold leading-none" style="color: #EC7A00;">
+          404
+        </h1>
+      </div>
+
+      <div class="space-y-6 mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold" style="color: #343A5A;">
+          Page Not Found
+        </h2>
+
+        <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+          Oops! The page you're looking for seems to have wandered off. Don't worry, we'll help you get back on track.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        <Button
+          href="/"
+          variant="primary"
+          size="lg"
+          class="rounded-full font-semibold transition-colors !text-white hover:!bg-[#343A5A]"
+        >
+          Go to Homepage
+        </Button>
+
+        <Button
+          href="/contact"
+          variant="outline"
+          size="lg"
+          class="!bg-white !border-[#343A5A] !text-black hover:!bg-[#EC7A00] hover:!border-[#EC7A00] hover:!text-white rounded-full font-semibold transition-colors"
+        >
+          Contact Us
+        </Button>
+      </div>
+
+      <div class="border-t border-gray-200 pt-12">
+        <p class="text-gray-600 mb-6 font-semibold">
+          Popular Pages
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          <a
+            href="/staffing"
+            class="p-4 rounded-lg border-2 border-gray-200 hover:border-[#EC7A00] transition-all duration-200 hover:shadow-lg group"
+          >
+            <div class="font-semibold group-hover:text-[#EC7A00] transition-colors" style="color: #343A5A;">
+              Staffing Services
+            </div>
+            <div class="text-sm text-gray-600 mt-1">
+              Find top talent
+            </div>
+          </a>
+
+          <a
+            href="/coaching"
+            class="p-4 rounded-lg border-2 border-gray-200 hover:border-[#EC7A00] transition-all duration-200 hover:shadow-lg group"
+          >
+            <div class="font-semibold group-hover:text-[#EC7A00] transition-colors" style="color: #343A5A;">
+              CEO Coaching
+            </div>
+            <div class="text-sm text-gray-600 mt-1">
+              Scale your business
+            </div>
+          </a>
+
+          <a
+            href="/executive-assistant"
+            class="p-4 rounded-lg border-2 border-gray-200 hover:border-[#EC7A00] transition-all duration-200 hover:shadow-lg group"
+          >
+            <div class="font-semibold group-hover:text-[#EC7A00] transition-colors" style="color: #343A5A;">
+              Executive Assistant
+            </div>
+            <div class="text-sm text-gray-600 mt-1">
+              Get support
+            </div>
+          </a>
+
+          <a
+            href="/about"
+            class="p-4 rounded-lg border-2 border-gray-200 hover:border-[#EC7A00] transition-all duration-200 hover:shadow-lg group"
+          >
+            <div class="font-semibold group-hover:text-[#EC7A00] transition-colors" style="color: #343A5A;">
+              About Us
+            </div>
+            <div class="text-sm text-gray-600 mt-1">
+              Learn our story
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-12 p-6 bg-white rounded-lg border border-gray-200 max-w-2xl mx-auto">
+        <p class="text-gray-700">
+          Need help finding something specific? <a href="/contact" class="font-semibold hover:underline" style="color: #EC7A00;">Contact our team</a> and we'll be happy to assist you.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  section > div {
+    animation: fade-in 0.6s ease-out;
+  }
+</style>
