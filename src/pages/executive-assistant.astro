@@ -168,10 +168,8 @@ const companyLogos = [
   <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-5xl mx-auto">
-        <a
-          href="https://youtu.be/RkDmKdlkXSs?si=w3_njg4MBTqeXY7H"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          id="video-thumbnail"
           class="relative block w-full rounded-xl shadow-2xl overflow-hidden group cursor-pointer"
         >
           <img
@@ -186,10 +184,66 @@ const companyLogos = [
               </svg>
             </div>
           </div>
-        </a>
+        </button>
       </div>
     </div>
   </section>
+
+  <!-- Video Modal -->
+  <div id="video-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+      <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+      <div class="inline-block align-bottom bg-black rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-5xl sm:w-full">
+        <div class="bg-black px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+          <div class="flex justify-end mb-2">
+            <button id="close-video-modal" type="button" class="text-white hover:text-gray-300 transition-colors">
+              <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="aspect-video">
+            <iframe
+              id="youtube-iframe"
+              width="100%"
+              height="100%"
+              src=""
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const videoThumbnail = document.getElementById('video-thumbnail');
+    const videoModal = document.getElementById('video-modal');
+    const closeModalBtn = document.getElementById('close-video-modal');
+    const youtubeIframe = document.getElementById('youtube-iframe');
+    const videoUrl = 'https://www.youtube.com/embed/RkDmKdlkXSs?si=w3_njg4MBTqeXY7H&autoplay=1';
+
+    videoThumbnail?.addEventListener('click', () => {
+      videoModal?.classList.remove('hidden');
+      youtubeIframe?.setAttribute('src', videoUrl);
+    });
+
+    closeModalBtn?.addEventListener('click', () => {
+      videoModal?.classList.add('hidden');
+      youtubeIframe?.setAttribute('src', '');
+    });
+
+    videoModal?.addEventListener('click', (e) => {
+      if (e.target === videoModal || e.target === videoModal.firstElementChild) {
+        videoModal.classList.add('hidden');
+        youtubeIframe?.setAttribute('src', '');
+      }
+    });
+  </script>
 
   <!-- Testimonials Section -->
   <section class="py-12 bg-white">
