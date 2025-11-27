@@ -1,0 +1,57 @@
+---
+interface Reason {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title: string;
+  reasons: Reason[];
+  imageSrc: string;
+  imageAlt: string;
+}
+
+const { title, reasons, imageSrc, imageAlt } = Astro.props;
+---
+
+<section id="why-choose" class="py-16 md:py-24 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-8">
+            {title}
+          </h2>
+          <div class="space-y-6">
+            {reasons.map((reason) => (
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 mt-1">
+                  <img
+                    src="/images/executive-assistant-page/check-sign.png"
+                    alt="Check"
+                    class="w-6 h-6"
+                  />
+                </div>
+                <div>
+                  <h3 class="font-bold text-xl text-brand-navy mb-2">
+                    {reason.title}
+                  </h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    {reason.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="order-first lg:order-last">
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            class="w-full h-auto rounded-lg shadow-xl"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
