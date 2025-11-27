@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import CompanyLogos from '../components/CompanyLogos.astro';
 import FAQSection from '../components/FAQSection.astro';
-import ServiceCard from '../components/ServiceCard.astro';
+import SupportServicesGrid from '../components/SupportServicesGrid.astro';
 import WhyChoose from '../components/role-components/WhyChoose.astro';
 import RoleTestimonials from '../components/role-components/RoleTestimonials.astro';
 
@@ -253,11 +253,7 @@ const faqs = [
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
-        {supportServices.map((service) => (
-          <ServiceCard title={service.title} description={service.description} />
-        ))}
-      </div>
+      <SupportServicesGrid services={supportServices} />
     </div>
   </section>
 
