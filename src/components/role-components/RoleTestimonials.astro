@@ -17,7 +17,7 @@ const { testimonials } = Astro.props;
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1400px] mx-auto">
       {testimonials.map((testimonial) => (
-        <div class="text-left">
+        <div class="text-left flex flex-col">
           <div class="flex mb-4">
             {[...Array(5)].map((_, i) => (
               <svg class="w-5 h-5" fill="#474BE1" viewBox="0 0 20 20">
@@ -25,8 +25,8 @@ const { testimonials } = Astro.props;
               </svg>
             ))}
           </div>
-          <p class="text-gray-700 text-sm mb-4 leading-relaxed font-bold">{testimonial.quote}</p>
-          <div class="flex items-center gap-3">
+          <p class="text-gray-700 text-sm mb-4 leading-relaxed font-bold flex-grow">{testimonial.quote}</p>
+          <div class="flex items-center gap-3 mt-5">
             <img src={testimonial.image} alt={testimonial.name} class="w-12 h-12 rounded-full object-cover" />
             <div class="text-left">
               <p class="font-semibold text-brand-navy text-sm">{testimonial.name}</p>
