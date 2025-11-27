@@ -19,6 +19,13 @@ const { title, reasons, imageSrc, imageAlt } = Astro.props;
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div>
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            class="w-full h-auto rounded-lg shadow-xl"
+          />
+        </div>
+        <div>
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-8">
             {title}
           </h2>
@@ -43,13 +50,6 @@ const { title, reasons, imageSrc, imageAlt } = Astro.props;
               </div>
             ))}
           </div>
-        </div>
-        <div class="order-first lg:order-last">
-          <img
-            src={imageSrc}
-            alt={imageAlt}
-            class="w-full h-auto rounded-lg shadow-xl"
-          />
         </div>
       </div>
     </div>
