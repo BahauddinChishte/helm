@@ -9,9 +9,10 @@ interface Service {
 interface Props {
   services: Service[];
   buttonText?: string;
+  openModal?: boolean;
 }
 
-const { services, buttonText = 'Find my assistant' } = Astro.props;
+const { services, buttonText = 'Find my assistant', openModal = false } = Astro.props;
 ---
 
 <style>
@@ -37,13 +38,23 @@ const { services, buttonText = 'Find my assistant' } = Astro.props;
 
       <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-1 text-left" set:html={service.description} />
 
-      <a
-        href={service.link || "/contact"}
-        class="text-white font-semibold transition-all duration-300 support-service-btn"
-        style="background-color: #FF8C42; border: 2px solid white; padding: 5px 20px; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);"
-      >
-        {buttonText}
-      </a>
+      {openModal ? (
+        <button
+          data-open-quote-modal
+          class="text-white font-semibold transition-all duration-300 support-service-btn cursor-pointer"
+          style="background-color: #FF8C42; border: 2px solid white; padding: 5px 20px; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);"
+        >
+          {buttonText}
+        </button>
+      ) : (
+        <a
+          href={service.link || "/contact"}
+          class="text-white font-semibold transition-all duration-300 support-service-btn"
+          style="background-color: #FF8C42; border: 2px solid white; padding: 5px 20px; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);"
+        >
+          {buttonText}
+        </a>
+      )}
     </div>
   ))}
 </div>
