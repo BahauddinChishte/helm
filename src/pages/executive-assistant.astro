@@ -3,9 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import CompanyLogos from '../components/CompanyLogos.astro';
 import FAQSection from '../components/FAQSection.astro';
+import ServiceCard from '../components/ServiceCard.astro';
 import WhyChoose from '../components/role-components/WhyChoose.astro';
 import RoleTestimonials from '../components/role-components/RoleTestimonials.astro';
-import DetailedServiceCard from '../components/role-components/DetailedServiceCard.astro';
 
 const testimonials = [
   {
@@ -46,51 +46,27 @@ const whyChooseReasons = [
 const supportServices = [
   {
     title: "Communication Management",
-    icon: "/images/executive-assistant-page/service-card-logo/executive-assistant-150x150.png",
-    items: [
-      { label: "Emails:", description: "Achieve zero inbox, prioritizing incoming emails, respond timely, and draft necessary communications." },
-      { label: "Phone Management:", description: "Join video-conferences for support or to fill in when you cannot be there. Screen and make calls." }
-    ]
+    description: "Emails: Achieve zero inbox, screen incoming emails, respond timely, and draft necessary communications.\n\nPhone Management: Join video-conferences for support or to fill in when you cannot be there. Screen and make calls."
   },
   {
     title: "Research and Data Management",
-    icon: "/images/executive-assistant-page/service-card-logo/account-management-150x150.webp",
-    items: [
-      { label: "Data Handling:", description: "Manage data entry for CRM, ERP systems, prepare lists, and conduct surveys." },
-      { label: "Research Tasks:", description: "Gather information, including conducting interviews of team members or customers. Prepare summary write-ups." }
-    ]
+    description: "Data Handling: Manage data entry for CRM, ERP systems, prepare lists, and conduct surveys.\n\nResearch Tasks: Gather information, including conducting interviews of team members or customers. Prepare summary write-ups."
   },
   {
     title: "Financial and Documentation Oversight",
-    icon: "/images/executive-assistant-page/service-card-logo/bookkeeping-150x150.webp",
-    items: [
-      { label: "Financial Tasks:", description: "Manage bill payments and processing, maintaining financial discretion and accuracy" },
-      { label: "Document Management:", description: "Handle sensitive sensitive documents like expense reports and invoicing. Organize and update spreadsheets." }
-    ]
+    description: "Financial Tasks: Manage bill payments and processing, maintaining financial discretion and accuracy.\n\nDocument Management: Handle sensitive documents like expense reports and invoicing. Organize and update your intranet."
   },
   {
     title: "Project and Team Support",
-    icon: "/images/executive-assistant-page/service-card-logo/project-management-150x150.webp",
-    items: [
-      { label: "Project Management:", description: "Coordinate with vendors, manage client relationships, and handle internal communications." },
-      { label: "Leadership Support:", description: "Act as a liaison between you and other team members, potentially supporting other leaders if helpful." }
-    ]
+    description: "Project Management: Coordinate with vendors, manage client relationships, and handle internal projects.\n\nLeadership Support: Act as a liaison between you and your team members, potentially supporting other leaders if helpful."
   },
   {
     title: "Personal Assistant Tasks",
-    icon: "/images/executive-assistant-page/service-card-logo/customer-support-150x150.png",
-    items: [
-      { label: "Personal Matters:", description: "Manage appointments and personal errands to help maintain your work-life balance." },
-      { label: "Transcription Services:", description: "Provide transcription for voicemails, videos, audio recordings, and podcasts." }
-    ]
+    description: "Personal Matters: Manage appointments and personal errands to help maintain your work-life balance.\n\nTranscription Services: Provide transcription for voicemails, videos, audio recordings, and podcasts."
   },
   {
     title: "Schedule Optimization",
-    icon: "/images/executive-assistant-page/service-card-logo/sales-150x150.webp",
-    items: [
-      { label: "Calendar Management:", description: "Schedule meetings, optimize your week and day to ensure maximum impact and avoidance of conflicts." },
-      { label: "Meeting Engagement:", description: "Take detailed minutes and ensure follow-ups are clearly communicated." }
-    ]
+    description: "Calendar Management: Schedule meetings, optimize your week and day to ensure maximum impact and avoidance of conflicts.\n\nMeeting Engagement: Take detailed minutes and ensure follow-ups are clearly communicated."
   }
 ];
 
@@ -269,7 +245,21 @@ const faqs = [
     imageAlt="Executive Assistant"
   />
 
-  <DetailedServiceCard services={supportServices} sectionTitle="What Your Helm Assistant Can Support You With" />
+  <section class="pt-8 pb-20 sm:pt-12 sm:pb-24 lg:pt-16 lg:pb-28" style="background-color: #F5F5F5;">
+    <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16">
+      <div class="text-center mb-12">
+        <h2 class="text-gray-900 mb-8" style="font-size: 32px; font-weight: 500;">
+          What Your Helm Assistant Can Support You With
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+        {supportServices.map((service) => (
+          <ServiceCard title={service.title} description={service.description} />
+        ))}
+      </div>
+    </div>
+  </section>
 
   <!-- A-Player Executive Assistant Section -->
   <section class="py-16" style="background: linear-gradient(135deg, #434b6d 0%, #343a5a 100%);">
