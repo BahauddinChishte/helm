@@ -160,37 +160,34 @@ const howItWorksSteps = [
   </section>
 
   <!-- Video Hero Section -->
-  <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-5xl mx-auto">
-        <button
-          id="video-thumbnail"
-          class="relative block w-full rounded-xl shadow-2xl overflow-hidden group cursor-pointer"
-        >
-          <img
-            src="/images/executive-assistant-page/Regina-Sanchez-v1.png"
-            alt="Watch testimonial video"
-            class="w-full h-auto"
-          />
-          <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300">
-            <div class="w-20 h-20 flex items-center justify-center bg-white bg-opacity-90 rounded-full group-hover:bg-opacity-100 group-hover:scale-110 transition-all duration-300">
-              <svg class="w-10 h-10 text-brand-orange ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
+  <section class="bg-gradient-to-b from-gray-50 to-white">
+    <div class="w-full">
+      <button
+        id="video-thumbnail"
+        class="relative block w-full overflow-hidden group cursor-pointer"
+      >
+        <img
+          src="/images/executive-assistant-page/Regina-Sanchez-v1.png"
+          alt="Watch testimonial video"
+          class="w-full h-auto object-cover"
+        />
+        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300">
+          <div class="w-20 h-20 flex items-center justify-center bg-white bg-opacity-90 rounded-full group-hover:bg-opacity-100 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-10 h-10 text-brand-orange ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
           </div>
-        </button>
-      </div>
+        </div>
+      </button>
     </div>
   </section>
 
   <!-- Video Modal -->
   <div id="video-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+    <div class="flex items-center justify-center min-h-screen p-4">
       <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-      <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-      <div class="inline-block align-bottom bg-black rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-5xl sm:w-full">
-        <div class="bg-black px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+      <div class="relative bg-black rounded-lg overflow-hidden shadow-xl transform transition-all w-full max-w-7xl">
+        <div class="bg-black p-4 sm:p-6">
           <div class="flex justify-end mb-2">
             <button id="close-video-modal" type="button" class="text-white hover:text-gray-300 transition-colors">
               <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
