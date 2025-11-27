@@ -6,6 +6,7 @@ import FAQSection from '../components/FAQSection.astro';
 import SupportServicesGrid from '../components/SupportServicesGrid.astro';
 import WhyChoose from '../components/role-components/WhyChoose.astro';
 import RoleTestimonials from '../components/role-components/RoleTestimonials.astro';
+import HowItWorksSteps from '../components/role-components/HowItWorksSteps.astro';
 
 const testimonials = [
   {
@@ -107,6 +108,27 @@ const faqs = [
   {
     question: "How long will it take to find the right remote assistant with Helm?",
     answer: "Our team screens over 3,000 candidates on average to find you the perfect match. Typically, the process takes 2-3 weeks from initial consultation to presenting candidates. Over 80% of the time, the first candidate we propose gets hired, which speaks to the quality of our matching process."
+  }
+];
+
+const howItWorksSteps = [
+  {
+    number: "01",
+    title: "Share your needs",
+    description: "We'll create a Success Profile based on your needs and preferences.",
+    subtext: "Our team will screen over 3,000 candidates, on average, to find you the perfect match."
+  },
+  {
+    number: "02",
+    title: "Meet the perfect hire",
+    description: "You'll meet and screen the candidate. Over 80% of the time, the 1st candidate we propose gets hired.",
+    subtext: "If you prefer to meet a new candidate, we extend our search to ensure your success!"
+  },
+  {
+    number: "03",
+    title: "Delegate. Elevate.",
+    description: "Best practices for onboarding your new hire will save you time and get them up and running immediately.",
+    subtext: "Create more value and do more of what you love by letting go and delegating to the right support!"
   }
 ];
 
@@ -299,67 +321,5 @@ const faqs = [
 
   <FAQSection faqs={faqs} />
 
-  <!-- How It Works Section -->
-  <section id="how-it-works" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-          <!-- Step 1 -->
-          <div class="text-center relative">
-            <div class="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 relative z-10">
-              01
-            </div>
-            <div class="absolute top-8 left-1/2 w-full h-0.5 bg-orange-300 hidden md:block" style="transform: translateX(0%); width: calc(100% + 3rem);"></div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Share your needs</h3>
-            <p class="text-gray-700 mb-4">
-              We'll create a Success Profile based on your needs and preferences.
-            </p>
-            <p class="text-sm text-gray-600">
-              Our team will screen over 3,000 candidates, on average, to find you the perfect match.
-            </p>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="text-center relative">
-            <div class="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 relative z-10">
-              02
-            </div>
-            <div class="absolute top-8 left-1/2 w-full h-0.5 bg-orange-300 hidden md:block" style="transform: translateX(0%); width: calc(100% + 3rem);"></div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Meet the perfect hire</h3>
-            <p class="text-gray-700 mb-4">
-              You'll meet and screen the candidate. Over 80% of the time, the 1st candidate we propose gets hired.
-            </p>
-            <p class="text-sm text-gray-600">
-              If you prefer to meet a new candidate, we extend our search to ensure your success!
-            </p>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="text-center">
-            <div class="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 relative z-10">
-              03
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Delegate. Elevate.</h3>
-            <p class="text-gray-700 mb-4">
-              Best practices for onboarding your new hire will save you time and get them up and running immediately.
-            </p>
-            <p class="text-sm text-gray-600">
-              Create more value and do more of what you love by letting go and delegating to the right support!
-            </p>
-          </div>
-        </div>
-
-        <div class="mt-12 text-center">
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#" data-open-quote-modal>
-              <Button variant="primary" size="lg">Get a Custom Quote</Button>
-            </a>
-            <a href="/how-it-works">
-              <Button variant="secondary" size="lg">Learn More</Button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <HowItWorksSteps steps={howItWorksSteps} />
 </Layout>

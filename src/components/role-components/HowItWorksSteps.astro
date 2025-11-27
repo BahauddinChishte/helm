@@ -1,0 +1,65 @@
+---
+interface Step {
+  number: string;
+  title: string;
+  description: string;
+  subtext: string;
+}
+
+interface Props {
+  steps: Step[];
+  showButtons?: boolean;
+  buttonPrimaryText?: string;
+  buttonSecondaryText?: string;
+  buttonSecondaryLink?: string;
+}
+
+const {
+  steps,
+  showButtons = true,
+  buttonPrimaryText = "Get a Custom Quote",
+  buttonSecondaryText = "Learn More",
+  buttonSecondaryLink = "/how-it-works"
+} = Astro.props;
+
+import Button from '../Button.astro';
+---
+
+<section id="how-it-works" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+        {steps.map((step, index) => (
+          <div class="text-center relative">
+            <div class="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 relative z-10">
+              {step.number}
+            </div>
+            {index < steps.length - 1 && (
+              <div class="absolute top-8 left-1/2 w-full h-0.5 bg-orange-300 hidden md:block" style="transform: translateX(0%); width: calc(100% + 3rem);"></div>
+            )}
+            <h3 class="font-bold text-gray-900 mb-4" style="font-size: 30px;">{step.title}</h3>
+            <p class="text-gray-700 mb-4" style="font-size: 18px;">
+              {step.description}
+            </p>
+            <p class="text-gray-600" style="font-size: 18px;">
+              {step.subtext}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {showButtons && (
+        <div class="mt-12 text-center">
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#" data-open-quote-modal>
+              <Button variant="primary" size="lg">{buttonPrimaryText}</Button>
+            </a>
+            <a href={buttonSecondaryLink}>
+              <Button variant="secondary" size="lg">{buttonSecondaryText}</Button>
+            </a>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
