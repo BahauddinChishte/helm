@@ -208,7 +208,7 @@ export default function QuoteModal() {
                     className="mt-1 h-4 w-4 text-brand-orange border-gray-300 rounded focus:ring-brand-orange"
                   />
                   <label htmlFor="agreeToTerms" className="ml-3 text-sm text-gray-600">
-                    I agree to the <a href="/privacy" className="text-brand-orange hover:underline">Privacy Policy</a> and to receive SMS from Helm Staffing. Message & data rates may apply. Reply STOP to opt out. *
+                    I agree to the <a href="/privacy-policy" className="text-brand-orange hover:underline">Privacy Policy</a> and to receive SMS from Helm Staffing. Message & data rates may apply. Reply STOP to opt out. *
                   </label>
                 </div>
 
