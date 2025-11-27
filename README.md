@@ -1,17 +1,15 @@
 # Helm Corporate Website
 
-A high-performance, SEO-optimized marketing website built with Astro, TypeScript, and Tailwind CSS.
+A high-performance, SEO-optimized corporate website for Helm Staffing and Coaching services. Built with Astro, React, TypeScript, and Tailwind CSS.
 
-## Features
+## Tech Stack
 
-- **Performance Optimized**: Targeting LCP < 2.0s, CLS < 0.05, INP < 200ms
-- **SEO Ready**: Meta tags, OpenGraph, JSON-LD schema, auto-generated sitemap
-- **Analytics**: Google Tag Manager integration with custom event tracking
-- **Forms**: Contact forms integrated with Zapier webhooks
-- **Blog**: Markdown-based blog with content collections
-- **Responsive**: Mobile-first design with Tailwind CSS
-- **Accessible**: WCAG 2.1 AA compliant
-- **CI/CD**: GitHub Actions workflow for AWS S3 + CloudFront deployment
+- **Framework**: Astro 4.x (Static Site Generation)
+- **UI Components**: Astro + React (Islands Architecture)
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
+- **Analytics**: Google Tag Manager
+- **Deployment**: Netlify
 
 ## Quick Start
 
@@ -52,147 +50,313 @@ npm run preview
 
 ```
 /
-├── .github/
-│   └── workflows/
-│       └── deploy.yml          # AWS deployment workflow
-├── docs/
-│   ├── README.md               # Complete documentation
-│   ├── CONTENT-EDITING.md      # Content editing guide
-│   └── DEPLOYMENT.md           # Deployment guide
-├── public/
-│   ├── images/                 # Static images
-│   ├── robots.txt              # SEO robots file
-│   └── favicon.svg             # Site favicon
+├── .astro/                     # Astro cache and generated types
+├── docs/                       # Project documentation
+│   ├── DEPLOYMENT.md          # Deployment guide
+│   └── README.md              # Complete documentation
+├── public/                     # Static assets (served as-is)
+│   └── images/
+│       ├── client-pictures/   # Client testimonial photos
+│       ├── coaching-page/     # Coaching page images
+│       ├── company-logo/      # Client company logos
+│       ├── executive-assistant-page/  # EA page images
+│       ├── learn-more/        # Learn more modal images
+│       ├── logo/              # Helm branding assets
+│       ├── people/            # Team member photos
+│       ├── privacy-page/      # Privacy page background
+│       ├── resources-page/    # Resources page images
+│       ├── sections-picture/  # Generic section images
+│       ├── service-card-logo/ # Service icon images
+│       ├── staffing-company-logo/  # Staffing client logos
+│       └── video-thumbnail/   # Video preview thumbnails
 ├── src/
-│   ├── components/
-│   │   ├── Button.astro
-│   │   ├── ContactForm.astro
-│   │   ├── FAQAccordion.jsx    # React island
-│   │   ├── Footer.astro
-│   │   ├── GTM.astro
-│   │   ├── Header.astro
-│   │   ├── Hero.astro
-│   │   ├── SEO.astro
-│   │   ├── ServiceCard.astro
-│   │   ├── TestimonialCard.astro
-│   │   └── TestimonialCarousel.jsx  # React island
-│   ├── content/
-│   │   ├── blog/               # Blog posts (markdown)
-│   │   └── config.ts           # Content collections config
-│   ├── data/
-│   │   ├── logos.json          # Client logos
-│   │   ├── redirects.json      # URL redirects
-│   │   ├── services.json       # Services data
-│   │   └── testimonials.json   # Testimonials data
+│   ├── components/            # Reusable UI components
+│   │   ├── BookModal.jsx      # Book appointment modal (React)
+│   │   ├── Button.astro       # Button component
+│   │   ├── CompanyLogos.astro # Client logo grid
+│   │   ├── ContactForm.astro  # Contact form component
+│   │   ├── FAQAccordion.jsx   # FAQ accordion (React)
+│   │   ├── FAQSection.astro   # FAQ section wrapper
+│   │   ├── Footer.astro       # Site footer
+│   │   ├── GTM.astro          # Google Tag Manager (head)
+│   │   ├── GTMBody.astro      # Google Tag Manager (body)
+│   │   ├── Header.astro       # Site header & navigation
+│   │   ├── Hero.astro         # Hero section component
+│   │   ├── LearnMoreModal.jsx # Learn more modal (React)
+│   │   ├── QuoteModal.jsx     # Request quote modal (React)
+│   │   ├── SEO.astro          # SEO meta tags component
+│   │   ├── ServiceCard.astro  # Service card component
+│   │   ├── SupportServicesGrid.astro  # Support services grid
+│   │   ├── TestimonialCarousel.jsx    # Testimonial slider (React)
+│   │   ├── VideoTestimonials.jsx      # Video testimonials (React)
+│   │   └── role-components/   # Role-specific components
+│   │       ├── HowItWorksSteps.astro
+│   │       ├── RoleTestimonials.astro
+│   │       └── WhyChoose.astro
+│   ├── content/               # Content collections
+│   │   └── blog/              # Blog posts (Markdown)
+│   │       ├── best-va-services.md
+│   │       ├── company-audit-five-minutes.md
+│   │       └── the-system-ebook.md
+│   ├── data/                  # Static data (JSON)
+│   │   ├── logos.json         # Client company logos
+│   │   ├── services.json      # Core services data
+│   │   ├── support-services.json  # Support services data
+│   │   ├── testimonials.json  # Client testimonials
+│   │   └── video-testimonials.json  # Video testimonial data
 │   ├── layouts/
-│   │   └── Layout.astro        # Main layout
-│   └── pages/
-│       ├── api/
-│       │   └── form.ts         # Form API endpoint
-│       ├── blog/
-│       │   ├── [...slug].astro # Blog post template
-│       │   └── index.astro     # Blog listing
-│       ├── 404.astro
-│       ├── about.astro
-│       ├── case-studies.astro
-│       ├── coaching.astro
-│       ├── contact.astro
-│       ├── how-it-works.astro
-│       ├── index.astro         # Homepage
-│       ├── privacy.astro
-│       ├── services.astro
-│       └── terms.astro
-├── .env                        # Environment variables
-├── astro.config.mjs            # Astro configuration
+│   │   └── Layout.astro       # Main site layout
+│   ├── pages/                 # File-based routing
+│   │   ├── free-resources/
+│   │   │   └── index.astro    # Resources listing page
+│   │   ├── services/          # Service detail pages
+│   │   │   ├── admin-support.astro
+│   │   │   ├── customer-support.astro
+│   │   │   └── finance-support.astro
+│   │   ├── about.astro
+│   │   ├── case-studies.astro
+│   │   ├── coaching.astro     # Coaching services page
+│   │   ├── contact.astro      # Contact page
+│   │   ├── disclaimer.astro
+│   │   ├── executive-assistant.astro
+│   │   ├── how-companies-get-their-sht-together.astro
+│   │   ├── how-it-works.astro
+│   │   ├── how-to-audit-your-entire-company-in-five-minutes-to-see-whats-working-and-whats-not.astro
+│   │   ├── index.astro        # Homepage
+│   │   ├── manifesto.astro
+│   │   ├── privacy-policy.astro
+│   │   ├── services.astro     # Services overview
+│   │   ├── staffing.astro     # Staffing services page
+│   │   └── the-best-va-services-for-your-business.astro
+│   ├── styles/
+│   │   └── global.css         # Global styles
+│   └── env.d.ts               # TypeScript environment types
+├── .env                       # Environment variables (not in git)
+├── .gitignore
+├── astro.config.mjs           # Astro configuration
+├── DESIGN-SYSTEM.md           # Design system documentation
+├── netlify.toml               # Netlify configuration
 ├── package.json
-├── tailwind.config.mjs         # Tailwind configuration
-└── tsconfig.json
+├── README.md
+├── SETUP-CHECKLIST.md         # Setup checklist
+├── tailwind.config.mjs        # Tailwind CSS configuration
+└── tsconfig.json              # TypeScript configuration
 ```
 
-## Configuration
+## Key Concepts
 
-### Environment Variables
+### File-Based Routing
+
+Astro uses file-based routing. Each `.astro` file in `src/pages/` becomes a route:
+
+- `src/pages/index.astro` → `/`
+- `src/pages/about.astro` → `/about`
+- `src/pages/services/admin-support.astro` → `/services/admin-support`
+
+### Components
+
+**Astro Components** (`.astro` files):
+- Server-rendered by default
+- Zero JavaScript shipped to client
+- Used for layouts, static content, and UI structure
+- Examples: `Header.astro`, `Footer.astro`, `Hero.astro`
+
+**React Components** (`.jsx` files):
+- Used for interactive features
+- Only load JavaScript when needed (Islands Architecture)
+- Examples: `TestimonialCarousel.jsx`, `FAQAccordion.jsx`, `BookModal.jsx`
+
+### Data Management
+
+**Static Data** (`src/data/*.json`):
+- Client logos
+- Services information
+- Testimonials
+- Video testimonials metadata
+
+This data is imported directly into components at build time.
+
+**Content Collections** (`src/content/blog/`):
+- Blog posts written in Markdown
+- Managed through Astro's Content Collections API
+- Supports frontmatter for metadata
+
+### Layouts
+
+The main layout (`src/layouts/Layout.astro`) wraps all pages and includes:
+- SEO meta tags
+- Google Tag Manager
+- Header
+- Footer
+- Global styles
+
+### Public Assets
+
+Files in `public/` are served as-is at the root path:
+- `public/images/logo/helm-white-logo-1.webp` → `/images/logo/helm-white-logo-1.webp`
+
+**Image Organization**:
+- `client-pictures/` - Individual client testimonial photos
+- `company-logo/` - Client company logos for trust section
+- `coaching-page/` - Images specific to coaching page
+- `executive-assistant-page/` - EA service page assets
+- `resources-page/` - Blog and resource thumbnails
+- `sections-picture/` - Generic section backgrounds/images
+- `service-card-logo/` - Icons for service cards
+- `staffing-company-logo/` - Logos for staffing clients section
+
+## Environment Variables
 
 Create a `.env` file in the root directory:
 
 ```env
 # Google Tag Manager
-GTM_ID=GTM-XXXXXXX
+PUBLIC_GTM_ID=GTM-XXXXXXX
 
-# Zapier webhook for forms
-ZAPIER_WEBHOOK_URL=https://hooks.zapier.com/hooks/catch/YOUR_ID/
+# Supabase (if using database features)
+PUBLIC_SUPABASE_URL=your_supabase_url
+PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 ```
 
-### Required Assets
+**Note**: Environment variables prefixed with `PUBLIC_` are exposed to the client-side code.
 
-Place these images in the `public/images/` directory:
+## Styling
 
-- `helm-logo.svg` - Main logo
-- `helm-logo-white.svg` - White version for dark backgrounds
-- `hero-regina.jpg` - Homepage hero image
-- `og-default.jpg` - Default OpenGraph image
-- `pattern.svg` - Background pattern
+### Tailwind CSS
 
-## Documentation
+The project uses Tailwind CSS with custom brand colors:
 
-Comprehensive documentation is available in the `/docs` directory:
+```js
+// tailwind.config.mjs
+colors: {
+  brand: {
+    navy: '#343A5A',        // Primary navy
+    navyDark: '#2A2F47',    // Darker navy for hovers
+    orange: '#EC7A00',       // Primary orange
+    orangeDark: '#D06E00',   // Darker orange for hovers
+    slate: '#64748B',        // Text gray
+  }
+}
+```
 
-- **[Complete Documentation](./docs/README.md)** - Full guide to the project
-- **[Content Editing Guide](./docs/CONTENT-EDITING.md)** - How to edit content
-- **[Deployment Guide](./docs/DEPLOYMENT.md)** - AWS deployment setup
+### Global Styles
 
-## Deployment
-
-The site deploys automatically to AWS S3 + CloudFront when you push to the `main` branch.
-
-### Required GitHub Secrets
-
-Configure these in your repository settings:
-
-- `AWS_ACCESS_KEY_ID`
-- `AWS_SECRET_ACCESS_KEY`
-- `AWS_REGION`
-- `AWS_S3_BUCKET`
-- `CLOUDFRONT_DISTRIBUTION_ID`
-- `GTM_ID`
-- `ZAPIER_WEBHOOK_URL`
-
-See [Deployment Guide](./docs/DEPLOYMENT.md) for detailed setup instructions.
+Custom global styles are in `src/styles/global.css`.
 
 ## Key Features
 
-### SEO Optimization
+### SEO
 
-- Meta tags and OpenGraph
-- JSON-LD structured data
-- Auto-generated sitemap
-- Semantic HTML
+- Meta tags via `SEO.astro` component
+- OpenGraph and Twitter Card support
+- Semantic HTML structure
 - Image optimization
 
-### Analytics & Tracking
+### Analytics
 
 - Google Tag Manager integration
-- Custom event tracking:
-  - CTA clicks
-  - Form submissions
-  - Video interactions
+- Custom event tracking throughout the site
+- Form submission tracking
 
-### Performance
+### Modals
 
-- Static site generation
-- Optimized images
-- Minimal JavaScript
-- React islands for interactivity
-- CDN delivery via CloudFront
+Interactive modals use React for client-side functionality:
+- `BookModal.jsx` - Book appointment
+- `QuoteModal.jsx` - Request a quote
+- `LearnMoreModal.jsx` - Additional information
 
 ### Forms
 
-Contact forms post to `/api/form` which forwards to Zapier webhook:
-- Honeypot spam protection
-- Client-side validation
-- Error handling
+Contact forms use the `ContactForm.astro` component and can be integrated with:
+- Zapier webhooks
+- Email services
+- Supabase database
 
-## Commands
+## Adding New Content
+
+### Adding a New Page
+
+1. Create a new `.astro` file in `src/pages/`
+2. Use the Layout component
+3. Add your content
+
+```astro
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="New Page" description="Page description">
+  <h1>New Page Content</h1>
+</Layout>
+```
+
+### Adding a Blog Post
+
+1. Create a new `.md` file in `src/content/blog/`
+2. Add frontmatter:
+
+```markdown
+---
+title: "Post Title"
+description: "Post description"
+pubDate: 2025-01-15
+image: "/images/resources-page/post-image.webp"
+---
+
+Your content here...
+```
+
+### Adding a Service
+
+Update `src/data/services.json` with the new service information.
+
+### Adding a Testimonial
+
+Update `src/data/testimonials.json` with:
+```json
+{
+  "name": "Client Name",
+  "company": "Company Name",
+  "role": "Job Title",
+  "content": "Testimonial text",
+  "image": "/images/client-pictures/client-name.webp"
+}
+```
+
+### Adding Client Logos
+
+1. Add logo to `public/images/company-logo/`
+2. Update `src/data/logos.json`
+
+## Development Guidelines
+
+### Component Organization
+
+- Keep components focused and single-purpose
+- Use Astro components for static content
+- Use React components only for interactive features
+- Extract reusable logic into separate components
+
+### File Naming
+
+- Use kebab-case for files: `my-component.astro`
+- Use PascalCase for React components: `MyComponent.jsx`
+- Use lowercase for folders: `my-folder/`
+
+### Image Optimization
+
+- Use WebP format when possible
+- Include appropriate alt text
+- Use loading="lazy" for below-fold images
+- Use loading="eager" for above-fold images
+
+### Responsive Design
+
+- Mobile-first approach
+- Use Tailwind's responsive prefixes: `sm:`, `md:`, `lg:`, `xl:`
+- Test on multiple screen sizes
+
+## Commands Reference
 
 | Command              | Action                                      |
 | :------------------- | :------------------------------------------ |
@@ -202,6 +366,16 @@ Contact forms post to `/api/form` which forwards to Zapier webhook:
 | `npm run preview`    | Preview production build locally            |
 | `npm run astro ...`  | Run Astro CLI commands                      |
 
+## Deployment
+
+The site is configured for Netlify deployment:
+
+- Builds are triggered on git push
+- Configuration is in `netlify.toml`
+- Environment variables are set in Netlify dashboard
+
+See [DEPLOYMENT.md](./docs/DEPLOYMENT.md) for detailed deployment instructions.
+
 ## Browser Support
 
 - Chrome (last 2 versions)
@@ -210,12 +384,21 @@ Contact forms post to `/api/form` which forwards to Zapier webhook:
 - Edge (last 2 versions)
 - Mobile browsers (iOS Safari, Chrome Android)
 
-## License
+## Documentation
 
-Copyright 2025 Helm. All Rights Reserved.
+For more detailed information, see:
+
+- **[DESIGN-SYSTEM.md](./DESIGN-SYSTEM.md)** - Design system and component guidelines
+- **[SETUP-CHECKLIST.md](./SETUP-CHECKLIST.md)** - Initial setup checklist
+- **[docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md)** - Deployment guide
+- **[docs/README.md](./docs/README.md)** - Complete documentation
 
 ## Support
 
-- Email: support@helm.ceo
-- Phone: 917.566.0364
-- Address: 417 Grand Street, New York, NY 10002
+- **Email**: support@helm.ceo
+- **Phone**: 917.566.0364
+- **Office**: 417 Grand Street, New York, NY 10002
+
+## License
+
+Copyright 2025 Helm. All Rights Reserved.
