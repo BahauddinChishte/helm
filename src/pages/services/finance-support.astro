@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
 import TestimonialCarousel from '../../components/TestimonialCarousel.jsx';
 import Button from '../../components/Button.astro';
+import VideoTestimonials from '../../components/VideoTestimonials.jsx';
 import logos from '../../data/logos.json';
 
 const financeTestimonials = [
@@ -12,7 +13,7 @@ const financeTestimonials = [
     title: 'CEO',
     company: 'Lilly\'s Fresh Pasta',
     quote: "Cynthia, our controller, is an MVP! She's driving budgeting, bringing clear insights and generating accurate reporting. Our decisions are smarter and we're more confident.",
-    image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+    image: '/images/client-pictures/Ann-Hambly.jpeg'
   },
   {
     id: 2,
@@ -20,7 +21,7 @@ const financeTestimonials = [
     title: 'CFO',
     company: 'Stratum Nutrition',
     quote: "Our accountant is also trained in NetSuite and has customized our entire company's experience to enable real-time reports and data that keep us on the same page with clarity and accountability.",
-    image: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+    image: '/images/client-pictures/Ed-Mafoud.jpeg'
   },
   {
     id: 3,
@@ -28,14 +29,22 @@ const financeTestimonials = [
     title: 'Managing Partner',
     company: 'Maypro Ventures',
     quote: "It's hard to believe that for $22/hr we're able to get help preparing for tax and financial reporting and so much more. Accounts Receivable is another headache that I subtracted from my life, thanks to Helm!",
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
+    image: '/images/client-pictures/Dan-Lifton.webp'
   }
 ];
+
+const videoTestimonial = {
+  name: 'Elaine Burr',
+  title: 'Financial Controller',
+  company: 'TechCorp',
+  videoUrl: '/images/financial-support-page/Elaine-Burr-Testimonial.mp4',
+  thumbnail: '/images/financial-support-page/Why Choose Our Financial Support.webp'
+};
 
 const benefits = [
   {
     title: 'Reliability',
-    description: 'Our financial support professionals are carefully selected for their experience, knowledge and skills. We further screen for dependability and attention to detail, ensuring your finances are always in trusted hands'
+    description: 'Our financial support professionals are carefully selected for their experience, knowledge and skills. We further screen for dependability and attention to detail, ensuring your finances are always in trusted hands.'
   },
   {
     title: 'Time-Saving',
@@ -49,46 +58,77 @@ const benefits = [
 
 const services = [
   {
+    icon: '/images/financial-support-page/service-card-logo/financial-recordkeeping-png.webp',
     title: 'Financial Recordkeeping',
+    description: 'Track daily transactions and update financial systems. Reconcile bank and credit card statements.',
     items: [
       'Track daily transactions and update financial systems.',
       'Reconcile bank and credit card statements.'
     ]
   },
   {
+    icon: '/images/financial-support-page/service-card-logo/financial-report-png.webp',
     title: 'Financial Reporting',
+    description: 'Prepare monthly profit & loss reports and balance sheets. Assist with budgeting and financial forecasting.',
     items: [
       'Prepare monthly profit & loss reports and balance sheets.',
       'Assist with budgeting and financial forecasting.'
     ]
   },
   {
+    icon: '/images/financial-support-page/service-card-logo/invoicing-payment-png.webp',
     title: 'Invoicing & Payments',
+    description: 'Create, send, and track invoices to clients and vendors. Manage accounts payable and receivable.',
     items: [
       'Create, send, and track invoices to clients and vendors.',
       'Manage accounts payable and receivable.'
     ]
   },
   {
+    icon: '/images/financial-support-page/service-card-logo/tax-compliance-png.webp',
     title: 'Tax & Compliance',
+    description: 'Support tax preparation and documentation. Help organize financial records for audits.',
     items: [
       'Support tax preparation and documentation.',
       'Help organize financial records for audits.'
     ]
   },
   {
+    icon: '/images/financial-support-page/service-card-logo/financial-system-png.webp',
     title: 'Financial Systems',
+    description: 'Set up and maintain financial software (QuickBooks, Xero, etc.). Enter and update data in accounting systems.',
     items: [
       'Set up and maintain financial software (QuickBooks, Xero, etc.).',
       'Enter and update data in accounting systems.'
     ]
   },
   {
+    icon: '/images/financial-support-page/service-card-logo/project-based-support-png.webp',
     title: 'Project-Based Support',
+    description: 'Provide financial analysis for special projects. Conduct cost-benefit analysis for new initiatives.',
     items: [
       'Provide financial analysis for special projects.',
       'Conduct cost-benefit analysis for new initiatives.'
     ]
+  }
+];
+
+const faqs = [
+  {
+    question: 'What is a remote financial support professional?',
+    answer: "Helm's remote financial support professionals are highly skilled, reliable, and adaptable experts who can assist you with a wide range of financial tasks, from bookkeeping to financial reporting. They work within your time zone and integrate seamlessly with your team, becoming an essential part of your operations. Many of our clients say that within just a few months, their remote financial support professional feels like a natural extension of their in-house team."
+  },
+  {
+    question: 'What types of financial tasks can a remote financial support professional handle?',
+    answer: 'Remote financial support can assist with bookkeeping, invoicing, payroll, financial reporting, budgeting, and tax preparation assistance. They handle day-to-day financial tasks to keep your operations running smoothly.'
+  },
+  {
+    question: 'How do I ensure the financial support professional I hire is trustworthy?',
+    answer: 'At Helm, we thoroughly vet all financial support professionals, ensuring they have the right experience, qualifications, and a proven track record for handling sensitive financial data securely.'
+  },
+  {
+    question: 'Can a remote financial support professional work with my existing team?',
+    answer: 'Yes, our financial professionals can work closely with your team, collaborate on financial tasks, and integrate seamlessly into your workflows to ensure a smooth operation.'
   }
 ];
 
@@ -135,6 +175,19 @@ const howItWorksSteps = [
     </div>
   </section>
 
+  <section class="py-20 bg-white">
+    <div class="w-full px-8 sm:px-12 lg:px-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-4">
+          Here's What One of Our Clients Had to Say!
+        </h2>
+      </div>
+      <div class="max-w-4xl mx-auto">
+        <VideoTestimonials testimonials={[videoTestimonial]} client:load />
+      </div>
+    </div>
+  </section>
+
   <section class="py-16 bg-white">
     <div class="w-full px-8 sm:px-12 lg:px-16">
       <div class="text-center mb-12">
@@ -155,18 +208,35 @@ const howItWorksSteps = [
 
   <section class="py-20 bg-gradient-to-br from-brand-navy to-brand-navyDark text-white" id="benefits">
     <div class="w-full px-8 sm:px-12 lg:px-16">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-          Why Choose Our Financial Support?
-        </h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        {benefits.map(benefit => (
-          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:bg-white/20 transition-all duration-300">
-            <h3 class="text-xl font-bold mb-3 text-brand-orange">{benefit.title}</h3>
-            <p class="text-gray-300 leading-relaxed">{benefit.description}</p>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <img
+            src="/images/financial-support-page/Why Choose Our Financial Support.webp"
+            alt="Why Choose Our Financial Support"
+            class="rounded-lg shadow-2xl w-full"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">
+            Why Choose Our Financial Support?
+          </h2>
+          <div class="space-y-6">
+            {benefits.map(benefit => (
+              <div class="flex gap-4">
+                <div class="flex-shrink-0">
+                  <svg class="w-6 h-6 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-2 text-white">{benefit.title}:</h3>
+                  <p class="text-gray-300 leading-relaxed">{benefit.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   </section>
@@ -181,20 +251,62 @@ const howItWorksSteps = [
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map(service => (
           <div class="bg-brand-light rounded-xl p-8 hover:shadow-lg transition-all duration-300">
+            <div class="mb-6">
+              <img
+                src={service.icon}
+                alt={service.title}
+                class="w-16 h-16 object-contain"
+                loading="lazy"
+              />
+            </div>
             <h3 class="text-xl font-bold text-brand-navy mb-4">{service.title}</h3>
-            <ul class="space-y-3">
-              {service.items.map(item => (
-                <li class="text-gray-700 leading-relaxed">{item}</li>
-              ))}
-            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">{service.description}</p>
             <button
               data-open-quote-modal
-              class="inline-block mt-6 text-brand-orange font-semibold hover:text-brand-orangeDark transition-colors cursor-pointer bg-transparent border-0"
+              class="inline-block mt-2 px-6 py-2 bg-brand-orange text-white font-semibold rounded-lg hover:bg-brand-orangeDark transition-colors cursor-pointer border-0"
             >
-              Request a demo →
+              Request a quote
             </button>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-brand-light">
+    <div class="w-full px-8 sm:px-12 lg:px-16">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+          <p class="text-gray-700 mb-8">
+            The most important questions are often about the unknown unknowns – that is the stuff you're not thinking to ask but you really need to know. While some common questions are just over here on the right, let's hop on a call and get you the knowledge you really need!
+          </p>
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-semibold text-brand-navy mb-2">Email</h3>
+              <a href="mailto:support@helm.ceo" class="text-brand-orange hover:text-brand-orangeDark">support@helm.ceo</a>
+            </div>
+            <div>
+              <h3 class="font-semibold text-brand-navy mb-2">Phone</h3>
+              <a href="tel:917.566.0364" class="text-brand-orange hover:text-brand-orangeDark">917.566.0364</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="space-y-4">
+            {faqs.map((faq, index) => (
+              <details class="bg-white rounded-lg p-6 group">
+                <summary class="font-semibold text-brand-navy cursor-pointer list-none flex justify-between items-center">
+                  {faq.question}
+                  <svg class="w-5 h-5 text-brand-orange transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p class="mt-4 text-gray-700 leading-relaxed">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   </section>
