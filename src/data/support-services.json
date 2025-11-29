@@ -28,7 +28,8 @@
   {
     "title": "Customer Support",
     "description": "Resolve issues, Deeply understand your product, Technical assistance, Process orders, Collect customer Feedback, Reach out proactively, Train & document, Build relationships & More…",
-    "icon": "/images/service-card-logo/customer-support-e1724684520634.png"
+    "icon": "/images/service-card-logo/customer-support-e1724684520634.png",
+    "link": "/customer-services-anchor-page"
   },
   {
     "title": "Marketing Support",
