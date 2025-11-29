@@ -5,11 +5,6 @@
     "icon": "/images/service-card-logo/account-management-e1724684508836.png"
   },
   {
-    "title": "And More...",
-    "description": "Our client partners have asked for help with just about everything under the sun! We exist to ensure you get the support you need.",
-    "icon": "/images/service-card-logo/other.webp"
-  },
-  {
     "title": "Bookkeeping / Accounting",
     "description": "Financial record keeping, Payroll processing, Tax compliance, Cash flow management, Budgeting, Financial reporting, Accounts Receivable & More…",
     "icon": "/images/service-card-logo/bookkeeping-e1724684473545.webp"
@@ -45,5 +40,10 @@
     "title": "Sales Development",
     "description": "Generate leads, Find contact information, Qualify leads, Schedule appointments for you, Manage your follow-up & More…",
     "icon": "/images/service-card-logo/sales-e1724684460921.webp"
+  },
+  {
+    "title": "And More...",
+    "description": "Our client partners have asked for help with just about everything under the sun! We exist to ensure you get the support you need.",
+    "icon": "/images/service-card-logo/other.webp"
   }
 ]
