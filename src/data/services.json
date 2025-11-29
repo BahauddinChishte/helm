@@ -2,31 +2,37 @@
   {
     "title": "Executive Support",
     "description": "Professional executive assistants to manage your calendar, emails, travel arrangements, and strategic projects.",
-    "icon": "briefcase"
+    "icon": "briefcase",
+    "url": "/executive-assistant"
   },
   {
     "title": "Administrative Support",
     "description": "Skilled administrative professionals for data entry, document management, scheduling, and office coordination.",
-    "icon": "clipboard"
+    "icon": "clipboard",
+    "url": "/services/admin-support"
   },
   {
     "title": "Customer Support",
     "description": "Dedicated customer service representatives to handle inquiries, resolve issues, and build customer relationships.",
-    "icon": "users"
+    "icon": "users",
+    "url": "/customer-services-anchor-page"
   },
   {
     "title": "Finance Support",
     "description": "Experienced finance professionals for bookkeeping, accounts payable/receivable, and financial reporting.",
-    "icon": "calculator"
+    "icon": "calculator",
+    "url": "/services/finance-support"
   },
   {
     "title": "Sales Support",
     "description": "Dynamic sales support staff to manage leads, CRM updates, and customer outreach campaigns.",
-    "icon": "chart"
+    "icon": "chart",
+    "url": "/contact"
   },
   {
     "title": "Marketing Support",
     "description": "Creative marketing professionals for content creation, social media management, and campaign execution.",
-    "icon": "megaphone"
+    "icon": "megaphone",
+    "url": "/contact"
   }
 ]
