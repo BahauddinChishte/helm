@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import CompanyLogos from '../components/CompanyLogos.astro';
 import FAQSection from '../components/FAQSection.astro';
+import SupportServicesGrid from '../components/SupportServicesGrid.astro';
 import WhyChoose from '../components/role-components/WhyChoose.astro';
 import RoleTestimonials from '../components/role-components/RoleTestimonials.astro';
 import HowItWorksSteps from '../components/role-components/HowItWorksSteps.astro';
@@ -53,32 +54,32 @@ const whyChooseReasons = [
 const supportServices = [
   {
     title: "Communication Management",
-    description: "Respond to emails, chats, and calls with quick, helpful solutions. Address customer complaints and ensure timely resolutions.",
+    description: "<strong>Respond to emails, chats, and calls with quick, helpful solutions.</strong><br><br><strong>Address customer complaints:</strong> Ensure timely resolutions.",
     icon: "/images/customer-service-page/service-card-logo/Communication-management-png.webp"
   },
   {
     title: "Customer Relationship Management",
-    description: "Assist new customers with a smooth onboarding experience. Gather and analyze customer feedback to improve service.",
+    description: "<strong>Assist new customers:</strong> Provide a smooth onboarding experience.<br><br><strong>Gather and analyze customer feedback:</strong> Improve service quality.",
     icon: "/images/customer-service-page/service-card-logo/Customer-relationship-management-png.webp"
   },
   {
     title: "Administrative Support",
-    description: "Manage orders, returns, and exchanges efficiently. Keep customer records accurate and current.",
+    description: "<strong>Manage orders, returns, and exchanges:</strong> Handle efficiently.<br><br><strong>Keep customer records accurate:</strong> Maintain current information.",
     icon: "/images/customer-service-page/service-card-logo/Administrative-support-png.webp"
   },
   {
     title: "Product and Service Knowledge",
-    description: "Provide accurate details to help customers make decisions. Assist with troubleshooting and issue resolution.",
+    description: "<strong>Provide accurate details:</strong> Help customers make decisions.<br><br><strong>Assist with troubleshooting:</strong> Resolve issues effectively.",
     icon: "/images/customer-service-page/service-card-logo/Product-and-service-knowledge-png.webp"
   },
   {
     title: "Customer Experience Enhancement",
-    description: "Send updates, offers, and personalized messages to customers. Track and manage customer loyalty rewards.",
+    description: "<strong>Send updates, offers, and personalized messages:</strong> Engage customers.<br><br><strong>Track and manage customer loyalty rewards:</strong> Build lasting relationships.",
     icon: "/images/customer-service-page/service-card-logo/Customer-experience-enhancement-png.webp"
   },
   {
     title: "Team and Process Support",
-    description: "Serve as a liaison between customers and your team, ensuring smooth information flow. Identify and suggest improvements to enhance customer service operations.",
+    description: "<strong>Serve as a liaison:</strong> Ensure smooth information flow between customers and your team.<br><br><strong>Identify and suggest improvements:</strong> Enhance customer service operations.",
     icon: "/images/customer-service-page/service-card-logo/Team-and-process-support-png.webp"
   }
 ];
@@ -120,122 +121,174 @@ const howItWorksSteps = [
   }
 ];
 
-const videoTestimonial = {
-  id: 1,
-  name: "Eugene Min",
-  title: "Founder, Quilt Software",
-  videoUrl: "/images/customer-service-page/Eugene-Min-Testimonial.mp4",
-  thumbnail: "/images/client-pictures/Ann-Hambly.jpeg",
-  quote: "Working with Helm transformed our customer support operations."
-};
 ---
 
 <Layout
   title="Customer Support Staffing - Remote Customer Service Professionals | Helm"
   description="Elevate Your Customer Experience with Customer Service Experts. Enhance Satisfaction and Drive Loyalty with Dedicated Support Specialists."
 >
-  <section class="relative py-20 md:py-28 text-white overflow-hidden" style="background-color: #343A5A;">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-          Elevate Your Customer Experience with Customer Service Experts
-        </h1>
-        <p class="text-xl md:text-2xl mb-8 text-gray-200">
-          Enhance Satisfaction and Drive Loyalty with Dedicated Support Specialists.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button openModal={true} variant="primary" size="lg" class="!bg-orange-500 hover:!bg-orange-600 !text-white">
-            Get a Custom Quote
-          </Button>
-          <button data-open-learn-more-modal class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold border-2 rounded-lg transition-all duration-200 border-white text-white hover:bg-white hover:text-brand-navy">
-            Learn More
-          </button>
-        </div>
+  <!-- Hero Section -->
+  <section class="relative min-h-[400px] sm:min-h-[500px] flex items-center justify-center" style="background: linear-gradient(135deg, #434b6d 0%, #343a5a 100%);">
+    <div class="absolute inset-0 grid-background"></div>
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 text-center">
+      <h1 class="text-white mb-4 sm:mb-6 hero-title-responsive">
+        Elevate Your Customer Experience with<br class="hidden lg:block" /> Customer Service Experts
+      </h1>
+      <p class="text-base sm:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto">
+        Enhance Satisfaction and Drive Loyalty with Dedicated Support Specialists.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-lg mx-auto">
+        <button
+          data-open-quote-modal
+          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 hero-btn-responsive btn-custom-quote"
+        >
+          Get a Custom Quote
+        </button>
+        <button
+          data-open-learn-more-modal
+          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 hero-btn-responsive btn-learn-more"
+        >
+          Learn More
+        </button>
       </div>
     </div>
   </section>
 
   <RoleTestimonials testimonials={testimonials} />
 
-  <section class="py-16 bg-white">
+  <!-- Client Testimonial Video Section -->
+  <section class="py-12 sm:py-16" style="background: linear-gradient(135deg, #e8e9f3 0%, #d4d7e8 100%);">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center max-w-7xl mx-auto">
         <div>
-          <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
-            Here's What One of Our Clients Had to Say!
+          <h2 class="testimonial-video-title text-gray-900 mb-4 sm:mb-6">
+            Here's What One of Our Clients<br class="hidden sm:block" />Had to Say!
           </h2>
-          <div class="aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-xl">
-            <video
-              controls
-              poster={videoTestimonial.thumbnail}
-              class="w-full h-full object-cover"
-            >
-              <source src={videoTestimonial.videoUrl} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
         </div>
         <div>
-          <CompanyLogos />
+          <video
+            controls
+            class="w-full rounded-xl shadow-xl"
+          >
+            <source src="/images/customer-service-page/Eugene-Min-Testimonial.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </div>
   </section>
+
+  <CompanyLogos />
 
   <WhyChoose
     title="Why Choose Our Customer Service Professionals?"
     reasons={whyChooseReasons}
     imageSrc="/images/customer-service-page/Why Choose Our Customer Service.webp"
-    imageAlt="Customer service professional at work"
+    imageAlt="Customer Service Professional"
   />
 
-  <section class="py-16 md:py-24 bg-gray-50">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy text-center mb-12">
+  <section class="pt-8 pb-12 sm:pb-20 lg:pb-24" style="background-color: #F5F5F5;">
+    <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16">
+      <div class="text-center mb-8 sm:mb-12">
+        <h2 class="text-gray-900 mb-4 sm:mb-8 support-services-title">
           What Your Helm Customer Service Professionals Can Help You With
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {supportServices.map((service) => (
-            <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-xl transition-shadow duration-300">
-              <div class="flex justify-center mb-6">
-                <img
-                  src={service.icon}
-                  alt={service.title}
-                  class="w-20 h-20 object-contain"
-                />
-              </div>
-              <h3 class="text-xl font-bold text-brand-navy mb-4 text-center">
-                {service.title}
-              </h3>
-              <p class="text-gray-700 text-center leading-relaxed mb-6">
-                {service.description}
-              </p>
-              <div class="text-center">
-                <button
-                  data-open-quote-modal
-                  class="inline-block px-6 py-2 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors cursor-pointer"
-                >
-                  Find my assistant
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
+
+      <SupportServicesGrid services={supportServices} buttonText="Find my assistant" openModal={true} />
     </div>
   </section>
 
   <FAQSection faqs={faqs} />
 
-  <section class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-6xl mx-auto text-center mb-12">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-4">
-          What to expect when you work with us
-        </h2>
-      </div>
-      <HowItWorksSteps steps={howItWorksSteps} />
-    </div>
-  </section>
+  <HowItWorksSteps steps={howItWorksSteps} />
 </Layout>
+
+<style>
+  /* Hero Title Responsive */
+  .hero-title-responsive {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 640px) {
+    .hero-title-responsive {
+      font-size: 38px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-title-responsive {
+      font-size: 48px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-title-responsive {
+      font-size: 55px;
+    }
+  }
+
+  /* Hero Button Responsive */
+  .hero-btn-responsive {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+
+  /* Testimonial Video Title Responsive */
+  .testimonial-video-title {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  @media (min-width: 640px) {
+    .testimonial-video-title {
+      font-size: 34px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .testimonial-video-title {
+      font-size: 40px;
+    }
+  }
+
+  /* Support Services Title Responsive */
+  .support-services-title {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  @media (min-width: 640px) {
+    .support-services-title {
+      font-size: 28px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .support-services-title {
+      font-size: 32px;
+    }
+  }
+
+  /* Custom Button Styles */
+  .btn-custom-quote {
+    background-color: #EC7A00 !important;
+    border: 3px solid #FFFFFF !important;
+    border-radius: 6px !important;
+  }
+
+  .btn-learn-more {
+    background-color: #5080A0 !important;
+    border: 3px solid #FFFFFF !important;
+    border-radius: 6px !important;
+  }
+
+  @media (min-width: 640px) {
+    .btn-custom-quote,
+    .btn-learn-more {
+      border-width: 4px !important;
+    }
+  }
+</style>
