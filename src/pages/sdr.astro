@@ -1,0 +1,307 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import CompanyLogos from '../components/CompanyLogos.astro';
+import FAQSection from '../components/FAQSection.astro';
+import SupportServicesGrid from '../components/SupportServicesGrid.astro';
+import WhyChoose from '../components/role-components/WhyChoose.astro';
+import RoleTestimonials from '../components/role-components/RoleTestimonials.astro';
+import HowItWorksSteps from '../components/role-components/HowItWorksSteps.astro';
+
+const testimonials = [
+  {
+    quote: "When our software startup was ready to scale up, Helm armed us with 5 exceptional inside salespeople. Remarkable and consistent quality!",
+    name: "Pramod Sajja",
+    role: "CEO",
+    company: "Paramount Software",
+    image: "/images/client-pictures/Pramod-Sajja.jpeg"
+  },
+  {
+    quote: "From day 1 Maria started identifying qualified prospects for our contract manufacturing. She also built our dashboard and manages our metrics.",
+    name: "Ed Mafoud",
+    role: "CEO",
+    company: "Damascus Bakery",
+    image: "/images/client-pictures/Ed-Mafoud.jpeg"
+  },
+  {
+    quote: "We were considering a salesperson for $125,000/year. The Sales Dev Rep we hired generates less than 1/3 of that but has exceeded every expectation we had!",
+    name: "Katie Borden",
+    role: "",
+    company: "Redbox",
+    image: "/images/client-pictures/Katie-Borden.webp"
+  }
+];
+
+const whyChooseReasons = [
+  {
+    title: "Work Fully:",
+    description: "Your Rep can work fully for you without any overhead or paid vacation, holidays, or sick leave. Get the temp-to-perm flexibility you want."
+  },
+  {
+    title: "Cost-Effective:",
+    description: "Get hungry, humble and smart A-Player Sales Dev Reps for 30-50% the cost of their U.S. equivalent."
+  },
+  {
+    title: "Expert Coaching:",
+    description: "Your Rep will get free sales coaching from our team that has cracked the code on lead-generation across nearly every industry."
+  }
+];
+
+const supportServices = [
+  {
+    title: "Right People",
+    description: "<strong>Get the right people in the right seats for your sales team.</strong><br><br><strong>Wherever your Sales Dev Rep lives, they always work in your timezone.</strong><br><br><strong>Our Sales Dev Reps have impeccable written and spoken English.</strong>",
+    icon: "/images/sections-picture/image.png"
+  },
+  {
+    title: "Smart Market Research",
+    description: "<strong>Get a smart sales development representatives (SDR) that can do market research.</strong><br><br><strong>Discover the right sales message and craft a repeatable sales process.</strong>",
+    icon: "/images/sections-picture/image.png"
+  },
+  {
+    title: "Proven Lead Generation",
+    description: "<strong>Access lead generation strategies that are working across our network of other businesses.</strong>",
+    icon: "/images/sections-picture/image.png"
+  }
+];
+
+const faqs = [
+  {
+    question: 'What is a remote assistant?',
+    answer: "Helm's remote assistants are hungry, humble and highly intelligent professionals and support you and your team in virtually any function. They work in your time zone and integrate with your team as deeply as you would like. Many of our client partners, within four months of hiring, say their remote assistant is as much a part of the team as the other people in their company.",
+    defaultOpen: true
+  },
+  {
+    question: 'What are the challenges and benefits of a remote assistant?',
+    answer: 'A remote assistant is often life-changing since they bring you freedom in work and out. Are your company, your department, or you hitting the ceiling and trying to figure out how to break through? The constraint is often bandwidth or capabilities. Hiring a remote assistant brings you both.\n\nIn times of change, remote assistants make it easier to grow or contract your team with agility.\n\nRates of remote workers are often between 25% and 50% of what you would pay in the US. The challenge, however, of a remote assistant comes into play for companies unable to hold remote meetings. Otherwise, the challenges are similar to those with a physically present team member.'
+  },
+  {
+    question: 'How is Helm unique?',
+    answer: 'The rigor Helm applies to your search goes far beyond that of any other staffing company.\n\nWe bring a deep background in organizational development and helping companies build organizational health. For decades, Helm\'s founder has helped other business owners scale their business and attract exceptional talent. Companies cannot do this if they don\'t themselves possess great talent. We have helped business owners make key hiring and firing decisions that have paved the way for the growth that followed.'
+  },
+  {
+    question: 'How does onboarding work?',
+    answer: "You'll receive guidance from us on how to get your new hire started. Often your remote assistant can guide you through much of this process. Key elements typically include:\n\n- Enabling access to your software and systems\n- Connecting with stakeholders\n- Acclimating to key processes and how things get done\n- Setting a cadence for meetings or check-ins\n- Sharing any project (s) or goal (s) to start on"
+  },
+  {
+    question: 'How long will it take to find the right remote assistant with Helm?',
+    answer: 'On average it takes us three weeks to find the right match for you. We know that once you need to hire, everyday can be a painful and costly wait, but as most people know, the cost of hiring the wrong person is vastly greater. Sometimes we have the right match for you within our community, particularly as our community of professionals grows.'
+  }
+];
+
+const howItWorksSteps = [
+  {
+    number: "01",
+    title: "Share your needs",
+    description: "We'll create a Success Profile based on your needs and preferences.",
+    subtext: "Our team will screen over 3,000 candidates, on average, to find you the perfect match."
+  },
+  {
+    number: "02",
+    title: "Meet the perfect hire",
+    description: "You'll meet and screen the candidate. Over 80% of the time, the 1st candidate we propose gets hired.",
+    subtext: "If you prefer to meet a new candidate, we extend our search to ensure your success!"
+  },
+  {
+    number: "03",
+    title: "Delegate. Elevate.",
+    description: "Best practices for onboarding your new hire will save you time and get them up and running immediately.",
+    subtext: "Create more value and do more of what you love by letting go and delegating to the right support!"
+  }
+];
+
+---
+
+<Layout
+  title="Sales Development Representative (SDR) Staffing - Expert Lead Generation | Helm"
+  description="Get more customers and qualified leads by using experts at lead generation. Expert Sales Development Reps cost a fraction of a salesperson and let your sales people focus on sales."
+>
+  <!-- Hero Section -->
+  <section class="relative min-h-[400px] sm:min-h-[500px] flex items-center justify-center" style="background: linear-gradient(135deg, #434b6d 0%, #343a5a 100%);">
+    <div class="absolute inset-0 grid-background"></div>
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 text-center">
+      <h1 class="text-white mb-4 sm:mb-6 hero-title-responsive">
+        Get more customers and qualified leads<br class="hidden lg:block" /> by using experts at lead generation.
+      </h1>
+      <p class="text-base sm:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto">
+        These expert Sales Development Reps cost a fraction of a salesperson and let your sales people focus on sales.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-lg mx-auto">
+        <button
+          data-open-quote-modal
+          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 hero-btn-responsive btn-custom-quote"
+        >
+          Hire a Sales Dev Rep
+        </button>
+        <button
+          data-open-learn-more-modal
+          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 hero-btn-responsive btn-learn-more"
+        >
+          Learn More
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <RoleTestimonials testimonials={testimonials} />
+
+  <!-- Video Section with Placeholder -->
+  <section class="py-12 sm:py-16" style="background: linear-gradient(135deg, #e8e9f3 0%, #d4d7e8 100%);">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center max-w-7xl mx-auto">
+        <div>
+          <h2 class="testimonial-video-title text-gray-900 mb-4 sm:mb-6">
+            Are you ready to generate high quality leads without the cost, time-waste and frustration of doing it all alone?
+          </h2>
+        </div>
+        <div>
+          <div class="w-full rounded-xl shadow-xl bg-gray-300 flex items-center justify-center" style="min-height: 400px;">
+            <p class="text-gray-600 text-lg">Video Coming Soon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CompanyLogos />
+
+  <WhyChoose
+    title="Why Choose Our Sales Development Representatives?"
+    reasons={whyChooseReasons}
+    imageSrc="/images/sections-picture/image.png"
+    imageAlt="Sales Development Representative"
+  />
+
+  <!-- Support Services Section -->
+  <section class="py-12 sm:py-16 lg:py-20" style="background: linear-gradient(135deg, #e8e9f3 0%, #d4d7e8 100%);">
+    <div class="w-full px-4 sm:px-8 md:px-12 lg:px-16">
+      <div class="text-center mb-8 sm:mb-12">
+        <h2 class="text-gray-900 mb-4 sm:mb-8 support-services-title">
+          Are you ready to bring an A-player who is hungry, humble and smart to your team?
+        </h2>
+      </div>
+
+      <SupportServicesGrid services={supportServices} buttonText="Hire a Sales Dev Rep" openModal={true} />
+    </div>
+  </section>
+
+  <FAQSection faqs={faqs} />
+
+  <HowItWorksSteps steps={howItWorksSteps} />
+</Layout>
+
+<style>
+  .hero-title-responsive {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 640px) {
+    .hero-title-responsive {
+      font-size: 38px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-title-responsive {
+      font-size: 48px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-title-responsive {
+      font-size: 55px;
+    }
+  }
+
+  .hero-btn-responsive {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+
+  @media (min-width: 640px) {
+    .hero-btn-responsive {
+      padding: 14px 32px;
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-btn-responsive {
+      padding: 16px 40px;
+      font-size: 18px;
+    }
+  }
+
+  .btn-custom-quote {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  }
+
+  .btn-custom-quote:hover {
+    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+  }
+
+  .btn-learn-more {
+    background: transparent;
+    border: 2px solid white;
+  }
+
+  .btn-learn-more:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .grid-background {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.5;
+  }
+
+  .testimonial-video-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  @media (min-width: 640px) {
+    .testimonial-video-title {
+      font-size: 28px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .testimonial-video-title {
+      font-size: 32px;
+    }
+  }
+
+  .support-services-title {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  @media (min-width: 640px) {
+    .support-services-title {
+      font-size: 32px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .support-services-title {
+      font-size: 38px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .support-services-title {
+      font-size: 42px;
+    }
+  }
+</style>
