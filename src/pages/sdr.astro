@@ -129,13 +129,13 @@ const howItWorksSteps = [
       <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-lg mx-auto">
         <button
           data-open-quote-modal
-          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 rounded-lg btn-custom-quote"
+          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 hero-btn-responsive btn-custom-quote"
         >
           Hire a Sales Dev Rep
         </button>
         <button
           data-open-learn-more-modal
-          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 rounded-lg btn-learn-more"
+          class="inline-flex items-center justify-center font-semibold text-white transition-all duration-200 hero-btn-responsive btn-learn-more"
         >
           Learn More
         </button>
@@ -216,42 +216,28 @@ const howItWorksSteps = [
     }
   }
 
+  .hero-btn-responsive {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+
   .btn-custom-quote {
-    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-    font-size: 14px;
-    padding: 12px 24px;
-  }
-
-  @media (min-width: 640px) {
-    .btn-custom-quote {
-      font-size: 16px;
-      padding: 14px 32px;
-    }
-  }
-
-  .btn-custom-quote:hover {
-    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+    background-color: #EC7A00 !important;
+    border: 3px solid #FFFFFF !important;
+    border-radius: 6px !important;
   }
 
   .btn-learn-more {
-    background: transparent;
-    border: 2px solid white;
-    font-size: 14px;
-    padding: 12px 24px;
+    background-color: #5080A0 !important;
+    border: 3px solid #FFFFFF !important;
+    border-radius: 6px !important;
   }
 
   @media (min-width: 640px) {
+    .btn-custom-quote,
     .btn-learn-more {
-      font-size: 16px;
-      padding: 14px 32px;
+      border-width: 4px !important;
     }
-  }
-
-  .btn-learn-more:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
   }
 
   .grid-background {
