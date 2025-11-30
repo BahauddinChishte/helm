@@ -1,0 +1,391 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CompanyLogos from '../components/CompanyLogos.astro';
+
+const pricingPlans = [
+  {
+    title: 'Executive Assistant',
+    price: '$22/hour',
+    features: [
+      'Email inbox management',
+      'Scheduling',
+      'Drafting letters & docs',
+      'Research',
+      'Travel planning',
+      'Spreadsheet support',
+      '& much more'
+    ]
+  },
+  {
+    title: 'Sales Development',
+    price: '$22/hour',
+    features: [
+      'Build lead lists',
+      'Find contact details',
+      'Qualify leads',
+      'Improve your sales approach',
+      'Schedule appointments',
+      'Manage your follow-up',
+      '& more'
+    ]
+  },
+  {
+    title: 'Bookkeeping',
+    price: '$22/hour',
+    features: [
+      'Financial record keeping',
+      'Payroll processing',
+      'Tax compliance',
+      'Cash flow management',
+      'Budgeting',
+      'Financial reporting',
+      '& more'
+    ]
+  },
+  {
+    title: 'Marketing Support',
+    price: '$24/hour',
+    features: [
+      'Social media/blog',
+      'Market research & analysis',
+      'Plan & execute campaigns',
+      'Email marketing',
+      'Analytics & Reporting',
+      'Partnerships & Collaboration',
+      '& more'
+    ]
+  }
+];
+
+const comparisonRows = [
+  {
+    consideration: 'Save money',
+    helm: '$22/hour',
+    helmCheckmark: true,
+    others: '$35 - $60/hour'
+  },
+  {
+    consideration: 'Get world-class support',
+    helm: 'Every support associate superhero standards. We also continually coach and train support so they\'re always becoming more valuable',
+    helmCheckmark: false,
+    others: 'Basic support, but often lacking in the areas you need expertise most.'
+  },
+  {
+    consideration: 'Avoid the wrong hire',
+    helm: 'We take matchmaking very seriously so before we\'re introducing you to a potential spouse, we make sure there\'s real chemistry. We\'re only introducing you to our proposed candidate. Over 90% of the time, our client partners like you hire the first candidate that we propose.',
+    helmCheckmark: false,
+    others: 'You don\'t meet your virtual assistant until they start. Compatibility is a roll of the dice.'
+  }
+];
+
+const testimonials = [
+  {
+    quote: "It's impossible to know what freedom feels like until you're living it. Anke has made possible what I couldn't have imagined",
+    name: "Dan Lifton",
+    role: "CEO, Quality of Life Labs",
+    company: "",
+    image: "/images/client-pictures/Dan-Lifton.webp",
+    validated: true
+  },
+  {
+    quote: "My prior assistant - who worked in my office and who I hired myself without Helm - lost my trust and the trust of my team. I was hesitant to delegate sensitive tasks ever again until I gave Helm a chance and they have changed the game for our company.",
+    name: "Jay Kaufman",
+    role: "CEO, Paragon Laboratories",
+    company: "",
+    image: "/images/client-pictures/Jay-Kaufman.webp",
+    validated: true
+  },
+  {
+    quote: "We were seeking greater accountability throughout our organization. But I had only one person to look to for accountability... me. And I needed help. Thanks to a single hire and someone following up on all of the open loops, we're in a different world now!",
+    name: "Antonio D'Alelio",
+    role: "",
+    company: "",
+    image: "/images/client-pictures/Antonio-DAlelio-jpg.webp",
+    validated: false
+  },
+  {
+    quote: "My only regret is that I didn't do this much sooner. Everyone who runs a business should have an admin assistant!",
+    name: "Ed Mafoud",
+    role: "CEO, Damascus Bakery",
+    company: "",
+    image: "/images/client-pictures/Ed Mafoud.png",
+    validated: true
+  },
+  {
+    quote: "When I tell my friends about Marie (my EA), they're jealous about what she brings. She's been trained by Helm on how to build a dashboard and manage our metrics, how to document our values and a whole bunch more.",
+    name: "Pramod Sajja",
+    role: "CEO, Paramount Software",
+    company: "",
+    image: "/images/client-pictures/Pramod-Sajja.jpeg",
+    validated: true
+  },
+  {
+    quote: "After 3 years of heavy investment in our product, our startup was ready to scale sales quickly. Helm armed us with 5 exceptional inside salespeople to grow and qualify our leads - remarkable and consistent quality!",
+    name: "James Scearmin",
+    role: "CEO, Zoi Paws",
+    company: "",
+    image: "/images/client-pictures/Antonio-DAlelio-jpg.webp",
+    validated: true
+  },
+  {
+    quote: "Our business has gone through lots of growing pains. At some point, it was time for me to buy my sanity with a project manager. But what I got was more than just my sanity, I got a world class operations manager.",
+    name: "Matthew Warnock",
+    role: "CEO, Ridge Herbicide",
+    company: "",
+    image: "/images/client-pictures/Matthew-Warnock.webp",
+    validated: true
+  }
+];
+
+const faqs = [
+  {
+    question: 'What is a remote assistant?',
+    answer: "Helm's remote assistants are hungry, humble and highly intelligent professionals and support you and your team in virtually any function. They work in your time zone and integrate with your team as deeply as you would like. Many of our client partners, within four months of hiring, say their remote assistant is as much a part of the team as the other people in their company.",
+    defaultOpen: true
+  },
+  {
+    question: 'What are the challenges and benefits of a remote assistant?',
+    answer: 'A remote assistant is often life-changing since they bring you freedom in work and out. Are your company, your department, or you hitting the ceiling and trying to figure out how to break through? The constraint is often bandwidth or capabilities. Hiring a remote assistant brings you both.\n\nIn times of change, remote assistants make it easier to grow or contract your team with agility.\n\nRates of remote workers are often between 25% and 50% of what you would pay in the US. The challenge, however, of a remote assistant comes into play for companies unable to hold remote meetings. Otherwise, the challenges are similar to those with a physically present team member.'
+  },
+  {
+    question: 'How is Helm unique?',
+    answer: 'The rigor Helm applies to your search goes far beyond that of any other staffing company.\n\nWe bring a deep background in organizational development and helping companies build organizational health. For decades, Helm\'s founder has helped other business owners scale their business and attract exceptional talent. Companies cannot do this if they don\'t themselves possess great talent. We have helped business owners make key hiring and firing decisions that have paved the way for the growth that followed.'
+  },
+  {
+    question: 'How does onboarding work?',
+    answer: "You'll receive guidance from us on how to get your new hire started. Often your remote assistant can guide you through much of this process. Key elements typically include:\n\n- Enabling access to your software and systems\n- Connecting with stakeholders\n- Acclimating to key processes and how things get done\n- Setting a cadence for meetings or check-ins\n- Sharing any project (s) or goal (s) to start on"
+  },
+  {
+    question: 'How long will it take to find the right remote assistant with Helm?',
+    answer: 'On average it takes us three weeks to find the right match for you. We know that once you need to hire, everyday can be a painful and costly wait, but as most people know, the cost of hiring the wrong person is vastly greater. Sometimes we have the right match for you within our community, particularly as our community of professionals grows.'
+  }
+];
+---
+
+<Layout
+  title="Plans & Pricing - World Class Support | Helm"
+  description="World class support to save you money and free your time. Explore our flexible pricing plans for Executive Assistants, Sales Development, Bookkeeping, and Marketing Support."
+>
+  <!-- Hero Section -->
+  <section class="relative pt-20 min-h-[500px] sm:min-h-[600px] flex items-center justify-center" style="background: linear-gradient(135deg, #434b6d 0%, #343a5a 100%);">
+    <div class="absolute inset-0 grid-background"></div>
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 text-center">
+      <h1 class="text-white mb-4 sm:mb-6 hero-title-responsive">
+        World Class Support To Save You Money<br class="hidden lg:block" /> And Free Your Time
+      </h1>
+    </div>
+  </section>
+
+  <!-- Pricing Cards Section -->
+  <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        {pricingPlans.map((plan) => (
+          <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+            <div class="p-6 flex-1">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{plan.title}</h3>
+              <p class="text-2xl font-bold text-brand-orange mb-6">{plan.price}</p>
+              <ul class="space-y-3">
+                {plan.features.map((feature) => (
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-brand-orange mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700 text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="p-6 pt-0">
+              <button
+                data-open-quote-modal
+                class="w-full bg-brand-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+              >
+                Book Consultation
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Elevate Section -->
+  <section class="py-12 sm:py-16 lg:py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+        <div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Elevate Yourself And Your Team<br />By Delegating More.
+          </h2>
+          <p class="text-lg text-gray-700 mb-6">
+            The assumption, more than any other, that limits business owners and executives is that by delegating you'll lose control. Instead, delegating enables you to...
+          </p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-brand-orange mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700">Break through the series of ceilings you'll face</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-brand-orange mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700">Buy back your time for $20-$25/hour</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-brand-orange mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700">Do more of the work you love and are great at</span>
+            </li>
+          </ul>
+          <button
+            data-open-quote-modal
+            class="bg-brand-orange hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+          >
+            Book Consultation
+          </button>
+        </div>
+        <div>
+          <img
+            src="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Professional working at desk"
+            class="rounded-lg shadow-xl w-full"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Helm vs Others Comparison Section -->
+  <section class="py-12 sm:py-16 lg:py-20" style="background: linear-gradient(135deg, #e8e9f3 0%, #d4d7e8 100%);">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-12">
+        Helm vs Others
+      </h2>
+      <div class="max-w-6xl mx-auto">
+        <div class="overflow-x-auto">
+          <table class="w-full bg-white rounded-lg shadow-lg overflow-hidden">
+            <thead>
+              <tr class="bg-gray-50 border-b-2 border-gray-200">
+                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-700">Consideration</th>
+                <th class="px-6 py-4 text-center bg-brand-navy">
+                  <div class="flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
+                    </svg>
+                    <span class="text-white font-bold text-lg">HELM</span>
+                  </div>
+                </th>
+                <th class="px-6 py-4 text-center text-sm font-semibold text-gray-700">Other remote assistant services</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              {comparisonRows.map((row, index) => (
+                <tr class={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td class="px-6 py-6 text-sm font-medium text-gray-900">{row.consideration}</td>
+                  <td class="px-6 py-6 bg-brand-navy bg-opacity-5">
+                    {row.helmCheckmark ? (
+                      <div class="flex flex-col items-center">
+                        <svg class="w-8 h-8 text-green-500 mb-2" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <p class="text-sm text-gray-700 text-center">{row.helm}</p>
+                      </div>
+                    ) : (
+                      <p class="text-sm text-gray-700">{row.helm}</p>
+                    )}
+                  </td>
+                  <td class="px-6 py-6 text-sm text-gray-700">{row.others}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-12 sm:py-16 lg:py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-12">
+        See What Our Clients Have to Say
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        {testimonials.map((testimonial) => (
+          <div class="bg-gray-50 rounded-lg p-6 flex flex-col">
+            <p class="text-sm text-gray-700 mb-6 flex-1 italic">"{testimonial.quote}"</p>
+            <div class="flex items-center">
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                class="w-12 h-12 rounded-full object-cover mr-3"
+              />
+              <div>
+                <p class="font-semibold text-gray-900 text-sm">{testimonial.name}</p>
+                {testimonial.validated && (
+                  <p class="text-xs text-brand-orange">✓ Validated reviewer</p>
+                )}
+                {testimonial.role && (
+                  <p class="text-xs text-gray-600">{testimonial.role}</p>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CompanyLogos />
+
+  <FAQSection faqs={faqs} />
+
+  <!-- CTA Arrow Section -->
+  <section class="py-20 bg-white relative overflow-hidden">
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <svg class="w-32 h-32 mx-auto text-brand-orange transform rotate-90" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+      </svg>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero-title-responsive {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  @media (min-width: 640px) {
+    .hero-title-responsive {
+      font-size: 36px;
+      line-height: 1.2;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-title-responsive {
+      font-size: 48px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-title-responsive {
+      font-size: 55px;
+    }
+  }
+
+  .grid-background {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.5;
+  }
+</style>
