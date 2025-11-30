@@ -263,47 +263,97 @@ const faqs = [
   <!-- Helm vs Others Comparison Section -->
   <section class="py-12 sm:py-16 lg:py-20" style="background: linear-gradient(135deg, #e8e9f3 0%, #d4d7e8 100%);">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-4">
         Helm vs Others
       </h2>
+      <p class="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+        See how Helm's world-class support compares to other remote assistant services
+      </p>
+
       <div class="max-w-6xl mx-auto">
-        <div class="overflow-x-auto">
-          <table class="w-full bg-white rounded-lg shadow-lg overflow-hidden">
+        <!-- Desktop Table View -->
+        <div class="hidden lg:block overflow-hidden rounded-xl shadow-2xl">
+          <table class="w-full bg-white">
             <thead>
-              <tr class="bg-gray-50 border-b-2 border-gray-200">
-                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-700">Consideration</th>
-                <th class="px-6 py-4 text-center bg-brand-navy">
-                  <div class="flex items-center justify-center">
-                    <svg class="w-8 h-8 text-white mr-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
+              <tr class="border-b-2 border-gray-200">
+                <th class="px-8 py-6 text-left text-base font-bold text-gray-900 bg-gray-50 w-1/4">Consideration</th>
+                <th class="px-8 py-6 text-center bg-brand-navy w-3/8">
+                  <div class="flex items-center justify-center gap-3">
+                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" fill="white" opacity="0.2"/>
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
                     </svg>
-                    <span class="text-white font-bold text-lg">HELM</span>
+                    <span class="text-white font-bold text-xl">HELM</span>
                   </div>
                 </th>
-                <th class="px-6 py-4 text-center text-sm font-semibold text-gray-700">Other remote assistant services</th>
+                <th class="px-8 py-6 text-center text-base font-bold text-gray-900 bg-gray-50 w-3/8">Other Remote Assistant Services</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-200">
               {comparisonRows.map((row, index) => (
                 <tr class={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                  <td class="px-6 py-6 text-sm font-medium text-gray-900">{row.consideration}</td>
-                  <td class="px-6 py-6 bg-brand-navy bg-opacity-5">
+                  <td class="px-8 py-8 align-top">
+                    <p class="text-base font-semibold text-gray-900">{row.consideration}</p>
+                  </td>
+                  <td class="px-8 py-8 bg-blue-50 border-l-4 border-r-4 border-brand-navy align-top">
                     {row.helmCheckmark ? (
-                      <div class="flex flex-col items-center">
-                        <svg class="w-8 h-8 text-green-500 mb-2" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      <div class="flex flex-col items-center gap-3">
+                        <svg class="w-10 h-10 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                         </svg>
-                        <p class="text-sm text-gray-700 text-center">{row.helm}</p>
+                        <p class="text-lg font-bold text-brand-navy text-center">{row.helm}</p>
                       </div>
                     ) : (
-                      <p class="text-sm text-gray-700">{row.helm}</p>
+                      <p class="text-base text-gray-800 leading-relaxed">{row.helm}</p>
                     )}
                   </td>
-                  <td class="px-6 py-6 text-sm text-gray-700">{row.others}</td>
+                  <td class="px-8 py-8 align-top">
+                    <p class="text-base text-gray-700 leading-relaxed">{row.others}</p>
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
+        </div>
+
+        <!-- Mobile/Tablet Card View -->
+        <div class="lg:hidden space-y-6">
+          {comparisonRows.map((row) => (
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div class="bg-gradient-to-r from-brand-navy to-blue-700 px-6 py-4">
+                <h3 class="text-lg font-bold text-white">{row.consideration}</h3>
+              </div>
+
+              <div class="p-6 space-y-6">
+                <!-- Helm -->
+                <div class="border-l-4 border-brand-navy pl-4">
+                  <div class="flex items-center gap-2 mb-3">
+                    <svg class="w-6 h-6 text-brand-navy" fill="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                    </svg>
+                    <span class="font-bold text-brand-navy text-lg">HELM</span>
+                  </div>
+                  {row.helmCheckmark ? (
+                    <div class="flex items-start gap-3">
+                      <svg class="w-8 h-8 text-green-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      <p class="text-base font-semibold text-gray-900">{row.helm}</p>
+                    </div>
+                  ) : (
+                    <p class="text-base text-gray-800 leading-relaxed">{row.helm}</p>
+                  )}
+                </div>
+
+                <!-- Others -->
+                <div class="border-l-4 border-gray-300 pl-4">
+                  <p class="font-bold text-gray-700 mb-2">Other Services</p>
+                  <p class="text-base text-gray-600 leading-relaxed">{row.others}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
